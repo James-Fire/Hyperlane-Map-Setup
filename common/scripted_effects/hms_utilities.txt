@@ -1,0 +1,73 @@
+# noscope
+hms_utilities_clear_hyperlanes = {
+	every_system = {
+		every_system = {
+			limit = {
+				has_hyperlane_to = prev
+			}
+			remove_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+	}
+}
+
+# noscope
+# INDEX = index of the save
+hms_utilities_clear_save_setup = {
+	every_system = {
+		every_system = {
+			limit = {
+				NOT = {
+					is_same_value = prev
+				}
+			}
+			prev = {
+				set_star_flag = hms_save_$INDEX$_connected_to_:@prev
+			}
+		}
+	}
+}
+
+# noscope
+# INDEX = index of the save
+hms_utilities_save_setup = {
+	hms_utilities_clear_save_setup = {
+		INDEX = $INDEX$
+	}
+	every_system = {
+		every_neighbor_system = {
+			limit = {
+				NOT = {
+					is_same_value = prev
+				}
+			}
+			prev = {
+				set_star_flag = hms_save_$INDEX$_connected_to_:@prev
+			}
+			# this allow to have 1 flag per hyperlane instead of 2
+			remove_star_flag = hms_save_$INDEX$_connected_to_:@prev
+		}
+	}
+}
+
+# noscope
+# INDEX = index of the save
+hms_utilities_load_setup = {
+	hms_utilities_clear_hyperlanes = yes
+	every_system = {
+		every_system = {
+			limit = {
+				NOT = {
+					is_same_value = prev
+				}
+				has_star_flag = hms_save_$INDEX$_connected_to_:@prev
+			}
+			add_hyperlane = {
+				from = THIS
+				to = prev
+			}
+		}
+	}
+}
