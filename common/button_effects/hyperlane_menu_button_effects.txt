@@ -4,14 +4,6 @@ blank_effect = {
 	effect = { }
 }
 
-generation_formula = {
-	potential = { hidden_trigger = { always = yes } }
-	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		#Swap between the various hyperlane layouts we've got.
-	}
-}
-
 generate_hyperlane_layout = {
 	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
@@ -33,5 +25,201 @@ load_hyperlane_layout = {
 	allow = { hidden_trigger = { always = yes } }
 	effect = {
 		#Load the saved hyperlane map
+	}
+}
+
+#Generation Type button triggers
+
+generation_clusters = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_clusters_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_pie_slices = {
+	potential = { hidden_trigger = { has_global_flag = generation_pie_slices } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_pie_slices_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_corridor = {
+	potential = { hidden_trigger = { has_global_flag = generation_corridor } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_corridor_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_center = {
+	potential = { hidden_trigger = { has_global_flag = generation_center } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_center_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_all = {
+	potential = { hidden_trigger = { has_global_flag = generation_all } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_all_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+
+generation_formula = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = { #Swap between the various hyperlane layouts we've got.
+		if = {
+			limit = {
+				has_global_flag = generation_clusters
+			}
+			remove_global_flag = generation_clusters
+			set_global_flag = generation_pie_slices
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_pie_slices
+			}
+			remove_global_flag = generation_pie_slices
+			set_global_flag = generation_corridor
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_corridor
+			}
+			remove_global_flag = generation_corridor
+			set_global_flag = generation_center
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_center
+			}
+			remove_global_flag = generation_center
+			set_global_flag = generation_all
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_all
+			}
+			remove_global_flag = generation_all
+			set_global_flag = generation_clusters
+		}
+	}
+}
+
+#cluster Options buttons triggers
+
+hub_hyperlanes = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = hub_hyperlanes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "hub_hyperlanes_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hub_wormholes = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = hub_wormholes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "hub_wormholes_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hub_gateways = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = hub_gateways } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "hub_gateways_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+standard_hyperlanes = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = standard_hyperlanes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "standard_hyperlanes_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+
+cluster_connection_type = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = { #Swap between the various cluster connections we've got.
+		if = {
+			limit = {
+				has_global_flag = hub_hyperlanes
+			}
+			remove_global_flag = hub_hyperlanes
+			set_global_flag = hub_wormholes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hub_wormholes
+			}
+			remove_global_flag = hub_wormholes
+			set_global_flag = hub_gateways
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hub_gateways
+			}
+			remove_global_flag = hub_gateways
+			set_global_flag = standard_hyperlanes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = standard_hyperlanes
+			}
+			remove_global_flag = standard_hyperlanes
+			set_global_flag = hub_hyperlanes
+		}
+	}
+}
+
+hub_no_change = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = hub_no_change } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "hub_no_change_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hub_black_hole = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = hub_black_hole } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "hub_black_hole_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hub_neutron_star = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters has_global_flag = hub_neutron_star } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "hub_neutron_star_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+
+cluster_hub_star = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = { #Swap between the various cluster connections we've got.
+		if = {
+			limit = {
+				has_global_flag = hub_no_change
+			}
+			remove_global_flag = hub_no_change
+			set_global_flag = hub_black_hole
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hub_black_hole
+			}
+			remove_global_flag = hub_black_hole
+			set_global_flag = hub_gateways
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hub_gateways
+			}
+			remove_global_flag = hub_gateways
+			set_global_flag = hub_no_change
+		}
 	}
 }

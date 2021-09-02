@@ -6,11 +6,14 @@ event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		set_global_flag = generation_clusters #Default Generation type, probably going to be the most used.
+		set_global_flag = hub_hyperlanes
+		set_global_flag = hub_no_change
 		every_country = {
 			limit = {
-				NOT = { has_country_flag = hyperlane_menu_start }
+				NOT = { has_global_flag = hyperlane_menu_start }
 			}
-			set_country_flag = hyperlane_menu_start
+			set_global_flag = hyperlane_menu_start
 			country_event = { id = hyperlane_menu.2 }
 		}
 	}
@@ -39,14 +42,8 @@ country_event = { ###Country Terminal
 	option = {
 		name = "hyperlane_menu.1.refresh"
 		#custom_tooltip = "hyperlane_menu.1.refresh.tooltip"
-		custom_gui = "exploit_main_menu_confirm"
-		country_event = { id = hyperlane_menu.2 }
-	}
-	option = {
-		name = "hyperlane_menu.1.confirm"
-		#custom_tooltip = "hyperlane_menu.1.confirm.tooltip"
-		custom_gui = "exploit_main_menu_YEET"
-		default_hide_option = yes
+		custom_gui = "hyperlane_menu_confirm"
+		#country_event = { id = hyperlane_menu.2 }
 	}
 	
 	after = {
