@@ -21,7 +21,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "BLANK"
+		name = "hyperlane_menu_window"
 		orientation = center
 		origo = center
 		moveable = yes
@@ -67,6 +67,55 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 			}
 		}
+		containerWindowType = {
+			name = "generation_formula_contain"
+			position = { x = -20 y = 50 }
+			size = { width = 410 height = 102 }
+			orientation = upper_left
+		
+			effectButtonType = {
+				name = "generation_formula_title"
+				position = { x = 0 y = -85 }
+				no_clicksound = yes
+				alwaysTransparent = yes
+				font = "large_title_font_28"
+				text = "generation_formula_title"
+				effect = "blank_effect"
+			}
+				effectButtonType = { name = "generation_clusters" spriteType = "GFX_half_menu_button_skinny" position = { x = 24 y = 50 } clicksound = interface font = "cg_16b" text = "generation_clusters" effect = "blank_effect" }
+				effectButtonType = { name = "generation_corridor" spriteType = "GFX_half_menu_button_skinny" position = { x = 24 y = 50 } clicksound = interface font = "cg_16b" text = "generation_corridor" effect = "blank_effect" }
+				effectButtonType = { name = "generation_center" spriteType = "GFX_half_menu_button_skinny" position = { x = 24 y = 50 } clicksound = interface font = "cg_16b" text = "generation_center" effect = "blank_effect" }
+				effectButtonType = { name = "generation_all" spriteType = "GFX_half_menu_button_skinny" position = { x = 24 y = 50 } clicksound = interface font = "cg_16b" text = "generation_all" effect = "blank_effect" }
+				
+				effectButtonType = { name = "generation_formula" spriteType = "GFX_exploit_menu_swap" position = { x = 198 y = 53 } clicksound = interface effect = "generation_formula" }
+		}
+		
+		effectButtonType = { name = "generate_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 378 y = 100 } clicksound = interface effect = "generate_hyperlane_layout" }
+		
+		effectButtonType = { name = "save_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 358 y = 100 } clicksound = interface effect = "save_hyperlane_layout" }
+		effectButtonType = { name = "load_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 338 y = 100 } clicksound = interface effect = "load_hyperlane_layout" }
+		
+		containerWindowType = {
+			name = "generation_options_contain"
+			position = { x = -20 y = 160 }
+			size = { width = 410 height = 102 }
+			orientation = upper_left
+			
+			effectButtonType = {
+				name = "generation_options_title"
+				position = { x = 0 y = -80 }
+				no_clicksound = yes
+				alwaysTransparent = yes
+				font = "large_title_font_28"
+				text = "generation_options_title"
+				effect = "blank_effect"
+			}
+				effectButtonType = { name = "cluster_connection_type" spriteType = "GFX_exploit_menu_swap" position = { x = 40 y = 70 } clicksound = interface effect = "cluster_connection_type" }
+				effectButtonType = { name = "hub_hyperlanes" spriteType = "GFX_half_menu_button_skinny" position = { x = 40 y = 70 } clicksound = interface font = "cg_16b" text = "hub_hyperlanes" effect = "hub_hyperlanes" }
+				effectButtonType = { name = "hub_wormholes" spriteType = "GFX_half_menu_button_skinny" position = { x = 178 y = 100 } clicksound = interface font = "cg_16b" text = "hub_wormholes" effect = "hub_wormholes" }
+				effectButtonType = { name = "hub_gateways" spriteType = "GFX_half_menu_button_skinny" position = { x = 178 y = 100 } clicksound = interface font = "cg_16b" text = "hub_gateways" effect = "hub_gateways" }
+				effectButtonType = { name = "standard_hyperlanes" spriteType = "GFX_half_menu_button_skinny" position = { x = 178 y = 100 } clicksound = interface font = "cg_16b" text = "standard_hyperlanes" effect = "standard_hyperlanes" }
+		}
 		background = {
 			name = "background"
 			quadTextureSprite ="GFX_tile_large_bg_curator" 
@@ -95,7 +144,7 @@ guiTypes = {
 		instantTextBoxType = { #Window Title
 			name = "ADVISOR"
 			font = "malgun_goth_24"
-			text = "ADVISOR"
+			text = "blank"
 			position = { x = 525 y = 15 }
 			maxWidth = 543
 			maxHeight = 22

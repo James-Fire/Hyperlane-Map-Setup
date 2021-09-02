@@ -1,0 +1,12 @@
+﻿l_english:
+ 
+ #UI
+     generation_formula_title:0 "Generation Type"
+     generation_options_title:0 "Generation Options"
+     
+     hyperlane_menu.2.name:0 "Hyperlane Map Setup"
+     hyperlane_menu.2.desc:0 ""
+     
+     blank:0 ""
+
+     

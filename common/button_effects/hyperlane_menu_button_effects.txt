@@ -1,0 +1,37 @@
+blank_effect = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = { }
+}
+
+generation_formula = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		#Swap between the various hyperlane layouts we've got.
+	}
+}
+
+generate_hyperlane_layout = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		#Use the Current hyperlane options to generate the map
+	}
+}
+
+save_hyperlane_layout = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		#Save the Current hyperlane map
+	}
+}
+
+load_hyperlane_layout = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		#Load the saved hyperlane map
+	}
+}
