@@ -6,7 +6,7 @@ hms_generator_full = {
 	every_system = {
 		every_system = {
 			limit = {
-				NOT = {
+				NOR = {
 					is_same_value = prev
 					has_hyperlane_to = prev
 				}
@@ -41,10 +41,25 @@ hms_generator_star = {
 }
 
 # noscope
-# VERY SLOW as we don't have a "closest euclidean system"
+# Might break
 hms_generator_closest_loop = {
 	set_spawn_system_batch = begin
-	hms_utilities_clear_hyperlanes = yes
+	every_system = {
+		every_system = {
+			limit = {
+				distance = {
+					source = prev
+					min_distance >= 1
+					max_distance <= 100
+					type = euclidean
+				}
+			}
+			add_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+	}
 	random_system = {
 		save_event_target_as = hms_current_system
 		save_event_target_as = hms_start_system
@@ -58,41 +73,37 @@ hms_generator_closest_loop = {
 		}
 		remove_global_flag = hms_continue
 		event_target:hms_current_system = {
-			random_system = {
+			closest_system = {
 				limit = {
-					NOR = {
+					NOT = {
 						has_star_flag = hms_loop_added
-						any_system = {
-							NOT = {
-								has_star_flag = hms_loop_added
-							}
-							event_target:hms_current_system = {
-								compare_distance = {
-									closer_object = prev
-									further_object = prevprev
-								}
-							}
-						}
 					}
 				}
 				set_star_flag = hms_loop_added
-				add_hyperlane = {
-					from = this
-					to = prev
-				}
+				set_star_flag = hms_linked_to_@prev
 				save_event_target_as = hms_current_system
 				set_global_flag = hms_continue
 			}
 		}
 	}
 	event_target:hms_current_system = {
-		add_hyperlane = {
-			from = this
-			to = event_target:hms_start_system
+		event_target:hms_start_system = {
+			set_star_flag = hms_linked_to_@prev
 		}
 	}
+	hms_utilities_clear_hyperlanes = yes
 	every_system = {
-		remove_star_flag = hms_loop_added
+		random_system = {
+			limit = {
+				has_star_flag = hms_linked_to_@prev
+			}
+			remove_star_flag = hms_linked_to_@prev
+			remove_star_flag = hms_loop_added
+			add_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
 	}
 	set_spawn_system_batch = end
 }
@@ -171,83 +182,399 @@ hms_generator_pie = {
 					}
 				}
 			}
-			log = "Added slice center [This.GetName]"
 			set_star_flag = hms_slices_center
 			set_global_flag = hms_continue
 		}
 	}
-	# for every slice center
+	# for every non slice center
 	every_system = {
 		limit = {
-			has_star_flag = hms_slices_center
+			NOT = {
+				has_star_flag = hms_slices_center
+			}
 		}
-		# we connect to the systems
+		# we connect to the closest slice center systems
+		# to do that, we connect to every slice center, then closest_system on them work
 		every_system = {
 			limit = {
-				NOR = {
-					# that aren't a center nor were already connected
-					has_star_flag = hms_slices_center
-					has_star_flag = hms_slices_added
-					# that haven't a closer slice center
-					any_system = {
-						has_star_flag = hms_slices_center
-						prev = {
-							compare_distance = {
-								closer_object = prev								# the other center
-								further_object = prevprevprev								# the center we are treating
-							}
-						}
-					}
+				has_star_flag = hms_slices_center
+			}
+			add_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+		closest_system = {
+			limit = {
+				has_star_flag = hms_slices_center
+			}
+			save_event_target_as = hms_chosen_center
+		}
+		# remove hyperlanes from the far away slice centers
+		every_system = {
+			limit = {
+				has_star_flag = hms_slices_center
+				NOT = {
+					is_same_value = event_target:hms_chosen_center
+				}
+			}
+			remove_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+	}
+	# # now we just have to connect the slices center in a loop fashion
+	# # for every slice center
+	# every_system = {
+	# 	limit = {
+	# 		has_star_flag = hms_slices_center
+	# 	}
+	# 	while = {
+	# 		count = 2
+	# 		# we connect to the systems
+	# 		random_system = {
+	# 			limit = {
+	# 				NOR = {
+	# 					# that aren't prev
+	# 					is_same_value = prev
+	# 					# that are the closest
+	# 					any_system = {
+	# 						has_star_flag = hms_slices_center
+	# 						NOT = {
+	# 							has_hyperlane_to = prevprev
+	# 						}
+	# 						prevprev = {
+	# 							# the slice center we are treating
+	# 							compare_distance = {
+	# 								closer_object = prev									# the other center we are considering
+	# 								further_object = prevprev									# the center we want to connect to
+	# 							}
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 			add_hyperlane = {
+	# 				from = this
+	# 				to = prev
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# cleanup
+	every_system = {
+		remove_star_flag = hms_slices_center
+	}
+	set_spawn_system_batch = end
+}
+
+# no scope
+hms_generator_concentric_circles = {
+	set_spawn_system_batch = begin
+	hms_utilities_clear_hyperlanes = yes
+	every_system = {
+		limit = {
+			distance_to_core_percent < 0.1
+		}
+		set_variable = {
+			which = hms_index
+			value = 1
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.1
+			distance_to_core_percent < 0.2
+		}
+		set_variable = {
+			which = hms_index
+			value = 2
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.2
+			distance_to_core_percent < 0.3
+		}
+		set_variable = {
+			which = hms_index
+			value = 3
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.3
+			distance_to_core_percent < 0.4
+		}
+		set_variable = {
+			which = hms_index
+			value = 4
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.4
+			distance_to_core_percent < 0.5
+		}
+		set_variable = {
+			which = hms_index
+			value = 5
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.5
+			distance_to_core_percent < 0.55
+		}
+		set_variable = {
+			which = hms_index
+			value = 5.5
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.55
+			distance_to_core_percent < 0.6
+		}
+		set_variable = {
+			which = hms_index
+			value = 6
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.6
+			distance_to_core_percent < 0.65
+		}
+		set_variable = {
+			which = hms_index
+			value = 6.5
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.65
+			distance_to_core_percent < 0.7
+		}
+		set_variable = {
+			which = hms_index
+			value = 7
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.7
+			distance_to_core_percent < 0.75
+		}
+		set_variable = {
+			which = hms_index
+			value = 7.5
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.75
+			distance_to_core_percent < 0.8
+		}
+		set_variable = {
+			which = hms_index
+			value = 8
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.8
+			distance_to_core_percent < 0.85
+		}
+		set_variable = {
+			which = hms_index
+			value = 8.5
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.85
+			distance_to_core_percent < 0.9
+		}
+		set_variable = {
+			which = hms_index
+			value = 9
+		}
+	}
+	every_system = {
+		limit = {
+			distance_to_core_percent >= 0.9
+		}
+		set_variable = {
+			which = hms_index
+			value = 10
+		}
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 1
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 2
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 3
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 4
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 5
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 5.5
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 6
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 6.5
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 7
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 7.5
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 8
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 8.5
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 9
+	}
+	hms_generator_concentric_circles_aux = {
+		INDEX = 10
+	}
+	set_spawn_system_batch = end
+}
+
+# no scope
+# INDEX
+hms_generator_concentric_circles_aux = {
+	# connect every system from a circle to each other
+	every_system = {
+		limit = {
+			check_variable = {
+				which = hms_index
+				value = $INDEX$
+			}
+		}
+		every_system = {
+			limit = {
+				NOT = {
+					is_same_value = prev
+				}
+				check_variable = {
+					which = hms_index
+					value = $INDEX$
 				}
 			}
 			add_hyperlane = {
 				from = this
 				to = prev
 			}
-			set_star_flag = hms_slices_added
 		}
 	}
-	# now we just have to connect the slices center to each other
-	# for every slice center
-	every_system = {
+	# get a random start system
+	random_system = {
 		limit = {
-			has_star_flag = hms_slices_center
+			check_variable = {
+				which = hms_index
+				value = $INDEX$
+			}
 		}
-		while = {
-			count = 2
-			# we connect to the systems
-			random_system = {
+		save_event_target_as = hms_start_system
+		save_event_target_as = hms_current_system
+		set_star_flag = hms_added
+	}
+	set_global_flag = hms_continue
+	while = {
+		count = 10000
+		limit = {
+			has_global_flag = hms_continue
+		}
+		remove_global_flag = hms_continue
+		event_target:hms_current_system = {
+			closest_system = {
 				limit = {
-					NOR = {
-						# that aren't prev
-						is_same_value = prev
-						# that are the closest
-						any_system = {
-							has_star_flag = hms_slices_center
-							NOT = {
-								has_hyperlane_to = prevprev
-							}
-							prevprev = {
-								# the slice center we are treating
-								compare_distance = {
-									closer_object = prev									# the other center we are considering
-									further_object = prevprev									# the center we want to connect to
-								}
-							}
-						}
+					check_variable = {
+						which = hms_index
+						value = $INDEX$
+					}
+					NOT = {
+						has_star_flag = hms_added
 					}
 				}
-				add_hyperlane = {
-					from = this
-					to = prev
-				}
+				set_star_flag = hms_connected_to_@prev
+				set_star_flag = hms_added
+				save_event_target_as = hms_current_system
+				set_global_flag = hms_continue
 			}
 		}
 	}
-	# cleanup
-	every_system = {
-		remove_star_flag = hms_slices_center
-		remove_star_flag = hms_slices_added
+	event_target:hms_current_system = {
+		event_target:hms_start_system = {
+			set_star_flag = hms_connected_to_@prev
+		}
 	}
-	set_spawn_system_batch = end
+	every_system = {
+		limit = {
+			check_variable = {
+				which = hms_index
+				value = $INDEX$
+			}
+		}
+		every_system = {
+			limit = {
+				check_variable = {
+					which = hms_index
+					value = $INDEX$
+				}
+				has_hyperlane_to = prev
+			}
+			remove_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+	}
+	every_system = {
+		limit = {
+			check_variable = {
+				which = hms_index
+				value = $INDEX$
+			}
+		}
+		every_system = {
+			limit = {
+				check_variable = {
+					which = hms_index
+					value = $INDEX$
+				}
+				has_star_flag = hms_connected_to_@prev
+			}
+			remove_star_flag = hms_connected_to_@prev
+			add_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+		remove_star_flag = hms_added
+	}
+	every_system = {
+		limit = {
+			check_variable = {
+				which = hms_index
+				value = $INDEX$
+			}
+		}
+		clear_variable = hms_index
+	}
 }

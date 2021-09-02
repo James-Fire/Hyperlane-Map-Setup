@@ -1,5 +1,6 @@
 # noscope
 hms_utilities_clear_hyperlanes = {
+	set_spawn_system_batch = begin
 	every_system = {
 		every_system = {
 			limit = {
@@ -11,6 +12,7 @@ hms_utilities_clear_hyperlanes = {
 			}
 		}
 	}
+	set_spawn_system_batch = end
 }
 
 # noscope
@@ -24,7 +26,7 @@ hms_utilities_clear_save_setup = {
 				}
 			}
 			prev = {
-				set_star_flag = hms_save_$INDEX$_connected_to_:@prev
+				remove_star_flag = hms_save_$INDEX$_connected_to_@prev
 			}
 		}
 	}
@@ -44,10 +46,10 @@ hms_utilities_save_setup = {
 				}
 			}
 			prev = {
-				set_star_flag = hms_save_$INDEX$_connected_to_:@prev
+				set_star_flag = hms_save_$INDEX$_connected_to_@prev
 			}
 			# this allow to have 1 flag per hyperlane instead of 2
-			remove_star_flag = hms_save_$INDEX$_connected_to_:@prev
+			remove_star_flag = hms_save_$INDEX$_connected_to_@prev
 		}
 	}
 }
@@ -55,19 +57,21 @@ hms_utilities_save_setup = {
 # noscope
 # INDEX = index of the save
 hms_utilities_load_setup = {
-	hms_utilities_clear_hyperlanes = yes
+	set_spawn_system_batch = begin
 	every_system = {
 		every_system = {
 			limit = {
-				NOT = {
+				NOR = {
 					is_same_value = prev
+					has_hyperlane_to = prev
 				}
-				has_star_flag = hms_save_$INDEX$_connected_to_:@prev
+				has_star_flag = hms_save_$INDEX$_connected_to_@prev
 			}
 			add_hyperlane = {
-				from = THIS
+				from = this
 				to = prev
 			}
 		}
 	}
+	set_spawn_system_batch = end
 }
