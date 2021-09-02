@@ -7,8 +7,42 @@ blank_effect = {
 generation_formula = {
 	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		#Swap between the various hyperlane layouts we've got.
+	effect = { #Swap between the various hyperlane layouts we've got.
+		if = {
+			limit = {
+				has_global_flag = generation_clusters
+			}
+			remove_gloabl_flag = generation_clusters
+			set_global_flag = generation_pie_slices
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_pie_slices
+			}
+			remove_gloabl_flag = generation_clusters
+			set_global_flag = generation_corridor
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_corridor
+			}
+			remove_gloabl_flag = generation_corridor
+			set_global_flag = generation_center
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_center
+			}
+			remove_gloabl_flag = generation_center
+			set_global_flag = generation_all
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_all
+			}
+			remove_gloabl_flag = generation_all
+			set_global_flag = generation_clusters
+		}
 	}
 }
 
@@ -35,3 +69,43 @@ load_hyperlane_layout = {
 		#Load the saved hyperlane map
 	}
 }
+
+#Generation Type button triggers
+
+generation_clusters = {
+	potential = { hidden_trigger = { has_global_flag = generation_clusters } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_clusters_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_pie_slices = {
+	potential = { hidden_trigger = { has_global_flag = generation_pie_slices } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_pie_slices_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_corridor = {
+	potential = { hidden_trigger = { has_global_flag = generation_corridor } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_corridor_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_center = {
+	potential = { hidden_trigger = { has_global_flag = generation_center } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_center_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_all = {
+	potential = { hidden_trigger = { has_global_flag = generation_all } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_all_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+
+#cluster Options buttons triggers

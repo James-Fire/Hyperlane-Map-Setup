@@ -3,10 +3,22 @@
  #UI
      generation_formula_title:0 "Generation Type"
      generation_options_title:0 "Generation Options"
+     hyperlane_manipulation_title:0 "Manipulation Options"
      
      hyperlane_menu.2.name:0 "Hyperlane Map Setup"
      hyperlane_menu.2.desc:0 ""
      
      blank:0 ""
+     
+     generation_clusters:0 "Clusters"
+     generation_clusters_tooltip:0 "This generation type will add hyperlane clusters based around hubs. Options exist for cluster connections."
+     generation_corridor:0 "Corridor"
+     generation_corridor_tooltip:0 "This generation type will generate a long winding corridor through the galaxy. Each star only gets 2 hyperlanes."
+     generation_center:0 "Central Hub"
+     generation_center_tooltip:0 "This generation type will connect all systems in the galaxy to 1 Hub system."
+     generation_all:0 "Everything (Cursed)"
+     generation_all_tooltip:0 "This generation type will connect all systems to all other systems in the galaxy. WARNING: MAY FREEZE THE GAME"
+     generation_pie_slices:0 "Pie Slices"
+     generation_pie_slices_tooltip:0 "This generation type will split the galaxy into pie slices, with systems being connected to 1 Hub system in each slice."
 
      
