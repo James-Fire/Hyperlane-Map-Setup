@@ -20,5 +20,19 @@
      generation_all_tooltip:0 "This generation type will connect all systems to all other systems in the galaxy. WARNING: MAY FREEZE THE GAME"
      generation_pie_slices:0 "Pie Slices"
      generation_pie_slices_tooltip:0 "This generation type will split the galaxy into pie slices, with systems being connected to 1 Hub system in each slice."
-
      
+     hub_hyperlanes:0 "Hub Hyperlanes"
+     hub_hyperlanes_tooltip:0 "This setting connects clusters through the hubs using hyperlanes."
+     hub_wormholes:0 "Hub Wormholes"
+     hub_wormholes_tooltip:0 "This setting connects clusters through the hubs using Wormholes."
+     hub_gateways:0 "Hub Gateway Network"
+     hub_gateways_tooltip:0 "This setting connects clusters through the hubs using a custom Gateway Network."
+     standard_hyperlanes:0 "Standard Hyperlanes"
+     standard_hyperlanes_tooltip:0 "This setting connects clusters using normal hyperlanes."
+     
+     hub_no_change:0 "Hub: Standard Star"
+     hub_no_change_tooltip:0 "This setting does not change what star any hubs are."
+     hub_black_hole:0 "Hub: Black Hole"
+     hub_black_hole_tooltip:0 "This settings turns all hubs into Black Holes."
+     hub_neutron_star:0 "Hub: Neutron Star"
+     hub_neutron_star_tooltip:0 "This Setting turns all hubs into Neutron Stars."
