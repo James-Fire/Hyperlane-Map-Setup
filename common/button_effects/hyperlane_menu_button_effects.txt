@@ -12,7 +12,7 @@ generate_hyperlane_layout = {
 			limit = {
 				has_global_flag = generation_clusters
 			} #Need to expand cluster generation to include the options present in the UI.
-			remove_global_flag = yes
+			#remove_global_flag = yes
 		}
 		else_if = {
 			limit = {
@@ -37,7 +37,7 @@ generate_hyperlane_layout = {
 			limit = {
 				has_global_flag = generation_circles
 			}
-			remove_global_flag = yes
+			hms_generator_concentric_circles = yes
 		}
 		else_if = {
 			limit = {
@@ -46,30 +46,6 @@ generate_hyperlane_layout = {
 			hms_generator_full = yes
 		}
 	
-	}
-}
-
-delete_hyperlanes = {
-	potential = { hidden_trigger = { always = yes } }
-	allow = { hidden_trigger = { always = yes } }
-	effect = { #Delete all hyperlanes
-		hms_utilities_clear_hyperlanes = yes
-	}
-}
-
-save_hyperlane_layout = {
-	potential = { hidden_trigger = { always = yes } }
-	allow = { hidden_trigger = { always = yes } }
-	effect = { #Save the Current hyperlane map
-		hms_utilities_save_setup = yes
-	}
-}
-
-load_hyperlane_layout = {
-	potential = { hidden_trigger = { always = yes } }
-	allow = { hidden_trigger = { always = yes } }
-	effect = { #Load the saved hyperlane map
-		hms_utilities_load_setup = yes
 	}
 }
 
@@ -289,7 +265,7 @@ save_hyperlane_on_gen = {
 	potential = { hidden_trigger = { has_global_flag = save_hyperlane_on_gen } }
 	allow = { hidden_trigger = { always = yes } }
 	effect = {
-		custom_tooltip = "save_hyperlane_on_gen_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "save_hyperlane_on_gen_tooltip"
 	}
 }
 load_hyperlane_on_gen = {
@@ -299,17 +275,24 @@ load_hyperlane_on_gen = {
 		custom_tooltip = "load_hyperlane_on_gen_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
-save_hyperlane_layout = {
-	potential = { hidden_trigger = { has_global_flag = save_hyperlane_layout } }
+delete_hyperlanes = {
+	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		custom_tooltip = "save_hyperlane_layout_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	effect = { #Delete all hyperlanes
+		hms_utilities_clear_hyperlanes = yes
+	}
+}
+save_hyperlane_layout = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = { #Save the Current hyperlane map
+		hms_utilities_save_setup = yes
 	}
 }
 load_hyperlane_layout = {
-	potential = { hidden_trigger = { has_global_flag = load_hyperlane_layout } }
+	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		custom_tooltip = "load_hyperlane_layout_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	effect = { #Load the saved hyperlane map
+		hms_utilities_load_setup = yes
 	}
 }
