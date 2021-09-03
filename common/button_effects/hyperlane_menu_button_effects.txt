@@ -7,24 +7,69 @@ blank_effect = {
 generate_hyperlane_layout = {
 	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		#Use the Current hyperlane options to generate the map
+	effect = { #Use the Current hyperlane options to generate the map
+		if = {
+			limit = {
+				has_global_flag = generation_clusters
+			} #Need to expand cluster generation to include the options present in the UI.
+			remove_global_flag = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_pie_slices
+			}
+			hms_generator_pie = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_corridor
+			}
+			hms_generator_closest_loop = yes
+			#hms_generator_ugly_loop = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_center
+			}
+			hms_generator_star = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_circles
+			}
+			remove_global_flag = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_all
+			}
+			hms_generator_full = yes
+		}
+	
+	}
+}
+
+delete_hyperlanes = {
+	potential = { hidden_trigger = { always = yes } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = { #Delete all hyperlanes
+		hms_utilities_clear_hyperlanes = yes
 	}
 }
 
 save_hyperlane_layout = {
 	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		#Save the Current hyperlane map
+	effect = { #Save the Current hyperlane map
+		hms_utilities_save_setup = yes
 	}
 }
 
 load_hyperlane_layout = {
 	potential = { hidden_trigger = { always = yes } }
 	allow = { hidden_trigger = { always = yes } }
-	effect = {
-		#Load the saved hyperlane map
+	effect = { #Load the saved hyperlane map
+		hms_utilities_load_setup = yes
 	}
 }
 
@@ -56,6 +101,13 @@ generation_center = {
 	allow = { hidden_trigger = { always = yes } }
 	effect = {
 		custom_tooltip = "generation_center_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+generation_circles = {
+	potential = { hidden_trigger = { has_global_flag = generation_circles } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "generation_circles_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
 generation_all = {
@@ -96,6 +148,13 @@ generation_formula = {
 				has_global_flag = generation_center
 			}
 			remove_global_flag = generation_center
+			set_global_flag = generation_circles
+		}
+		else_if = {
+			limit = {
+				has_global_flag = generation_circles
+			}
+			remove_global_flag = generation_circles
 			set_global_flag = generation_all
 		}
 		else_if = {
@@ -221,5 +280,36 @@ cluster_hub_star = {
 			remove_global_flag = hub_gateways
 			set_global_flag = hub_no_change
 		}
+	}
+}
+
+#Hyperlane Manipulation Buttons
+
+save_hyperlane_on_gen = {
+	potential = { hidden_trigger = { has_global_flag = save_hyperlane_on_gen } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "save_hyperlane_on_gen_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+load_hyperlane_on_gen = {
+	potential = { hidden_trigger = { has_global_flag = load_hyperlane_on_gen } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "load_hyperlane_on_gen_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+save_hyperlane_layout = {
+	potential = { hidden_trigger = { has_global_flag = save_hyperlane_layout } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "save_hyperlane_layout_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+load_hyperlane_layout = {
+	potential = { hidden_trigger = { has_global_flag = load_hyperlane_layout } }
+	allow = { hidden_trigger = { always = yes } }
+	effect = {
+		custom_tooltip = "load_hyperlane_layout_tooltip" #The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
