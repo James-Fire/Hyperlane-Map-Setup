@@ -1,6 +1,12 @@
 # Triggers when the game starts
 on_game_start = {
 	events = {
-		hyperlane_menu.1
+		hms_utility.10
+	}
+}
+
+dmm_mod_selected = {
+	events = {
+		hms_utility.15
 	}
 }
