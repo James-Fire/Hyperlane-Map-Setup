@@ -75,3 +75,140 @@ hms_utilities_load_setup = {
 	}
 	set_spawn_system_batch = end
 }
+
+# noscope
+hms_utilities_count_hyperlanes = {
+	# TODO switch to custom global empire ?
+	event_target:global_event_country = {
+		set_variable = {
+			which = hms_hyperlane_count
+			value = 0
+		}
+	}
+	every_system = {
+		every_neighbor_system = {
+			event_target:global_event_country = {
+				change_variable = {
+					which = hms_hyperlane_count
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+# noscope
+# INDEX
+hms_utilities_count_hyperlanes_saved = {
+	# TODO switch to custom global empire ?
+	event_target:global_event_country = {
+		set_variable = {
+			which = hms_hyperlane_count
+			value = 0
+		}
+	}
+	every_system = {
+		every_system = {
+			limit = {
+				has_star_flag = hms_save_$INDEX$_connected_to_@prev
+			}
+			event_target:global_event_country = {
+				change_variable = {
+					which = hms_hyperlane_count
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+# noscope
+# DOESN'T WORK IN 3.0 DUE TO RANDOM BUG
+# CHANCE
+hms_utilities_prune_hyperlane = {
+	every_system = {
+		every_neighbor_system = {
+			random = {
+				chance = $CHANCE$
+				remove_hyperlane = {
+					from = this
+					to = prev
+				}
+			}
+		}
+	}
+}
+
+# noscope
+hms_utilities_tag_partitions = {
+	every_system = {
+		limit = {
+			is_variable_set = hms_partition
+		}
+		clear_variable = hms_partition
+	}
+	set_global_flag = hms_continue
+	event_target:global_event_country = {
+		set_variable = {
+			which = hms_partition_count
+			value = 0
+		}
+	}
+	while = {
+		count = 10000
+		limit = {
+			has_global_flag = hms_continue
+		}
+		remove_global_flag = hms_continue
+		random_system = {
+			limit = {
+				NOT = {
+					is_variable_set = hms_partition
+				}
+			}
+			set_global_flag = hms_continue
+			event_target:global_event_country = {
+				change_variable = {
+					which = hms_partition_count
+					value = 1
+				}
+			}
+			set_variable = {
+				which = hms_partition
+				value = {
+					# TODO 3.1
+					scope = event_target:global_event_country
+					variable = hms_partition_count
+				}
+			}
+			every_system = {
+				limit = {
+					distance = {
+						source = prev
+						type = hyperlane
+						min_jumps = 1
+						max_jumps = 10000
+					}
+				}
+				set_variable = {
+					which = hms_partition
+					value = {
+						# TODO 3.1
+						scope = event_target:global_event_country
+						variable = hms_partition_count
+					}
+				}
+			}
+			# TODO remove
+			if = {
+				limit = {
+					is_variable_set = hms_partition
+				}
+				log = "var set"
+			}
+			else = {
+				log = "var not set"
+			}
+		}
+	}
+}
