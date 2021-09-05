@@ -1,0 +1,166 @@
+namespace = hyperlane_hubs
+
+system_event = {
+	id = hyperlane_hubs.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[This.hyperlane_hubs] Hyperlane Hubs"
+		log = "Remove all hyperlanes"
+		every_system = {
+            every_neighbor_system = {
+                remove_hyperlane = { from = prev to = this }
+            }
+        }
+		system_event = { id = hyperlane_hubs.2 days = 1 }
+	}
+	
+	after = {
+	}
+}
+
+system_event = {
+	id = hyperlane_hubs.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "Stage [This.cluster_connection_range] Cluster Connections"
+		event_target:hyperlane_hub_primary = {
+			change_variable = { which = cluster_connection_range value = 1 }
+		}
+		every_system = {
+			limit = {
+				has_star_flag = hyperlane_hub
+			}
+			every_neighbor_system_euclidean = {
+				limit = {
+					NOT = { has_star_flag = hyperlane_hub }
+					NOT = { has_star_flag = sealed_system }
+					NOT = { has_star_flag = hyperlane_hub_spread }
+					NOT = { has_hyperlane_to = prev }
+				}
+				add_hyperlane = { from = this to = prev }
+				set_star_flag = hyperlane_hub_spread
+			}
+		}
+		system_event = { id = hyperlane_hubs.3 days = 1 }
+	}
+	after = {
+		
+	}
+}
+
+system_event = {
+	id = hyperlane_hubs.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+			
+			}
+			log = "Stage [This.cluster_connection_range] Cluster Connections"
+			event_target:hyperlane_hub_primary = {
+				change_variable = { which = cluster_connection_range value = 1 }
+			}
+			every_system = {
+				limit = {
+					has_star_flag = hyperlane_hub_spread
+				}
+				every_neighbor_system_euclidean = {
+					limit = {
+						NOT = { has_star_flag = hyperlane_hub }
+						NOT = { has_star_flag = sealed_system }
+						NOT = { has_star_flag = hyperlane_hub_spread }
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = { from = this to = prev }
+					set_star_flag = hyperlane_hub_spread
+				}
+			}
+			system_event = { id = hyperlane_hubs.3 days = 1 }
+		}
+		else = {
+			system_event = { id = hyperlane_hubs.4 days = 1 }
+		}
+	}
+}
+
+system_event = {
+	id = hyperlane_hubs.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "Conneting Cluster Systems"
+		every_system = {
+			limit = {
+				OR = {
+					has_star_flag = hyperlane_hub_1
+					has_star_flag = hyperlane_hub_2
+					has_star_flag = hyperlane_hub_3
+					has_star_flag = hyperlane_hub_4
+				}
+			}
+			every_neighbor_system_euclidean = {
+				limit = {
+					NOT = { has_hyperlane_to = prev }
+					OR = {
+						has_star_flag = hyperlane_hub
+						has_star_flag = hyperlane_hub_1
+						has_star_flag = hyperlane_hub_2
+						has_star_flag = hyperlane_hub_3
+						has_star_flag = hyperlane_hub_4
+					}
+					NOT = { has_star_flag = sealed_system }
+					distance = {
+						source = prev
+						min_jumps = 1
+						max_jumps = 10
+						type = hyperlane
+					}
+					distance = {
+						source = prev
+						min_distance >= 1
+						max_distance <= 40
+						type = euclidean
+					}
+				}
+				add_hyperlane = { from = this to = prev }
+			}
+		}
+		system_event = { id = hyperlane_hubs.5 days = 1 }
+	}
+}
+
+system_event = {
+	id = hyperlane_hubs.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "Link Hyperlane Hubs"
+		every_system = {
+			limit = {
+				has_star_flag = hyperlane_hub
+			}
+			every_system = {
+				limit = {
+					has_star_flag = hyperlane_hub
+					NOT = { has_hyperlane_to = prev }
+					distance = {
+						source = prev
+						min_distance >= 1
+						max_distance <= 170
+						type = euclidean
+					}
+				}
+				add_hyperlane = { from = this to = prev }
+			}
+		}
+		#system_event = { id = hyperlane_hubs.2 days = 1 }
+	}
+}

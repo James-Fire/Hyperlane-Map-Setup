@@ -9,9 +9,11 @@
      hyperlane_menu.2.desc:0 ""
      
      blank:0 ""
+     generate_hyperlane_layout_tooltip:0 "Generate a layout in the galaxy based on currently-set parameters. This may require that several days pass."
+     delete_hyperlanes_tooltip:0 "Delete all hyperlanes in the galaxy."
      
      generation_clusters:0 "  Clusters"
-     generation_clusters_tooltip:0 "This generation type will add hyperlane clusters based around hubs. Options exist for cluster connections."
+     generation_clusters_tooltip:0 "This generation type will add hyperlane clusters based around hubs. Options exist for inter and intra cluster connections."
      generation_corridor:0 "  Corridor"
      generation_corridor_tooltip:0 "This generation type will generate a long winding corridor through the galaxy. Each star only gets 2 hyperlanes."
      generation_center:0 "  Central Hub"
@@ -21,7 +23,7 @@
      generation_all:0 "  Everything (Cursed)"
      generation_all_tooltip:0 "This generation type will connect all systems to all other systems in the galaxy. WARNING: MAY FREEZE THE GAME"
      generation_pie_slices:0 "  Pie Slices"
-     generation_pie_slices_tooltip:0 "This generation type will split the galaxy into pie slices, with systems being connected to 1 Hub system in each slice."
+     generation_pie_slices_tooltip:0 "This generation type will split the galaxy into pie slices, with options for inter and intra slice connections."
      
      hub_hyperlanes:0 "  Hub Hyperlanes"
      hub_hyperlanes_tooltip:0 "This setting connects clusters through the hubs using hyperlanes."
@@ -30,7 +32,7 @@
      hub_gateways:0 "  Hub Gateway Network"
      hub_gateways_tooltip:0 "This setting connects clusters through the hubs using a custom Gateway Network."
      standard_hyperlanes:0 "  Standard Hyperlanes"
-     standard_hyperlanes_tooltip:0 "This setting connects clusters using normal hyperlanes."
+     standard_hyperlanes_tooltip:0 "This setting connects clusters using normal hyperlanes. This option also uses the vanilla Hyperlane Density setting."
      
      hub_no_change:0 "  Hub: Standard Star"
      hub_no_change_tooltip:0 "This setting does not change what star any hubs are."
@@ -39,7 +41,10 @@
      hub_neutron_star:0 "  Hub: Neutron Star"
      hub_neutron_star_tooltip:0 "This Setting turns all hubs into Neutron Stars."
      
-     save_hyperlane_on_gen_tooltip:0 ""
-     load_hyperlane_on_gen_tooltip:0 ""
+     save_load_hyperlanes:0 "Save/Load"
+     save_hyperlane_on_gen_tooltip:0 "The current hyperlane galaxy layout will be saved on generating a new one."
+     save_hyperlane_on_gen_false_tooltip:0 "The current hyperlane galaxy layout will not be saved on generating a new one."
+     load_hyperlane_on_gen_tooltip:0 "The current hyperlane galaxy layout will be loaded and superimposed after generating a new one."
+     load_hyperlane_on_gen_false_tooltip:0 "The current hyperlane galaxy layout will not be loaded on generating a new one."
      save_hyperlane_layout_tooltip:0 "Save the current hyperlane map."
      load_hyperlane_layout_tooltip:0 "Load the saved hyperlane map, on top of existing hyperlanes."
