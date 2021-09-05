@@ -1,0 +1,7 @@
+hms_is_installed = {
+	always = yes
+}
+
+hms_is_not_installed = {
+	always = no
+}

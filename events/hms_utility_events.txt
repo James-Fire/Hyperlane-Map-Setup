@@ -1,0 +1,31 @@
+namespace = hms_utility
+#
+event = {
+	id = hms_utility.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = hyperlane_map_setup_installed
+		dmm_register_mod = {
+			DMM_NAME = hyperlane_map_setup.dmm_name
+			DMM_FLAG = hyperlane_map_setup_unique_flag
+		}
+	}
+}
+
+# DMM gate
+country_event = {
+	id = hms_utility.15
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		from = {
+			has_leader_flag = hyperlane_map_setup_unique_flag
+		}
+	}
+	immediate = {
+		country_event = {
+			id = hyperlane_menu.2
+		}
+	}
+}
