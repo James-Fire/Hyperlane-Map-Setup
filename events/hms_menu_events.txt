@@ -1,0 +1,50 @@
+namespace = hms_menu
+event = {
+	id = hms_menu.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = hms_generation_clusters		#Default Generation type, probably going to be the most used.
+		set_global_flag = hms_hub_hyperlanes
+		set_global_flag = hms_hub_no_change
+		every_country = {
+			limit = {
+				NOT = {
+					has_global_flag = hms_menu_start
+				}
+			}
+			set_global_flag = hms_menu_start
+			country_event = {
+				id = hms_menu.2
+			}
+		}
+	}
+	after = {
+	}
+}
+
+country_event = {
+	###Country Terminal
+	id = hms_menu.2
+	title = "hms_menu.2.name"
+	desc = "hms_menu.2.desc"
+	diplomatic = yes
+	custom_gui = "hms_menu_window"
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = ROOT.ruler
+		room = ethic_spaceship_room
+	}
+	immediate = {
+	}
+	# Confirm
+	option = {
+		name = "hms_menu.1.refresh"
+		#custom_tooltip = "hms_menu.1.refresh.tooltip"
+		custom_gui = "hms_menu_confirm"
+		#country_event = { id = hms_menu.2 }
+	}
+	after = {
+		#fire_on_action = { on_action = exploit_apply_queue }
+	}
+}

@@ -5,7 +5,7 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		set_global_flag = hyperlane_map_setup_installed
+		set_global_flag = hyperlane_map_setup_installed		# we use the long name for less conflicts
 		dmm_register_mod = {
 			DMM_NAME = hyperlane_map_setup.dmm_name
 			DMM_FLAG = hyperlane_map_setup_unique_flag
@@ -25,7 +25,7 @@ country_event = {
 	}
 	immediate = {
 		country_event = {
-			id = hyperlane_menu.2
+			id = hms_menu.2
 		}
 	}
 }

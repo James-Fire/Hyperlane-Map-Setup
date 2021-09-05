@@ -1,6 +1,6 @@
 guiTypes = {
 	containerWindowType = {
-		name = "hyperlane_menu_confirm"
+		name = "hms_menu_confirm"
 		position = { x=0 y=0 }
 		size = { width = 188 height = 35 }
 		moveable = no
@@ -21,7 +21,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "hyperlane_menu_window"
+		name = "hms_menu_window"
 		orientation = center
 		origo = center
 		moveable = yes
@@ -88,32 +88,32 @@ guiTypes = {
 				alwaysTransparent = yes
 				font = "large_title_font_28"
 				text = "generation_options_title"
-				effect = "blank_effect"
+				effect = "hms_blank_effect"
 			}
-				effectButtonType = { name = "generation_clusters" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "generation_clusters" effect = "generation_clusters" }
-				effectButtonType = { name = "generation_pie_slices" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "generation_pie_slices" effect = "generation_pie_slices" }
-				effectButtonType = { name = "generation_corridor" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "generation_corridor" effect = "generation_corridor" }
-				effectButtonType = { name = "generation_center" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "generation_center" effect = "generation_center" }
-				effectButtonType = { name = "generation_circles" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "generation_circles" effect = "generation_circles" }
-				effectButtonType = { name = "generation_all" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "generation_all" effect = "generation_all" }
-				effectButtonType = { name = "generation_formula" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 54 } clicksound = interface effect = "generation_formula" }
+				effectButtonType = { name = "hms_generation_clusters" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "hms_generation_clusters" effect = "hms_generation_clusters" }
+				effectButtonType = { name = "hms_generation_pie_slices" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "hms_generation_pie_slices" effect = "hms_generation_pie_slices" }
+				effectButtonType = { name = "hms_generation_corridor" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "hms_generation_corridor" effect = "hms_generation_corridor" }
+				effectButtonType = { name = "hms_generation_center" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "hms_generation_center" effect = "hms_generation_center" }
+				effectButtonType = { name = "hms_generation_circles" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "hms_generation_circles" effect = "hms_generation_circles" }
+				effectButtonType = { name = "hms_generation_all" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 50 } clicksound = interface format = left font = "cg_16b" text = "hms_generation_all" effect = "hms_generation_all" }
+				effectButtonType = { name = "hms_generation_formula" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 54 } clicksound = interface effect = "hms_generation_formula" }
 				
-				effectButtonType = { name = "hub_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hub_hyperlanes" effect = "hub_hyperlanes" }
-				effectButtonType = { name = "hub_wormholes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hub_wormholes" effect = "hub_wormholes" }
-				effectButtonType = { name = "hub_gateways" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hub_gateways" effect = "hub_gateways" }
-				effectButtonType = { name = "standard_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "standard_hyperlanes" effect = "standard_hyperlanes" }
-				effectButtonType = { name = "cluster_connection_type" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 90 } clicksound = interface effect = "cluster_connection_type" }
+				effectButtonType = { name = "hms_hub_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_hyperlanes" effect = "hms_hub_hyperlanes" }
+				effectButtonType = { name = "hms_hub_wormholes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_wormholes" effect = "hms_hub_wormholes" }
+				effectButtonType = { name = "hms_hub_gateways" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_gateways" effect = "hms_hub_gateways" }
+				effectButtonType = { name = "hms_standard_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 86 } clicksound = interface format = left font = "cg_16b" text = "hms_standard_hyperlanes" effect = "hms_standard_hyperlanes" }
+				effectButtonType = { name = "hms_cluster_connection_type" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 90 } clicksound = interface effect = "hms_cluster_connection_type" }
 				
-				effectButtonType = { name = "hub_no_change" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 122 } clicksound = interface format = left font = "cg_16b" text = "hub_no_change" effect = "hub_no_change" }
-				effectButtonType = { name = "hub_black_hole" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 122 } clicksound = interface format = left font = "cg_16b" text = "hub_black_hole" effect = "hub_black_hole" }
-				effectButtonType = { name = "hub_neutron_star" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 122 } clicksound = interface format = left font = "cg_16b" text = "hub_neutron_star" effect = "hub_neutron_star" }
-				effectButtonType = { name = "cluster_hub_star" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 126 } clicksound = interface effect = "cluster_hub_star" }
+				effectButtonType = { name = "hms_hub_no_change" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 122 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_no_change" effect = "hms_hub_no_change" }
+				effectButtonType = { name = "hms_hub_black_hole" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 122 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_black_hole" effect = "hms_hub_black_hole" }
+				effectButtonType = { name = "hms_hub_neutron_star" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 122 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_neutron_star" effect = "hms_hub_neutron_star" }
+				effectButtonType = { name = "hms_cluster_hub_star" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 126 } clicksound = interface effect = "hms_cluster_hub_star" }
 				
-				effectButtonType = { name = "setting_3" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 158 } clicksound = interface format = left font = "cg_16b" text = "setting_3" effect = "blank_effect" }
-				effectButtonType = { name = "setting_3_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 162 } clicksound = interface effect = "clusteblank_effectr_hub_star" }
+				effectButtonType = { name = "setting_3" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 158 } clicksound = interface format = left font = "cg_16b" text = "setting_3" effect = "hms_blank_effect" }
+				effectButtonType = { name = "setting_3_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 162 } clicksound = interface effect = "clustehms_blank_effectr_hub_star" }
 				
-				effectButtonType = { name = "setting_4" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 194 } clicksound = interface format = left font = "cg_16b" text = "setting_4" effect = "blank_effect" }
-				effectButtonType = { name = "setting_4_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 198 } clicksound = interface effect = "blank_effect" }
+				effectButtonType = { name = "setting_4" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 194 } clicksound = interface format = left font = "cg_16b" text = "setting_4" effect = "hms_blank_effect" }
+				effectButtonType = { name = "setting_4_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 198 } clicksound = interface effect = "hms_blank_effect" }
 		}
 		
 		containerWindowType = {
@@ -129,21 +129,21 @@ guiTypes = {
 				alwaysTransparent = yes
 				font = "large_title_font_28"
 				text = "hyperlane_manipulation_title"
-				effect = "blank_effect"
+				effect = "hms_blank_effect"
 			}			
 			effectButtonType = { name = "save_load_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 0 y = 50 } clicksound = interface font = "cg_16b" text = "save_load_hyperlanes" effect = "save_load_hyperlanes" }
 			effectButtonType = { name = "save_load_hyperlanes_buttons" spriteType = "GFX_half_menu_button_bg" position = { x = 0 y = 86 } clicksound = interface effect = "save_load_hyperlanes" }
 			
-			effectButtonType = { name = "generate_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 3 y = 90 } clicksound = interface effect = "generate_hyperlane_layout" }
-			effectButtonType = { name = "delete_hyperlanes" spriteType = "GFX_exploit_menu_swap" position = { x = 33 y = 90 } clicksound = interface effect = "delete_hyperlanes" }
+			effectButtonType = { name = "hms_generate_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 3 y = 90 } clicksound = interface effect = "hms_generate_hyperlane_layout" }
+			effectButtonType = { name = "hms_delete_hyperlanes" spriteType = "GFX_exploit_menu_swap" position = { x = 33 y = 90 } clicksound = interface effect = "hms_delete_hyperlanes" }
 			
-			effectButtonType = { name = "save_hyperlane_on_gen" spriteType = "GFX_giga_menu_enabled" position = { x = 3 y = 54 } clicksound = interface effect = "save_hyperlane_on_gen" }
-			effectButtonType = { name = "save_hyperlane_on_gen_false" spriteType = "GFX_giga_menu_disabled" position = { x = 3 y = 54 } clicksound = interface effect = "save_hyperlane_on_gen_false" }
-			effectButtonType = { name = "load_hyperlane_on_gen" spriteType = "GFX_giga_menu_enabled" position = { x = 177 y = 54 } clicksound = interface effect = "load_hyperlane_on_gen" }
-			effectButtonType = { name = "load_hyperlane_on_gen_false" spriteType = "GFX_giga_menu_disabled" position = { x = 177 y = 54 } clicksound = interface effect = "load_hyperlane_on_gen_false" }
+			effectButtonType = { name = "hms_save_hyperlane_on_gen" spriteType = "GFX_giga_menu_enabled" position = { x = 3 y = 54 } clicksound = interface effect = "hms_save_hyperlane_on_gen" }
+			effectButtonType = { name = "hms_save_hyperlane_on_gen_false" spriteType = "GFX_giga_menu_disabled" position = { x = 3 y = 54 } clicksound = interface effect = "hms_save_hyperlane_on_gen_false" }
+			effectButtonType = { name = "hms_load_hyperlane_on_gen" spriteType = "GFX_giga_menu_enabled" position = { x = 177 y = 54 } clicksound = interface effect = "hms_load_hyperlane_on_gen" }
+			effectButtonType = { name = "hms_load_hyperlane_on_gen_false" spriteType = "GFX_giga_menu_disabled" position = { x = 177 y = 54 } clicksound = interface effect = "hms_load_hyperlane_on_gen_false" }
 			
-			effectButtonType = { name = "save_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 33 y = 54 } clicksound = interface effect = "save_hyperlane_layout" }
-			effectButtonType = { name = "load_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 147 y = 54 } clicksound = interface effect = "load_hyperlane_layout" }
+			effectButtonType = { name = "hms_save_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 33 y = 54 } clicksound = interface effect = "hms_save_hyperlane_layout" }
+			effectButtonType = { name = "hms_load_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 147 y = 54 } clicksound = interface effect = "hms_load_hyperlane_layout" }
 		}
 		
 		
@@ -160,7 +160,7 @@ guiTypes = {
 			position = { x = 225 y = 36500 } #Yeet
 			spriteType = "GFX_tiles_dark_area_cut_8"
 			alwaysTransparent = yes
-			effect = "blank_effect"
+			effect = "hms_blank_effect"
 		}
 		instantTextBoxType = {
 			name = "alien_message"
