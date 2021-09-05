@@ -110,7 +110,7 @@ guiTypes = {
 				effectButtonType = { name = "hms_cluster_hub_star" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 126 } clicksound = interface effect = "hms_cluster_hub_star" }
 				
 				effectButtonType = { name = "setting_3" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 158 } clicksound = interface format = left font = "cg_16b" text = "setting_3" effect = "hms_blank_effect" }
-				effectButtonType = { name = "setting_3_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 162 } clicksound = interface effect = "clustehms_blank_effectr_hub_star" }
+				effectButtonType = { name = "setting_3_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 162 } clicksound = interface effect = "hms_blank_effect" }
 				
 				effectButtonType = { name = "setting_4" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 194 } clicksound = interface format = left font = "cg_16b" text = "setting_4" effect = "hms_blank_effect" }
 				effectButtonType = { name = "setting_4_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 198 } clicksound = interface effect = "hms_blank_effect" }
