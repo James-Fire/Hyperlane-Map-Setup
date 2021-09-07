@@ -70,6 +70,104 @@ hms_generate_hyperlane_layout = {
 	}
 }
 
+#Generation Type tab buttons
+hms_generation_clusters_tab = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_clusters
+	}
+}
+hms_generation_pie_slices_tab = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_pie_slices
+	}
+}
+hms_generation_corridor_tab = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_corridor
+	}
+}
+hms_generation_center_tab = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_center
+	}
+}
+hms_generation_circles_tab = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_circles
+	}
+}
+hms_generation_all_tab = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_all
+	}
+}
+
 #Generation Type button triggers
 hms_generation_clusters = {
 	potential = {

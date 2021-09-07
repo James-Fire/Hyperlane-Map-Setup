@@ -64,13 +64,17 @@ spriteTypes = {
 	spriteType = { name = "GFX_autofab_100_neg"						texturefile = "gfx/interface/menu_ui/-100.dds" }
 
 	spriteType = { name = "GFX_advisor_autofab"						texturefile = "gfx/event_pictures/custom_uis/Advisor-Room.dds" }
-	spriteType = { name = "GFX_advisor_upper_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_upper_dongs.dds" }
-	spriteType = { name = "GFX_advisor_lower_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_lower_dongs.dds" }
+	spriteType = { name = "GFX_upper_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_upper_dongs.dds" }
+	spriteType = { name = "GFX_lower_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_lower_dongs.dds" }
+	spriteType = { name = "GFX_upper_left_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_upper_left_dongs.dds" }
+	spriteType = { name = "GFX_lower_left_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_lower_left_dongs.dds" }
 	spriteType = { name = "GFX_flipped_geargalaxy_dongs"					texturefile = "gfx/event_pictures/custom_uis/lower_geargalaxy_dongs.dds" }
 	spriteType = { name = "GFX_lower_geargalaxy_dongs"					texturefile = "gfx/event_pictures/custom_uis/flipped_geargalaxy_Dongs.dds" }
 	spriteType = { name = "GFX_portrait_bg"							texturefile = "gfx/event_pictures/custom_uis/portrait_bg.dds" }
 	spriteType = { name = "GFX_portrait_flipped_bg"							texturefile = "gfx/event_pictures/custom_uis/portrait_flipped_bg.dds" }
+	
 	spriteType = { name = "GFX_terminal_exploit"					texturefile = "gfx/event_pictures/custom_uis/exploit-Terminal-Image.dds" }
+	spriteType = { name = "GFX_hms_circles_gentype"					texturefile = "gfx/event_pictures/custom_uis/hms_circles_gentype.dds" }
 	
 	spriteType = { name = "GFX_side_top"							texturefile = "gfx/interface/menu_ui/side_button_top.dds" }
 	spriteType = { name = "GFX_autofab_side"						texturefile = "gfx/interface/menu_ui/side_button_factory.dds" }
@@ -83,6 +87,7 @@ spriteTypes = {
 
 	spriteType = { name = "GFX_giga_menu_bg"						texturefile = "gfx/interface/menu_ui/background.dds" }
 	spriteType = { name = "GFX_menu_button_bg"						texturefile = "gfx/interface/menu_ui/button_background.dds" }
+	spriteType = { name = "GFX_thicc_menu_button_bg"						texturefile = "gfx/interface/menu_ui/button_background_thicc.dds" }
 	spriteType = { name = "GFX_long_menu_button"					texturefile = "gfx/interface/menu_ui/long_button_background.dds" }
 	spriteType = { name = "GFX_long_menu_button_skinny"				texturefile = "gfx/interface/menu_ui/skinny_long_button_background.dds" }
 	spriteType = { name = "GFX_half_menu_button_bg"					texturefile = "gfx/interface/menu_ui/half_button_background.dds" }

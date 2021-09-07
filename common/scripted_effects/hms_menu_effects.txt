@@ -1,0 +1,8 @@
+hms_remove_all_gentype_flags = {
+	remove_global_flag = hms_generation_clusters
+	remove_global_flag = hms_generation_pie_slices
+	remove_global_flag = hms_generation_corridor
+	remove_global_flag = hms_generation_center
+	remove_global_flag = hms_generation_circles
+	remove_global_flag = hms_generation_all
+}
