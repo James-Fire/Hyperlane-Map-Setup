@@ -131,6 +131,22 @@ hms_generation_corridor_tab = {
 		set_global_flag = hms_generation_corridor
 	}
 }
+hms_generation_cursed_corridor_tab = {
+	potential = {
+		hidden_trigger = {
+			hms_has_gentype_flag = no
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hms_remove_all_gentype_flags = yes
+		set_global_flag = hms_generation_cursed_corridor
+	}
+}
 hms_generation_center_tab = {
 	potential = {
 		hidden_trigger = {
@@ -213,6 +229,20 @@ hms_generation_corridor_image = {
 	potential = {
 		hidden_trigger = {
 			has_global_flag = hms_generation_corridor
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_cursed_corridor_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_cursed_corridor
 		}
 	}
 	allow = {
@@ -314,6 +344,23 @@ hms_generation_corridor = {
 	}
 	effect = {
 		custom_tooltip = "hms_generation_corridor_tooltip"
+		hms_remove_all_gentype_flags = yes
+	}
+}
+
+hms_generation_cursed_corridor = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_cursed_corridor
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_generation_cursed_corridor_tooltip"
 		hms_remove_all_gentype_flags = yes
 	}
 }
@@ -694,9 +741,9 @@ hms_cluster_hyperlanes_swap = {
 				has_global_flag = hms_cluster_hyperlanes_neighbour
 			}
 			remove_global_flag = hms_cluster_hyperlanes_neighbour
-			set_global_flag = hms_cluster_hyperlanes_distance
+			set_global_flag = hms_cluster_hyperlanes_hub
 		}
-		else_if = {
+		else_if = { #Skip over this option for now, we need 1.1 and button loc commands
 			limit = {
 				has_global_flag = hms_cluster_hyperlanes_distance
 			}
@@ -713,7 +760,7 @@ hms_cluster_hyperlanes_swap = {
 	}
 }
 
-
+#Central Hub Options
 
 #Hyperlane Manipulation Buttons
 hms_delete_hyperlanes = {
