@@ -56,22 +56,22 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/text_icons/tooltip_planet_total.dds"
 	}
 
-	spriteType = { name = "GFX_autofab_1"						texturefile = "gfx/interface/menu_ui/1.dds" }
+	spriteType = { name = "GFX_autofab_1"							texturefile = "gfx/interface/menu_ui/1.dds" }
 	spriteType = { name = "GFX_autofab_1_neg"						texturefile = "gfx/interface/menu_ui/-1.dds" }
-	spriteType = { name = "GFX_autofab_10"						texturefile = "gfx/interface/menu_ui/10.dds" }
+	spriteType = { name = "GFX_autofab_10"							texturefile = "gfx/interface/menu_ui/10.dds" }
 	spriteType = { name = "GFX_autofab_10_neg"						texturefile = "gfx/interface/menu_ui/-10.dds" }
-	spriteType = { name = "GFX_autofab_100"						texturefile = "gfx/interface/menu_ui/100.dds" }
+	spriteType = { name = "GFX_autofab_100"							texturefile = "gfx/interface/menu_ui/100.dds" }
 	spriteType = { name = "GFX_autofab_100_neg"						texturefile = "gfx/interface/menu_ui/-100.dds" }
 
 	spriteType = { name = "GFX_advisor_autofab"						texturefile = "gfx/event_pictures/custom_uis/Advisor-Room.dds" }
-	spriteType = { name = "GFX_upper_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_upper_dongs.dds" }
-	spriteType = { name = "GFX_lower_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_lower_dongs.dds" }
+	spriteType = { name = "GFX_upper_dongs"							texturefile = "gfx/event_pictures/custom_uis/advisor_upper_dongs.dds" }
+	spriteType = { name = "GFX_lower_dongs"							texturefile = "gfx/event_pictures/custom_uis/advisor_lower_dongs.dds" }
 	spriteType = { name = "GFX_upper_left_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_upper_left_dongs.dds" }
 	spriteType = { name = "GFX_lower_left_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_lower_left_dongs.dds" }
-	spriteType = { name = "GFX_flipped_geargalaxy_dongs"					texturefile = "gfx/event_pictures/custom_uis/lower_geargalaxy_dongs.dds" }
-	spriteType = { name = "GFX_lower_geargalaxy_dongs"					texturefile = "gfx/event_pictures/custom_uis/flipped_geargalaxy_Dongs.dds" }
+	spriteType = { name = "GFX_flipped_geargalaxy_dongs"			texturefile = "gfx/event_pictures/custom_uis/lower_geargalaxy_dongs.dds" }
+	spriteType = { name = "GFX_lower_geargalaxy_dongs"				texturefile = "gfx/event_pictures/custom_uis/flipped_geargalaxy_Dongs.dds" }
 	spriteType = { name = "GFX_portrait_bg"							texturefile = "gfx/event_pictures/custom_uis/portrait_bg.dds" }
-	spriteType = { name = "GFX_portrait_flipped_bg"							texturefile = "gfx/event_pictures/custom_uis/portrait_flipped_bg.dds" }
+	spriteType = { name = "GFX_portrait_flipped_bg"					texturefile = "gfx/event_pictures/custom_uis/portrait_flipped_bg.dds" }
 	
 	spriteType = { name = "GFX_terminal_exploit"					texturefile = "gfx/event_pictures/custom_uis/exploit-Terminal-Image.dds" }
 	
@@ -88,12 +88,12 @@ spriteTypes = {
 	spriteType = { name = "GFX_side_bottom"							texturefile = "gfx/interface/menu_ui/side_button_bottom.dds" }
 	spriteType = { name = "GFX_exploit_side_button"					texturefile = "gfx/interface/menu_ui/exploit_side_button.dds" }
 
-	spriteType = { name = "GFX_stockpile_menu_top"						texturefile = "gfx/interface/menu_ui/ui_stockpile_top.dds" }
-	spriteType = { name = "GFX_stockpile_menu_bottom"						texturefile = "gfx/interface/menu_ui/ui_stockpile_bot.dds" }
+	spriteType = { name = "GFX_stockpile_menu_top"					texturefile = "gfx/interface/menu_ui/ui_stockpile_top.dds" }
+	spriteType = { name = "GFX_stockpile_menu_bottom"				texturefile = "gfx/interface/menu_ui/ui_stockpile_bot.dds" }
 
 	spriteType = { name = "GFX_giga_menu_bg"						texturefile = "gfx/interface/menu_ui/background.dds" }
 	spriteType = { name = "GFX_menu_button_bg"						texturefile = "gfx/interface/menu_ui/button_background.dds" }
-	spriteType = { name = "GFX_thicc_menu_button_bg"						texturefile = "gfx/interface/menu_ui/button_background_thicc.dds" }
+	spriteType = { name = "GFX_thicc_menu_button_bg"				texturefile = "gfx/interface/menu_ui/button_background_thicc.dds" }
 	spriteType = { name = "GFX_long_menu_button"					texturefile = "gfx/interface/menu_ui/long_button_background.dds" }
 	spriteType = { name = "GFX_long_menu_button_skinny"				texturefile = "gfx/interface/menu_ui/skinny_long_button_background.dds" }
 	spriteType = { name = "GFX_half_menu_button_bg"					texturefile = "gfx/interface/menu_ui/half_button_background.dds" }
@@ -104,7 +104,11 @@ spriteTypes = {
 	spriteType = { name = "GFX_blank_menu_button_skinny"			texturefile = "gfx/interface/menu_ui/blank_skinny_button_background.dds" }
 	spriteType = { name = "GFX_blank_half_menu_button_skinny"		texturefile = "gfx/interface/menu_ui/blank_skinny_half_button_background.dds" }
 
-	spriteType = { name = "GFX_hms_delete"						texturefile = "gfx/interface/menu_ui/hms_delete.dds" }
+	spriteType = { name = "GFX_hms_save"							texturefile = "gfx/interface/menu_ui/hms_save.dds" }
+	spriteType = { name = "GFX_hms_load"							texturefile = "gfx/interface/menu_ui/hms_load.dds" }
+	spriteType = { name = "GFX_hms_delete"							texturefile = "gfx/interface/menu_ui/hms_delete.dds" }
+	spriteType = { name = "GFX_hms_enabled"							texturefile = "gfx/interface/menu_ui/hms_enabled.dds" }
+	spriteType = { name = "GFX_hms_disabled"						texturefile = "gfx/interface/menu_ui/hms_disabled.dds" }
 	
 	spriteType = {
 		name = "GFX_autofab_settings"
