@@ -4,6 +4,7 @@
      hms_generation_formula_title: "Generation Type"
      generation_options_title: "Generation Options"
      hyperlane_manipulation_title: "Manipulation Options"
+     hyperlane_saving_title: "Save States"
      
      hms_menu.2.name: "Hyperlane Map Setup"
      hms_menu.2.desc: ""
@@ -40,6 +41,13 @@
      hms_hub_black_hole_tooltip: "This settings turns all hubs into Black Holes."
      hms_hub_neutron_star: "  Hub: Neutron Star"
      hms_hub_neutron_star_tooltip: "This Setting turns all hubs into Neutron Stars."
+     
+     hms_cluster_hyperlanes_neighbour: "  Cluster: Neighbours"
+     hms_cluster_hyperlanes_neighbour_tooltip: "This setting has cluster systems connected to their immediate neighbours."
+     hms_cluster_hyperlanes_distance: "  Cluster: Distance"
+     hms_cluster_hyperlanes_distance_tooltip: "This setting has cluster systems connected to all systems in the cluster within a specified distance."
+     hms_cluster_hyperlanes_hub: "  Cluster: Hub"
+     hms_cluster_hyperlanes_hub_tooltip: "This setting has cluster systems connected to the cluster hub only."
      
      save_load_hyperlanes: "Save/Load"
      hms_save_hyperlane_on_gen_tooltip: "The current hyperlane galaxy layout will be saved on generating a new one."

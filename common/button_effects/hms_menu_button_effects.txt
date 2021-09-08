@@ -28,6 +28,12 @@ hms_generate_hyperlane_layout = {
 		#Use the Current hyperlane options to generate the map
 		custom_tooltip = "hms_generate_hyperlane_layout_tooltip"
 		hidden_effect = {
+			if = { #If perma save is enabled, or if load after gen is enabled, save the current network.
+				limit = {
+					
+				}
+				
+			}
 			if = {
 				limit = {
 					has_global_flag = hms_generation_clusters
@@ -66,6 +72,12 @@ hms_generate_hyperlane_layout = {
 				}
 				hms_generator_full = yes
 			}
+			if = { #If perma save is disabled, clear the save slot.
+				limit = {
+				
+				}
+				
+			}
 		}
 	}
 }
@@ -74,7 +86,7 @@ hms_generate_hyperlane_layout = {
 hms_generation_clusters_tab = {
 	potential = {
 		hidden_trigger = {
-			always = yes
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {
@@ -90,7 +102,7 @@ hms_generation_clusters_tab = {
 hms_generation_pie_slices_tab = {
 	potential = {
 		hidden_trigger = {
-			always = yes
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {
@@ -106,7 +118,7 @@ hms_generation_pie_slices_tab = {
 hms_generation_corridor_tab = {
 	potential = {
 		hidden_trigger = {
-			always = yes
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {
@@ -122,7 +134,7 @@ hms_generation_corridor_tab = {
 hms_generation_center_tab = {
 	potential = {
 		hidden_trigger = {
-			always = yes
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {
@@ -138,7 +150,7 @@ hms_generation_center_tab = {
 hms_generation_circles_tab = {
 	potential = {
 		hidden_trigger = {
-			always = yes
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {
@@ -154,7 +166,7 @@ hms_generation_circles_tab = {
 hms_generation_all_tab = {
 	potential = {
 		hidden_trigger = {
-			always = yes
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {
@@ -165,6 +177,92 @@ hms_generation_all_tab = {
 	effect = {
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_all
+	}
+}
+
+#Generation types image triggers
+hms_generation_clusters_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_clusters
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_pie_slices_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_pie_slices
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_corridor_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_corridor
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_center_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_center
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_circles_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_circles
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_all_image = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_all
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
 	}
 }
 
@@ -181,7 +279,8 @@ hms_generation_clusters = {
 		}
 	}
 	effect = {
-		custom_tooltip = "hms_generation_clusters_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "hms_generation_clusters_tooltip"
+		hms_remove_all_gentype_flags = yes
 	}
 }
 
@@ -197,7 +296,8 @@ hms_generation_pie_slices = {
 		}
 	}
 	effect = {
-		custom_tooltip = "hms_generation_pie_slices_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "hms_generation_pie_slices_tooltip"
+		hms_remove_all_gentype_flags = yes
 	}
 }
 
@@ -213,7 +313,8 @@ hms_generation_corridor = {
 		}
 	}
 	effect = {
-		custom_tooltip = "hms_generation_corridor_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "hms_generation_corridor_tooltip"
+		hms_remove_all_gentype_flags = yes
 	}
 }
 
@@ -229,7 +330,8 @@ hms_generation_center = {
 		}
 	}
 	effect = {
-		custom_tooltip = "hms_generation_center_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "hms_generation_center_tooltip"
+		hms_remove_all_gentype_flags = yes
 	}
 }
 
@@ -245,7 +347,8 @@ hms_generation_circles = {
 		}
 	}
 	effect = {
-		custom_tooltip = "hms_generation_circles_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "hms_generation_circles_tooltip"
+		hms_remove_all_gentype_flags = yes
 	}
 }
 
@@ -261,7 +364,8 @@ hms_generation_all = {
 		}
 	}
 	effect = {
-		custom_tooltip = "hms_generation_all_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+		custom_tooltip = "hms_generation_all_tooltip"
+		hms_remove_all_gentype_flags = yes
 	}
 }
 
@@ -327,7 +431,7 @@ hms_generation_formula = {
 hms_hub_hyperlanes = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_hyperlanes
 		}
 	}
@@ -344,7 +448,7 @@ hms_hub_hyperlanes = {
 hms_hub_wormholes = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_wormholes
 		}
 	}
@@ -361,7 +465,7 @@ hms_hub_wormholes = {
 hms_hub_gateways = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_gateways
 		}
 	}
@@ -378,7 +482,7 @@ hms_hub_gateways = {
 hms_standard_hyperlanes = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_standard_hyperlanes
 		}
 	}
@@ -395,7 +499,7 @@ hms_standard_hyperlanes = {
 hms_cluster_connection_type = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 		}
 	}
 	allow = {
@@ -439,7 +543,7 @@ hms_cluster_connection_type = {
 hms_hub_no_change = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_no_change
 		}
 	}
@@ -456,7 +560,7 @@ hms_hub_no_change = {
 hms_hub_black_hole = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_black_hole
 		}
 	}
@@ -473,7 +577,7 @@ hms_hub_black_hole = {
 hms_hub_neutron_star = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_neutron_star
 		}
 	}
@@ -490,7 +594,7 @@ hms_hub_neutron_star = {
 hms_cluster_hub_star = {
 	potential = {
 		hidden_trigger = {
-			has_global_flag = hms_generation_clusters
+			hms_has_cluster_flag = yes
 		}
 	}
 	allow = {
@@ -524,7 +628,115 @@ hms_cluster_hub_star = {
 	}
 }
 
+hms_cluster_hyperlanes_neighbour = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+			has_global_flag = hms_cluster_hyperlanes_neighbour
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_cluster_hyperlanes_neighbour_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_cluster_hyperlanes_distance = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+			has_global_flag = hms_cluster_hyperlanes_distance
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_cluster_hyperlanes_distance_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_cluster_hyperlanes_hub = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+			has_global_flag = hms_cluster_hyperlanes_hub
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_cluster_hyperlanes_hub_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_cluster_hyperlanes_swap = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Swap between the various cluster connection types we've got.
+		if = {
+			limit = {
+				has_global_flag = hms_cluster_hyperlanes_neighbour
+			}
+			remove_global_flag = hms_cluster_hyperlanes_neighbour
+			set_global_flag = hms_cluster_hyperlanes_distance
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_cluster_hyperlanes_distance
+			}
+			remove_global_flag = hms_cluster_hyperlanes_distance
+			set_global_flag = hms_cluster_hyperlanes_hub
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_cluster_hyperlanes_hub
+			}
+			remove_global_flag = hms_cluster_hyperlanes_hub
+			set_global_flag = hms_cluster_hyperlanes_neighbour
+		}
+	}
+}
+
+
+
 #Hyperlane Manipulation Buttons
+hms_delete_hyperlanes = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Delete all hyperlanes
+		custom_tooltip = "hms_delete_hyperlanes_tooltip"
+		hidden_effect = {
+			hms_utilities_clear_hyperlanes = yes
+		}
+	}
+}
+
+#Hyperlane Saving Buttons
 hms_save_hyperlane_on_gen = {
 	potential = {
 		hidden_trigger = {
@@ -601,26 +813,6 @@ hms_load_hyperlane_on_gen_false = {
 		custom_tooltip = "hms_load_hyperlane_on_gen_false_tooltip"
 		hidden_effect = {
 			set_global_flag = hms_load_hyperlane_on_gen
-		}
-	}
-}
-
-hms_delete_hyperlanes = {
-	potential = {
-		hidden_trigger = {
-			always = yes
-		}
-	}
-	allow = {
-		hidden_trigger = {
-			always = yes
-		}
-	}
-	effect = {
-		#Delete all hyperlanes
-		custom_tooltip = "hms_delete_hyperlanes_tooltip"
-		hidden_effect = {
-			hms_utilities_clear_hyperlanes = yes
 		}
 	}
 }
