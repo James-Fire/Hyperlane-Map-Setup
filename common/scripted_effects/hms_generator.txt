@@ -6,15 +6,12 @@ hms_generator_cluster = {
 				exists = space_owner
 			}
 			NOT = {
-				has_star_flag = sealed_system
+				hms_isolated_system = yes
 			}
 		}
 		set_star_flag = hyperlane_hub_primary
 		set_star_flag = hyperlane_hub
-		system_event = {
-			id = hms_hubs.1
-		}
-		log = "Primary Hyperlane Hub on [This.GetName]"
+		log = "Primary Hyperlane Hub on \\[This.GetName]"
 		set_variable = {
 			which = hms_hubs
 			value = 1
@@ -53,13 +50,21 @@ hms_generator_cluster = {
 				}
 			}
 			set_star_flag = hyperlane_hub
-			log = "Hyperlane Hub on [This.GetName]"
+			log = "Hyperlane Hub on \\[This.GetName]"
 			event_target:hyperlane_hub_primary = {
 				change_variable = {
 					which = hms_hubs
 					value = 1
 				}
 			}
+		}
+	}
+	log = "\\[event_target:hyperlane_hub_primary.hms_hubs] Hyperlane Hubs"
+	log = "Remove all hyperlanes"
+	hms_utilities_clear_hyperlanes = yes
+	event_target:hyperlane_hub_primary = {
+		system_event = {
+			id = hms_hubs.2
 		}
 	}
 }

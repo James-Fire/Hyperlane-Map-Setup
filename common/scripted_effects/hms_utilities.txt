@@ -1,4 +1,13 @@
 # noscope
+hms_remove_gen_flags = {
+	every_system = {
+		remove_star_flag = hyperlane_hub_primary
+		remove_star_flag = hyperlane_hub
+		remove_star_flag = hyperlane_hub_spread
+	}
+}
+
+# noscope
 hms_utilities_clear_hyperlanes = {
 	set_spawn_system_batch = begin
 	every_system = {

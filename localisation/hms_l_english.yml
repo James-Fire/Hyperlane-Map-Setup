@@ -33,7 +33,7 @@
      hms_hub_wormholes: "  Hub Wormholes"
      hms_hub_wormholes_tooltip: "This setting connects clusters through the hubs using Wormholes."
      hms_hub_gateways: "  Hub Gateway Network"
-     hms_hub_gateways_tooltip: "This setting connects clusters through the hubs using a custom Gateway Network."
+     hms_hub_gateways_tooltip: "This setting connects clusters through the hubs using a Gateway Network. The Gateways are active, but cannot be used until you have the Gateway Activation tech."
      hms_standard_hyperlanes: "  Standard Hyperlanes"
      hms_standard_hyperlanes_tooltip: "This setting connects clusters using normal hyperlanes. This option also uses the vanilla Hyperlane Density setting."
      

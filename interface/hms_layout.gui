@@ -166,11 +166,11 @@ guiTypes = {
 				effectButtonType = { name = "setting_4_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 198 } clicksound = interface effect = "hms_blank_effect" }
 				
 				#Central Hub Options
-				effectButtonType = { name = "hms_hub_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_hyperlanes" effect = "hms_hub_hyperlanes" }
-				effectButtonType = { name = "hms_hub_wormholes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_wormholes" effect = "hms_hub_wormholes" }
-				effectButtonType = { name = "hms_hub_gateways" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_gateways" effect = "hms_hub_gateways" }
-				effectButtonType = { name = "hms_standard_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 43 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_standard_hyperlanes" effect = "hms_standard_hyperlanes" }
-				effectButtonType = { name = "hms_cluster_connection_type" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 47 } clicksound = interface effect = "hms_cluster_connection_type" }
+				#effectButtonType = { name = "hms_hub_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_hyperlanes" effect = "hms_hub_hyperlanes" }
+				#effectButtonType = { name = "hms_hub_wormholes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_wormholes" effect = "hms_hub_wormholes" }
+				#effectButtonType = { name = "hms_hub_gateways" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_gateways" effect = "hms_hub_gateways" }
+				#effectButtonType = { name = "hms_standard_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 43 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_standard_hyperlanes" effect = "hms_standard_hyperlanes" }
+				#effectButtonType = { name = "hms_cluster_connection_type" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 47 } clicksound = interface effect = "hms_cluster_connection_type" }
 				
 				#
 		}

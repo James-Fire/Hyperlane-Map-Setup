@@ -4,19 +4,8 @@ system_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "[This.hms_hubs] Hyperlane Hubs"
-		log = "Remove all hyperlanes"
-		every_system = {
-			every_neighbor_system = {
-				remove_hyperlane = {
-					from = prev
-					to = this
-				}
-			}
-		}
 		system_event = {
 			id = hms_hubs.2
-			days = 1
 		}
 	}
 	after = {
@@ -28,6 +17,7 @@ system_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		set_spawn_system_batch = begin
 		log = "Stage [This.cluster_connection_range] Cluster Connections"
 		event_target:hyperlane_hub_primary = {
 			change_variable = {
@@ -41,16 +31,10 @@ system_event = {
 			}
 			every_neighbor_system_euclidean = {
 				limit = {
-					NOT = {
+					NOR = {
 						has_star_flag = hyperlane_hub
-					}
-					NOT = {
 						has_star_flag = sealed_system
-					}
-					NOT = {
 						has_star_flag = hyperlane_hub_spread
-					}
-					NOT = {
 						has_hyperlane_to = prev
 					}
 				}
@@ -61,9 +45,9 @@ system_event = {
 				set_star_flag = hyperlane_hub_spread
 			}
 		}
+		set_spawn_system_batch = end
 		system_event = {
 			id = hms_hubs.3
-			days = 1
 		}
 	}
 	after = {
@@ -77,30 +61,29 @@ system_event = {
 	immediate = {
 		if = {
 			limit = {
-			}
-			log = "Stage [This.cluster_connection_range] Cluster Connections"
-			event_target:hyperlane_hub_primary = {
-				change_variable = {
-					which = cluster_connection_range
-					value = 1
+				any_system = {
+					hms_isolated_system = no
+					count_neighbor_system = {
+						count = 0
+					}
 				}
 			}
+			log = "Stage [This.cluster_connection_range] Cluster Connections"
+			change_variable = {
+				which = cluster_connection_range
+				value = 1
+			}
+			set_spawn_system_batch = begin
 			every_system = {
 				limit = {
 					has_star_flag = hyperlane_hub_spread
 				}
 				every_neighbor_system_euclidean = {
 					limit = {
-						NOT = {
+						NOR = {
 							has_star_flag = hyperlane_hub
-						}
-						NOT = {
 							has_star_flag = sealed_system
-						}
-						NOT = {
 							has_star_flag = hyperlane_hub_spread
-						}
-						NOT = {
 							has_hyperlane_to = prev
 						}
 					}
@@ -111,15 +94,14 @@ system_event = {
 					set_star_flag = hyperlane_hub_spread
 				}
 			}
+			set_spawn_system_batch = end
 			system_event = {
 				id = hms_hubs.3
-				days = 1
 			}
 		}
 		else = {
 			system_event = {
 				id = hms_hubs.4
-				days = 1
 			}
 		}
 	}
@@ -131,14 +113,10 @@ system_event = {
 	is_triggered_only = yes
 	immediate = {
 		log = "Conneting Cluster Systems"
+		set_spawn_system_batch = begin
 		every_system = {
 			limit = {
-				OR = {
-					has_star_flag = hyperlane_hub_1
-					has_star_flag = hyperlane_hub_2
-					has_star_flag = hyperlane_hub_3
-					has_star_flag = hyperlane_hub_4
-				}
+				has_star_flag = hyperlane_hub_spread
 			}
 			every_neighbor_system_euclidean = {
 				limit = {
@@ -147,10 +125,7 @@ system_event = {
 					}
 					OR = {
 						has_star_flag = hyperlane_hub
-						has_star_flag = hyperlane_hub_1
-						has_star_flag = hyperlane_hub_2
-						has_star_flag = hyperlane_hub_3
-						has_star_flag = hyperlane_hub_4
+						has_star_flag = hyperlane_hub_spread
 					}
 					NOT = {
 						has_star_flag = sealed_system
@@ -174,9 +149,9 @@ system_event = {
 				}
 			}
 		}
+		set_spawn_system_batch = end
 		system_event = {
 			id = hms_hubs.5
-			days = 1
 		}
 	}
 }
@@ -186,30 +161,90 @@ system_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "Link Hyperlane Hubs"
-		every_system = {
-			limit = {
-				has_star_flag = hyperlane_hub
-			}
-			every_system = {
-				limit = {
-					has_star_flag = hyperlane_hub
-					NOT = {
-						has_hyperlane_to = prev
+		log = "Link Clusters"
+		set_spawn_system_batch = begin
+		switch = {
+			trigger = has_global_flag
+			hms_hub_hyperlanes = {	
+				every_system = {
+					limit = {
+						has_star_flag = hyperlane_hub
 					}
-					distance = {
-						source = prev
-						min_distance >= 1
-						max_distance <= 170
-						type = euclidean
+					every_system = {
+						limit = {
+							has_star_flag = hyperlane_hub
+							NOT = {
+								has_hyperlane_to = prev
+							}
+							distance = {
+								source = prev
+								min_distance >= 1
+								max_distance <= 170
+								type = euclidean
+							}
+						}
+						add_hyperlane = {
+							from = this
+							to = prev
+						}
 					}
 				}
-				add_hyperlane = {
-					from = this
-					to = prev
+			}
+			hms_hub_wormholes = {
+				every_system = {
+					limit = {
+						has_star_flag = hyperlane_hub
+					}
+					spawn_natural_wormhole = { bypass_type = wormhole orbit_distance = 100 random_pos = yes }
+					every_system = {
+						limit = {
+							has_star_flag = hyperlane_hub
+							distance = {
+								source = prev
+								min_distance >= 1
+								max_distance <= 170
+								type = euclidean
+							}
+						}
+						spawn_natural_wormhole = { bypass_type = wormhole orbit_distance = 100 random_pos = yes }
+						link_wormholes = prev
+					}
+				}
+			}
+			hms_hub_gateways = {
+				every_system = {
+					limit = {
+						has_star_flag = hyperlane_hub
+					}
+					spawn_megastructure = {
+						type = "gateway_final"
+						random_pos = yes
+						orbit_angle = 360		# range of the randomization
+					}
+				}
+			}
+			hms_standard_hyperlanes = {
+				every_system = {
+					limit = {
+						has_star_flag = hyperlane_hub_spread
+					}
+					every_neighbor_system_euclidean = {
+						limit = {
+							NOT = {
+								has_hyperlane_to = prev
+								distance = {
+									source = prev
+									min_jumps = 1
+									max_jumps = 10
+									type = hyperlane
+								}
+							}
+						}
+						#Something about connecting the clusters through normal hyperlanes.
+					}
 				}
 			}
 		}
-		#system_event = { id = hms_hubs.2 days = 1 }
+		set_spawn_system_batch = end
 	}
 }

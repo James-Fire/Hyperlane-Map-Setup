@@ -38,7 +38,6 @@ hms_generate_hyperlane_layout = {
 				limit = {
 					has_global_flag = hms_generation_clusters
 				}
-				#Need to expand cluster generation to include the options present in the UI.
 				hms_generator_cluster = yes
 			}
 			else_if = {
@@ -680,6 +679,10 @@ hms_cluster_hyperlanes_neighbour = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_neighbour
+			NOR = {
+				has_global_flag = hms_hub_gateways
+				has_global_flag = hms_standard_hyperlanes
+			}
 		}
 	}
 	allow = {
@@ -696,6 +699,10 @@ hms_cluster_hyperlanes_distance = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_distance
+			NOR = {
+				has_global_flag = hms_hub_gateways
+				has_global_flag = hms_standard_hyperlanes
+			}
 		}
 	}
 	allow = {
@@ -712,6 +719,10 @@ hms_cluster_hyperlanes_hub = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_hub
+			NOR = {
+				has_global_flag = hms_hub_gateways
+				has_global_flag = hms_standard_hyperlanes
+			}
 		}
 	}
 	allow = {
@@ -727,6 +738,10 @@ hms_cluster_hyperlanes_swap = {
 	potential = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
+			NOR = {
+				has_global_flag = hms_hub_gateways
+				has_global_flag = hms_standard_hyperlanes
+			}
 		}
 	}
 	allow = {
