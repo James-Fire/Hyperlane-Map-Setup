@@ -129,8 +129,9 @@ hms_generator_star = {
 	random_system = {
 		every_system = {
 			limit = {
-				NOT = {
+				NOR = {
 					is_same_value = prev
+					exists = owner
 				}
 			}
 			add_hyperlane = {
