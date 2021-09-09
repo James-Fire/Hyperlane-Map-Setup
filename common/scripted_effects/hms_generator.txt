@@ -127,11 +127,15 @@ hms_generator_star = {
 	set_spawn_system_batch = begin
 	hms_utilities_clear_hyperlanes = yes
 	random_system = {
+		limit = {
+			NOT = {
+				exists = owner
+			}
+		}
 		every_system = {
 			limit = {
-				NOR = {
+				NOT = {
 					is_same_value = prev
-					exists = owner
 				}
 			}
 			add_hyperlane = {
