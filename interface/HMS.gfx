@@ -110,6 +110,8 @@ spriteTypes = {
 	spriteType = { name = "GFX_hms_enabled"							texturefile = "gfx/interface/menu_ui/hms_enabled.dds" }
 	spriteType = { name = "GFX_hms_disabled"						texturefile = "gfx/interface/menu_ui/hms_disabled.dds" }
 	spriteType = { name = "GFX_hms_generate"						texturefile = "gfx/interface/menu_ui/hms_generate.dds" }
+	spriteType = { name = "GFX_hms_left"							texturefile = "gfx/interface/menu_ui/hms_arrow_left.dds" }
+	spriteType = { name = "GFX_hms_right"							texturefile = "gfx/interface/menu_ui/hms_arrow_right.dds" }
 	
 	spriteType = {
 		name = "GFX_autofab_settings"

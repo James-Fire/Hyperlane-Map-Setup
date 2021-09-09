@@ -548,6 +548,49 @@ hms_standard_hyperlanes = {
 	}
 }
 
+hms_cluster_connection_type_reverse = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Swap between the various cluster connections we've got.
+		if = {
+			limit = {
+				has_global_flag = hms_hub_hyperlanes
+			}
+			remove_global_flag = hms_hub_hyperlanes
+			set_global_flag = hms_hub_gateways
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_hub_wormholes
+			}
+			remove_global_flag = hms_hub_wormholes
+			set_global_flag = hms_hub_hyperlanes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_hub_gateways
+			}
+			remove_global_flag = hms_hub_gateways
+			set_global_flag = hms_hub_wormholes
+		}
+		else_if = { #Skip over this thing for now, it's hard.
+			limit = {
+				has_global_flag = hms_standard_hyperlanes 
+			}
+			remove_global_flag = hms_standard_hyperlanes
+			set_global_flag = hms_hub_hyperlanes
+		}
+	}
+}
 hms_cluster_connection_type = {
 	potential = {
 		hidden_trigger = {
@@ -660,6 +703,49 @@ hms_hub_pulsar = {
 	}
 }
 
+hms_cluster_hub_star_reverse = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Swap between the various cluster Stars we've got.
+		if = {
+			limit = {
+				has_global_flag = hms_hub_no_change
+			}
+			remove_global_flag = hms_hub_no_change
+			set_global_flag = hms_hub_pulsar
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_hub_black_hole
+			}
+			remove_global_flag = hms_hub_black_hole
+			set_global_flag = hms_hub_no_change
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_hub_neutron_star
+			}
+			remove_global_flag = hms_hub_neutron_star
+			set_global_flag = hms_hub_black_hole
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_hub_pulsar
+			}
+			remove_global_flag = hms_hub_pulsar
+			set_global_flag = hms_hub_neutron_star
+		}
+	}
+}
 hms_cluster_hub_star = {
 	potential = {
 		hidden_trigger = {
@@ -764,6 +850,46 @@ hms_cluster_hyperlanes_hub = {
 		custom_tooltip = "hms_cluster_hyperlanes_hub_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+hms_cluster_hyperlanes_swap_reverse = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+			NOR = {
+				has_global_flag = hms_hub_gateways
+				has_global_flag = hms_standard_hyperlanes
+			}
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Swap between the various cluster connection types we've got.
+		if = {
+			limit = {
+				has_global_flag = hms_cluster_hyperlanes_neighbour
+			}
+			remove_global_flag = hms_cluster_hyperlanes_neighbour
+			set_global_flag = hms_cluster_hyperlanes_hub
+		}
+		else_if = { #Skip over this option for now, we need 1.1 and button loc commands
+			limit = {
+				has_global_flag = hms_cluster_hyperlanes_distance
+			}
+			remove_global_flag = hms_cluster_hyperlanes_distance
+			set_global_flag = hms_cluster_hyperlanes_hub
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_cluster_hyperlanes_hub
+			}
+			remove_global_flag = hms_cluster_hyperlanes_hub
+			set_global_flag = hms_cluster_hyperlanes_neighbour
+		}
+	}
+}
 hms_cluster_hyperlanes_swap = {
 	potential = {
 		hidden_trigger = {
@@ -852,6 +978,42 @@ hms_central_hub_xenophile_fe = {
 	}
 	effect = {
 		custom_tooltip = "hms_central_hub_xenophile_fe_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_central_hub_swap_reverse = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_center
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Swap between the various cluster connection types we've got.
+		if = {
+			limit = {
+				has_global_flag = hms_central_hub_random
+			}
+			remove_global_flag = hms_central_hub_random
+			set_global_flag = hms_central_hub_xenophile_fe
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_central_hub_lgate
+			}
+			remove_global_flag = hms_central_hub_lgate
+			set_global_flag = hms_central_hub_random
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_central_hub_xenophile_fe
+			}
+			remove_global_flag = hms_central_hub_xenophile_fe
+			set_global_flag = hms_central_hub_lgate
+		}
 	}
 }
 hms_central_hub_swap = {
