@@ -51,6 +51,13 @@
      hms_cluster_hyperlanes_hub: "  Cluster: Hub"
      hms_cluster_hyperlanes_hub_tooltip: "This setting has cluster systems connected to the cluster hub only."
      
+     hms_central_hub_random: "  Random System"
+     hms_central_hub_random_tooltip: "This setting has the hub set to a random unowned system."
+     hms_central_hub_lgate: "  L-Gate System"
+     hms_central_hub_lgate_tooltip: "This setting has the hub set to a random L-Gate system, assuming one exists. If one does not exist, it defaults to Random."
+     hms_central_hub_xenophile_fe: "  Xenophile FE"
+     hms_central_hub_xenophile_fe_tooltip: "This setting has the hub set to the Xenophile FE capital system, if it exists. If it does not, it defaults to Random. WARNING: FEs sometimes send out fleets to adjacent systems for fun. They may clear the galaxy of its natural Fauna, as all systems are adjacent to them."
+     
      save_load_hyperlanes: "Save/Load"
      hms_save_hyperlane_on_gen_tooltip: "The current hyperlane galaxy layout will be saved on generating a new one."
      hms_save_hyperlane_on_gen_false_tooltip: "The current hyperlane galaxy layout will not be saved on generating a new one."

@@ -162,15 +162,12 @@ guiTypes = {
 				effectButtonType = { name = "hms_cluster_hyperlanes_hub" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 80 } clicksound = interface format = left font = "cg_16b" text = "hms_cluster_hyperlanes_hub" effect = "hms_cluster_hyperlanes_hub" }
 				effectButtonType = { name = "hms_cluster_hyperlanes_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 84 } clicksound = interface effect = "hms_cluster_hyperlanes_swap" }
 				
-				effectButtonType = { name = "setting_4" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 194 } clicksound = interface format = left font = "cg_16b" text = "setting_4" effect = "hms_blank_effect" }
-				effectButtonType = { name = "setting_4_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 198 } clicksound = interface effect = "hms_blank_effect" }
-				
 				#Central Hub Options
-				#effectButtonType = { name = "hms_hub_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_hyperlanes" effect = "hms_hub_hyperlanes" }
-				#effectButtonType = { name = "hms_hub_wormholes" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_wormholes" effect = "hms_hub_wormholes" }
-				#effectButtonType = { name = "hms_hub_gateways" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_hub_gateways" effect = "hms_hub_gateways" }
-				#effectButtonType = { name = "hms_standard_hyperlanes" spriteType = "GFX_half_menu_button_bg" position = { x = 43 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_standard_hyperlanes" effect = "hms_standard_hyperlanes" }
-				#effectButtonType = { name = "hms_cluster_connection_type" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 47 } clicksound = interface effect = "hms_cluster_connection_type" }
+				effectButtonType = { name = "hms_central_hub_random" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_central_hub_random" effect = "hms_central_hub_random" }
+				effectButtonType = { name = "hms_central_hub_lgate" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_central_hub_lgate" effect = "hms_central_hub_lgate" }
+				effectButtonType = { name = "hms_central_hub_xenophile_fe" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_central_hub_xenophile_fe" effect = "hms_central_hub_xenophile_fe" }
+				#effectButtonType = { name = "hms_central_hub_katzens" spriteType = "GFX_half_menu_button_bg" position = { x = 24 y = 43 } clicksound = interface format = left font = "cg_16b" text = "hms_central_hub_katzens" effect = "hms_central_hub_katzens" }
+				effectButtonType = { name = "hms_central_hub_swap" spriteType = "GFX_exploit_menu_swap" position = { x = 201 y = 47 } clicksound = interface effect = "hms_central_hub_swap" }
 				
 				#
 		}

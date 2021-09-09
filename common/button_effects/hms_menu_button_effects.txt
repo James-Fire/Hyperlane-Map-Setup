@@ -51,7 +51,12 @@ hms_generate_hyperlane_layout = {
 					has_global_flag = hms_generation_corridor
 				}
 				hms_generator_closest_loop = yes
-				#hms_generator_ugly_loop = yes
+			}
+			else_if = {
+				limit = {
+					has_global_flag = hms_generation_cursed_corridor
+				}
+				hms_generator_ugly_loop = yes
 			}
 			else_if = {
 				limit = {
@@ -181,6 +186,7 @@ hms_generation_circles_tab = {
 hms_generation_all_tab = {
 	potential = {
 		hidden_trigger = {
+			always = no
 			hms_has_gentype_flag = no
 		}
 	}
@@ -574,11 +580,11 @@ hms_cluster_connection_type = {
 				has_global_flag = hms_hub_gateways
 			}
 			remove_global_flag = hms_hub_gateways
-			set_global_flag = hms_standard_hyperlanes
+			set_global_flag = hms_hub_hyperlanes
 		}
-		else_if = {
+		else_if = { #Skip over this thing for now, it's hard.
 			limit = {
-				has_global_flag = hms_standard_hyperlanes
+				has_global_flag = hms_standard_hyperlanes 
 			}
 			remove_global_flag = hms_standard_hyperlanes
 			set_global_flag = hms_hub_hyperlanes
@@ -776,6 +782,91 @@ hms_cluster_hyperlanes_swap = {
 }
 
 #Central Hub Options
+hms_central_hub_random = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_center
+			has_global_flag = hms_central_hub_random
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_central_hub_random_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_central_hub_lgate = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_center
+			has_global_flag = hms_central_hub_lgate
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_central_hub_lgate_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_central_hub_xenophile_fe = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_center
+			has_global_flag = hms_central_hub_xenophile_fe
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_central_hub_xenophile_fe_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+hms_central_hub_swap = {
+	potential = {
+		hidden_trigger = {
+			has_global_flag = hms_generation_center
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		#Swap between the various cluster connection types we've got.
+		if = {
+			limit = {
+				has_global_flag = hms_central_hub_random
+			}
+			remove_global_flag = hms_central_hub_random
+			set_global_flag = hms_central_hub_lgate
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_central_hub_lgate
+			}
+			remove_global_flag = hms_central_hub_lgate
+			set_global_flag = hms_central_hub_xenophile_fe
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_central_hub_xenophile_fe
+			}
+			remove_global_flag = hms_central_hub_xenophile_fe
+			set_global_flag = hms_central_hub_random
+		}
+	}
+}
+
 
 #Hyperlane Manipulation Buttons
 hms_delete_hyperlanes = {

@@ -3,6 +3,7 @@ hms_has_gentype_flag = {
 		has_global_flag = hms_generation_clusters
 		has_global_flag = hms_generation_pie_slices
 		has_global_flag = hms_generation_corridor
+		has_global_flag = hms_generation_cursed_corridor
 		has_global_flag = hms_generation_center
 		has_global_flag = hms_generation_circles
 		has_global_flag = hms_generation_all
