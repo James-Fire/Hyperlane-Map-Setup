@@ -189,8 +189,9 @@ guiTypes = {
 				effect = "hms_blank_effect"
 			}
 			
-			effectButtonType = { name = "hms_generate_hyperlane_layout" spriteType = "GFX_exploit_menu_swap" position = { x = 3 y = 90 } clicksound = interface effect = "hms_generate_hyperlane_layout" }
-			effectButtonType = { name = "hms_delete_hyperlanes" spriteType = "GFX_hms_delete" position = { x = 33 y = 90 } clicksound = interface effect = "hms_delete_hyperlanes" }
+			effectButtonType = { name = "hms_manipulation_bg" spriteType = "GFX_half_menu_button_bg" position = { x = 0 y = 50 } clicksound = interface effect = "hms_blank_effect" }
+			effectButtonType = { name = "hms_generate_hyperlane_layout" spriteType = "GFX_hms_generate" position = { x = 3 y = 55 } clicksound = interface effect = "hms_generate_hyperlane_layout" }
+			effectButtonType = { name = "hms_delete_hyperlanes" spriteType = "GFX_hms_delete" position = { x = 33 y = 55 } clicksound = interface effect = "hms_delete_hyperlanes" }
 		}
 		
 		containerWindowType = {
