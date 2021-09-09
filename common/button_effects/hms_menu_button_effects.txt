@@ -643,6 +643,23 @@ hms_hub_neutron_star = {
 	}
 }
 
+hms_hub_pulsar = {
+	potential = {
+		hidden_trigger = {
+			hms_has_cluster_flag = yes
+			has_global_flag = hms_hub_pulsar
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		custom_tooltip = "hms_hub_pulsar_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
+	}
+}
+
 hms_cluster_hub_star = {
 	potential = {
 		hidden_trigger = {
@@ -668,13 +685,20 @@ hms_cluster_hub_star = {
 				has_global_flag = hms_hub_black_hole
 			}
 			remove_global_flag = hms_hub_black_hole
-			set_global_flag = hms_hub_gateways
+			set_global_flag = hms_hub_neutron_star
 		}
 		else_if = {
 			limit = {
-				has_global_flag = hms_hub_gateways
+				has_global_flag = hms_hub_neutron_star
 			}
-			remove_global_flag = hms_hub_gateways
+			remove_global_flag = hms_hub_neutron_star
+			set_global_flag = hms_hub_pulsar
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_hub_pulsar
+			}
+			remove_global_flag = hms_hub_pulsar
 			set_global_flag = hms_hub_no_change
 		}
 	}

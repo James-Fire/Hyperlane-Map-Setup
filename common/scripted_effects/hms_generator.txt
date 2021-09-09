@@ -1,4 +1,35 @@
 # noscope
+hms_set_hub_stars = {
+	every_system ={
+		limit = {
+			has_star_flag = hyperlane_hub
+		}
+		switch = {
+			trigger = has_global_flag
+			hms_hub_black_hole = {
+				set_star_class = sc_black_hole
+				star = {
+					set_planet_class = pc_black_hole
+				}
+			}
+			hms_hub_neutron_star = {
+				set_star_class = sc_neutron_star
+				star = {
+					set_planet_class = pc_neutron_star
+				}
+			}
+			hms_hub_pulsar = {
+				set_star_class = sc_pulsar
+				star = {
+					set_planet_class = pc_pulsar
+				}
+			}
+		}
+	}
+
+}
+
+# noscope
 hms_generator_cluster = {
 	random_system = {
 		limit = {

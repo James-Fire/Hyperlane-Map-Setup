@@ -40,9 +40,11 @@
      hms_hub_no_change: "  Hub: Standard Star"
      hms_hub_no_change_tooltip: "This setting does not change what star any hubs are."
      hms_hub_black_hole: "  Hub: Black Hole"
-     hms_hub_black_hole_tooltip: "This settings turns all hubs into Black Holes."
+     hms_hub_black_hole_tooltip: "This setting turns all hubs into Black Holes."
      hms_hub_neutron_star: "  Hub: Neutron Star"
-     hms_hub_neutron_star_tooltip: "This Setting turns all hubs into Neutron Stars."
+     hms_hub_neutron_star_tooltip: "This setting turns all hubs into Neutron Stars."
+     hms_hub_pulsar: "  Hub: Pulsar"
+     hms_hub_pulsar_tooltip: "This setting turns all hubs into Pulsars."
      
      hms_cluster_hyperlanes_neighbour: "  Cluster: Neighbours"
      hms_cluster_hyperlanes_neighbour_tooltip: "This setting has cluster systems connected to their immediate neighbours in the same cluster."
