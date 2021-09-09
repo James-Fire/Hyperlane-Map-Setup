@@ -114,38 +114,80 @@ system_event = {
 	immediate = {
 		log = "Conneting Cluster Systems"
 		set_spawn_system_batch = begin
-		every_system = {
-			limit = {
-				has_star_flag = hyperlane_hub_spread
-			}
-			every_neighbor_system_euclidean = {
-				limit = {
-					NOT = {
-						has_hyperlane_to = prev
-					}
-					OR = {
-						has_star_flag = hyperlane_hub
+		switch = {
+			trigger = has_global_flag
+			hms_cluster_hyperlanes_neighbour = {
+				every_system = {
+					limit = {
 						has_star_flag = hyperlane_hub_spread
 					}
-					NOT = {
-						has_star_flag = sealed_system
-					}
-					distance = {
-						source = prev
-						min_jumps = 1
-						max_jumps = 10
-						type = hyperlane
-					}
-					distance = {
-						source = prev
-						min_distance >= 1
-						max_distance <= 40
-						type = euclidean
+					every_neighbor_system_euclidean = {
+						limit = {
+							NOT = {
+								has_hyperlane_to = prev
+							}
+							OR = {
+								has_star_flag = hyperlane_hub
+								has_star_flag = hyperlane_hub_spread
+							}
+							NOT = {
+								has_star_flag = sealed_system
+							}
+							distance = {
+								source = prev
+								min_jumps = 1
+								max_jumps = 10
+								type = hyperlane
+							}
+							distance = {
+								source = prev
+								min_distance >= 1
+								max_distance <= 40
+								type = euclidean
+							}
+						}
+						add_hyperlane = {
+							from = this
+							to = prev
+						}
 					}
 				}
-				add_hyperlane = {
-					from = this
-					to = prev
+			}
+			hms_cluster_hyperlanes_hub = {
+				every_system = {
+					limit = {
+						has_star_flag = hyperlane_hub_spread
+					}
+					every_system = {
+						limit = {
+							has_star_flag = hyperlane_hub
+							distance = {
+								source = prev
+								min_jumps = 1
+								max_jumps = 10
+								type = hyperlane
+							}
+						}
+						add_hyperlane = {
+							from = this
+							to = prev
+						}
+					}
+					every_system = {
+						limit = {
+							has_star_flag = hyperlane_hub_spread
+							distance = {
+								source = prev
+								min_jumps = 1
+								max_jumps = 10
+								type = hyperlane
+							}
+						}
+						remove_hyperlane = {
+							from = this
+							to = prev
+						}
+					}
 				}
 			}
 		}
@@ -163,6 +205,7 @@ system_event = {
 	immediate = {
 		log = "Link Clusters"
 		set_spawn_system_batch = begin
+		hms_set_hub_stars = yes
 		switch = {
 			trigger = has_global_flag
 			hms_hub_hyperlanes = {	
