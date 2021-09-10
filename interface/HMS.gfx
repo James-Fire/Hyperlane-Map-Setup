@@ -75,9 +75,10 @@ spriteTypes = {
 	
 	spriteType = { name = "GFX_terminal_exploit"					texturefile = "gfx/event_pictures/custom_uis/exploit-Terminal-Image.dds" }
 	
-	spriteType = { name = "GFX_hms_clusters_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" }
+	#spriteType = { name = "GFX_hms_clusters_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" }
 	spriteType = { name = "GFX_hms_nice_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_nice_loop_gentype.dds" }
 	spriteType = { name = "GFX_hms_ugly_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_gentype.dds" }
+	spriteType = { name = "GFX_hms_pie_slices_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_pie_slices_gentype.dds" }
 	spriteType = { name = "GFX_hms_hub_gentype"						texturefile = "gfx/event_pictures/custom_uis/hms_hub_gentype.dds" }
 	spriteType = { name = "GFX_hms_circles_gentype"					texturefile = "gfx/event_pictures/custom_uis/hms_circles_gentype.dds" }
 	spriteType = { name = "GFX_hms_cursed_gentype"					texturefile = "gfx/event_pictures/custom_uis/hms_cursed_gentype.dds" }
