@@ -202,6 +202,48 @@ hms_generation_all_tab = {
 }
 
 #Generation types image triggers
+hms_generation_dropdown = {
+	potential = {
+		hidden_trigger = {
+			hms_has_gentype_flag = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_none = {
+	potential = {
+		hidden_trigger = {
+			hms_has_gentype_flag = no
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
+hms_generation_image_bg = {
+	potential = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+	}
+}
 hms_generation_clusters_image = {
 	potential = {
 		hidden_trigger = {

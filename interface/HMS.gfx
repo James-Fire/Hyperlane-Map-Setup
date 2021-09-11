@@ -75,7 +75,9 @@ spriteTypes = {
 	
 	spriteType = { name = "GFX_terminal_exploit"					texturefile = "gfx/event_pictures/custom_uis/exploit-Terminal-Image.dds" }
 	
-	#spriteType = { name = "GFX_hms_clusters_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" }
+	spriteType = { name = "GFX_hms_image_bg"						texturefile = "gfx/event_pictures/custom_uis/button_background_image.dds" }
+	spriteType = { name = "GFX_hms_gentype_none"						texturefile = "gfx/event_pictures/custom_uis/hms_gentype_none.dds" }
+	spriteType = { name = "GFX_hms_clusters_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" }
 	spriteType = { name = "GFX_hms_nice_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_nice_loop_gentype.dds" }
 	spriteType = { name = "GFX_hms_ugly_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_gentype.dds" }
 	spriteType = { name = "GFX_hms_pie_slices_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_pie_slices_gentype.dds" }
@@ -105,15 +107,36 @@ spriteTypes = {
 	spriteType = { name = "GFX_blank_menu_button_skinny"			texturefile = "gfx/interface/menu_ui/blank_skinny_button_background.dds" }
 	spriteType = { name = "GFX_blank_half_menu_button_skinny"		texturefile = "gfx/interface/menu_ui/blank_skinny_half_button_background.dds" }
 
+	spriteType = { name = "GFX_hms_blank"							texturefile = "gfx/interface/menu_ui/hms_blank.dds" }
 	spriteType = { name = "GFX_hms_save"							texturefile = "gfx/interface/menu_ui/hms_save.dds" }
 	spriteType = { name = "GFX_hms_load"							texturefile = "gfx/interface/menu_ui/hms_load.dds" }
 	spriteType = { name = "GFX_hms_delete"							texturefile = "gfx/interface/menu_ui/hms_delete.dds" }
 	spriteType = { name = "GFX_hms_enabled"							texturefile = "gfx/interface/menu_ui/hms_enabled.dds" }
 	spriteType = { name = "GFX_hms_disabled"						texturefile = "gfx/interface/menu_ui/hms_disabled.dds" }
-	spriteType = { name = "GFX_hms_generate"						texturefile = "gfx/interface/menu_ui/hms_generate.dds" }
 	spriteType = { name = "GFX_hms_left"							texturefile = "gfx/interface/menu_ui/hms_arrow_left.dds" }
 	spriteType = { name = "GFX_hms_right"							texturefile = "gfx/interface/menu_ui/hms_arrow_right.dds" }
+	spriteType = { name = "GFX_hms_arrow_dropdown"					texturefile = "gfx/interface/menu_ui/hms_arrow_dropdown.dds" }
 	
+	
+	
+	spriteType = {
+		name = "GFX_hms_generate"
+		texturefile = "gfx/interface/menu_ui/hms_generate.dds" #The actual image. If blank, nothing shows.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/menu_ui/hms_generate.dds" #The shape of the animation. It appears to use the outline of the actual image.
+			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds" #The colour of the animation.
+			animationrotation = -90.0
+			animationlooping = yes
+			animationtime = 2
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "rotating"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
 	spriteType = {
 		name = "GFX_autofab_settings"
 		texturefile = "gfx/interface/menu_ui/autofab_settings_button.dds"
