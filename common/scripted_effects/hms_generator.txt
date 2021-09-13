@@ -1,6 +1,6 @@
 # noscope
 hms_set_hub_stars = {
-	every_system ={
+	every_system = {
 		limit = {
 			has_star_flag = hyperlane_hub
 		}
@@ -26,7 +26,6 @@ hms_set_hub_stars = {
 			}
 		}
 	}
-
 }
 
 # noscope
@@ -106,8 +105,12 @@ hms_generator_full = {
 	set_spawn_system_batch = begin
 	hms_utilities_clear_hyperlanes = yes
 	every_system = {
+		limit = {
+			hms_useable_system = yes
+		}
 		every_system = {
 			limit = {
+				hms_useable_system = yes
 				NOR = {
 					is_same_value = prev
 					has_hyperlane_to = prev
@@ -127,16 +130,61 @@ hms_generator_star = {
 	set_spawn_system_batch = begin
 	hms_utilities_clear_hyperlanes = yes
 	random_system = {
+		save_event_target_as = hms_star_central_star
+	}
+	random_system = {
 		limit = {
+			hms_useable_system = yes
 			NOT = {
-				exists = owner
+				exists = space_owner
 			}
 		}
+		save_event_target_as = hms_star_central_star
+	}
+	if = {
+		limit = {
+			has_global_flag = hms_central_hub_lgate
+		}
+		random_system = {
+			limit = {
+				any_system_megastructure = {
+					is_megastructure_type = lgate_base
+				}
+			}
+			save_event_target_as = hms_star_central_star
+		}
+	}
+	else_if = {
+		limit = {
+			has_global_flag = hms_central_hub_xenophile_fe
+			any_country = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				is_xenophile = yes
+			}
+		}
+		random_country = {
+			limit = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				is_xenophile = yes
+			}
+			capital_scope.solar_system = {
+				save_event_target_as = hms_star_central_star
+			}
+		}
+	}
+	event_target:hms_star_central_star = {
 		every_system = {
 			limit = {
 				NOT = {
 					is_same_value = prev
 				}
+				hms_useable_system = yes
 			}
 			add_hyperlane = {
 				from = this

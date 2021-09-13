@@ -5,8 +5,13 @@ hms_is_installed = {
 hms_is_not_installed = {
 	always = no
 }
+
 hms_isolated_system = {
 	OR = {
 		has_star_flag = sealed_system
 	}
+}
+
+hms_useable_system = {
+	hms_isolated_system = no
 }
