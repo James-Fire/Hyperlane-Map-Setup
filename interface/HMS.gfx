@@ -66,7 +66,6 @@ spriteTypes = {
 	spriteType = { name = "GFX_advisor_autofab"						texturefile = "gfx/event_pictures/custom_uis/Advisor-Room.dds" }
 	spriteType = { name = "GFX_upper_dongs"							texturefile = "gfx/event_pictures/custom_uis/advisor_upper_dongs.dds" }
 	spriteType = { name = "GFX_lower_dongs"							texturefile = "gfx/event_pictures/custom_uis/advisor_lower_dongs.dds" }
-	spriteType = { name = "GFX_upper_left_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_upper_left_dongs.dds" }
 	spriteType = { name = "GFX_lower_left_dongs"					texturefile = "gfx/event_pictures/custom_uis/advisor_lower_left_dongs.dds" }
 	spriteType = { name = "GFX_flipped_geargalaxy_dongs"			texturefile = "gfx/event_pictures/custom_uis/lower_geargalaxy_dongs.dds" }
 	spriteType = { name = "GFX_lower_geargalaxy_dongs"				texturefile = "gfx/event_pictures/custom_uis/flipped_geargalaxy_Dongs.dds" }
@@ -75,8 +74,8 @@ spriteTypes = {
 	
 	spriteType = { name = "GFX_terminal_exploit"					texturefile = "gfx/event_pictures/custom_uis/exploit-Terminal-Image.dds" }
 	
-	spriteType = { name = "GFX_hms_image_bg"						texturefile = "gfx/event_pictures/custom_uis/button_background_image.dds" }
-	spriteType = { name = "GFX_hms_gentype_none"						texturefile = "gfx/event_pictures/custom_uis/hms_gentype_none.dds" }
+	spriteType = { name = "GFX_hms_image_bg"						texturefile = "gfx/event_pictures/custom_uis/hms_image_bg.dds" }
+	spriteType = { name = "GFX_hms_gentype_none"					texturefile = "gfx/event_pictures/custom_uis/hms_gentype_none.dds" }
 	spriteType = { name = "GFX_hms_clusters_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" }
 	spriteType = { name = "GFX_hms_nice_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_nice_loop_gentype.dds" }
 	spriteType = { name = "GFX_hms_ugly_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_gentype.dds" }
@@ -117,41 +116,85 @@ spriteTypes = {
 	spriteType = { name = "GFX_hms_right"							texturefile = "gfx/interface/menu_ui/hms_arrow_right.dds" }
 	spriteType = { name = "GFX_hms_arrow_dropdown"					texturefile = "gfx/interface/menu_ui/hms_arrow_dropdown.dds" }
 	
+	spriteType = { name = "GFX_hms_dong_blank"						texturefile = "gfx/interface/menu_ui/hms_dong_blank.dds" }
 	
 	
 	spriteType = {
-		name = "GFX_hms_generate"
-		texturefile = "gfx/interface/menu_ui/hms_generate.dds" #The actual image. If blank, nothing shows.
+		name = "GFX_upper_left_dongs"
+		texturefile = "gfx/event_pictures/custom_uis/advisor_upper_left_dongs.dds" #The base image. Defines the size of the sprite.
 		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
 		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/hms_generate.dds" #The shape of the animation. It appears to use the outline of the actual image.
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds" #The colour of the animation.
-			animationrotation = -90.0
+			animationmaskfile = "gfx/event_pictures/custom_uis/advisor_upper_left_dongs.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/advisor_upper_left_dongs.dds" #The image to animate.
+			animationrotation = 0.0
 			animationlooping = yes
-			animationtime = 2
+			animationtime = 5.0
 			animationdelay = 0
 			animationblendmode = "add"
-			animationtype = "rotating"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
 		}
 		legacy_lazy_load = no
 	}
 	spriteType = {
-		name = "GFX_autofab_settings"
-		texturefile = "gfx/interface/menu_ui/autofab_settings_button.dds"
+		name = "GFX_hms_genstripes"
+		texturefile = "gfx/event_pictures/custom_uis/galaxygen_stripe_texture3.dds"
 		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		#noOfFrames = 3			
 		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
+			animationmaskfile = "gfx/interface/diplomacy/diplomacy_portrait_mask2.dds"
+			animationtexturefile = "gfx/interface/diplomacy/diplomacy_texture4.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 30.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			#animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = { #Only buttons can be animated. IconTypes cannot. Buttons that are animated have the animation halted when hovered over.
+		name = "GFX_hms_generate"
+		texturefile = "gfx/interface/menu_ui/hms_blank.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/interface/menu_ui/box_test_mask.dds" #The shape of the animation. Whitespace appears to define where the animation appears.
+			animationtexturefile = "gfx/interface/menu_ui/hms_generate.dds" #The image to animate.
 			animationrotation = -90.0
 			animationlooping = yes
-			animationtime = 1
+			animationtime = 4
 			animationdelay = 0
 			animationblendmode = "add"
-			animationtype = "rotating"
+			animationtype = "rotating"  #scrolling, rotating, pulsing
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = { #Only buttons can be animated. IconTypes cannot. Buttons that are animated have the animation halted when hovered over.
+		name = "GFX_hms_radar"
+		texturefile = "gfx/interface/menu_ui/hms_radar_blank.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/interface/menu_ui/box_test_mask.dds" #The shape of the animation. Whitespace appears to define where the animation appears.
+			animationtexturefile = "gfx/interface/menu_ui/hms_radar.dds" #The image to animate.
+			animationrotation = -90.0
+			animationlooping = yes
+			animationtime = 4
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "rotating"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
 		}
 		legacy_lazy_load = no
 	}

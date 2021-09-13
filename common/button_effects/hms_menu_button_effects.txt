@@ -838,7 +838,7 @@ hms_cluster_hyperlanes_neighbour = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_neighbour
 			NOR = {
-				has_global_flag = hms_hub_gateways
+				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
 			}
 		}
@@ -858,7 +858,7 @@ hms_cluster_hyperlanes_distance = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_distance
 			NOR = {
-				has_global_flag = hms_hub_gateways
+				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
 			}
 		}
@@ -878,7 +878,7 @@ hms_cluster_hyperlanes_hub = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_hub
 			NOR = {
-				has_global_flag = hms_hub_gateways
+				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
 			}
 		}
@@ -897,7 +897,7 @@ hms_cluster_hyperlanes_swap_reverse = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			NOR = {
-				has_global_flag = hms_hub_gateways
+				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
 			}
 		}
@@ -937,7 +937,7 @@ hms_cluster_hyperlanes_swap = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			NOR = {
-				has_global_flag = hms_hub_gateways
+				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
 			}
 		}

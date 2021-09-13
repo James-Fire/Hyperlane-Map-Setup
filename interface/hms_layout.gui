@@ -67,25 +67,25 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 			}
 		}
-		iconType = {#Dongs
+		ButtonType = {#Dongs
 			name = "left_hms_dongs_top"
 			spriteType = "GFX_upper_left_dongs"
 			position = { x = 0 y = 50 }
 			alwaysTransparent = yes
 		}
-		iconType = {#Dongs
+		ButtonType = {#Dongs
 			name = "left_hms_dongs_bottom"
 			spriteType = "GFX_lower_left_dongs"
 			position = { x = -5 y = 517 }
 			alwaysTransparent = yes
 		}
-		iconType = {#Dongs
+		ButtonType = {#Dongs
 			name = "right_hms_dongs_top"
 			spriteType = "GFX_upper_dongs"
 			position = { x = 845 y = 50 }
 			alwaysTransparent = yes
 		}
-		iconType = {#Dongs
+		ButtonType = {#Dongs
 			name = "right_hms_dongs_bottom"
 			spriteType = "GFX_lower_dongs"
 			position = { x = 835 y = 517 }
@@ -98,39 +98,41 @@ guiTypes = {
 			size = { width = 410 height = 102 }
 			orientation = upper_left
 			
-				effectButtonType = { name = "hms_generation_clusters_tab" spriteType = "GFX_half_menu_button_bg" position = { x = -115 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_clusters" effect = "hms_generation_clusters_tab" }
-				effectButtonType = { name = "hms_generation_pie_slices_tab" spriteType = "GFX_half_menu_button_bg" position = { x = -115 y = 40 } clicksound = interface font = "cg_16b" text = "hms_generation_pie_slices" effect = "hms_generation_pie_slices_tab" }
+				effectButtonType = { name = "hms_generation_clusters_tab" spriteType = "GFX_half_menu_button_bg" position = { x = -114 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_clusters" effect = "hms_generation_clusters_tab" }
+				effectButtonType = { name = "hms_generation_pie_slices_tab" spriteType = "GFX_half_menu_button_bg" position = { x = -114 y = 40 } clicksound = interface font = "cg_16b" text = "hms_generation_pie_slices" effect = "hms_generation_pie_slices_tab" }
 				effectButtonType = { name = "hms_generation_corridor_tab" spriteType = "GFX_half_menu_button_bg" position = { x = 95 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_corridor" effect = "hms_generation_corridor_tab" }
 				effectButtonType = { name = "hms_generation_cursed_corridor_tab" spriteType = "GFX_half_menu_button_bg" position = { x = 95 y = 40 } clicksound = interface font = "cg_16b" text = "hms_generation_cursed_corridor" effect = "hms_generation_cursed_corridor_tab" }
-				effectButtonType = { name = "hms_generation_center_tab" spriteType = "GFX_half_menu_button_bg" position = { x = 305 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_center" effect = "hms_generation_center_tab" }
-				effectButtonType = { name = "hms_generation_circles_tab" spriteType = "GFX_half_menu_button_bg" position = { x = 305 y = 40 } clicksound = interface font = "cg_16b" text = "hms_generation_circles" effect = "hms_generation_circles_tab" }
+				effectButtonType = { name = "hms_generation_center_tab" spriteType = "GFX_half_menu_button_bg" position = { x = 304 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_center" effect = "hms_generation_center_tab" }
+				effectButtonType = { name = "hms_generation_circles_tab" spriteType = "GFX_half_menu_button_bg" position = { x = 304 y = 40 } clicksound = interface font = "cg_16b" text = "hms_generation_circles" effect = "hms_generation_circles_tab" }
 				effectButtonType = { name = "hms_generation_all_tab" spriteType = "GFX_half_menu_button_bg" position = { x = -115 y = 80 } clicksound = interface font = "cg_16b" text = "hms_generation_all" effect = "hms_generation_all_tab" }
 				
 				
-				effectButtonType = { name = "hms_generation_image_bg" spriteType = "GFX_hms_image_bg" position = { x = -113 y = 78 } clicksound = interface effect = "hms_generation_image_bg" }
-				effectButtonType = { name = "hms_generation_none" spriteType = "GFX_hms_gentype_none" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_none" }
+				effectButtonType = { name = "hms_generation_image_bg" spriteType = "GFX_hms_image_bg" position = { x = -114 y = 77 } clicksound = interface effect = "hms_generation_image_bg" alwaysTransparent = yes }
+				effectButtonType = { name = "hms_generation_none" spriteType = "GFX_hms_gentype_none" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_none" alwaysTransparent = yes }
+				effectButtonType = { name = "hms_generation_stripes" spriteType = "GFX_hms_genstripes" position = { x = -120 y = 75 } scale = 1.0 clicksound = interface effect = "hms_generation_image_bg" alwaysTransparent = yes }
+				effectButtonType = { name = "hms_generation_radar" spriteType = "GFX_hms_radar" position = { x = 418 y = 54 } clicksound = interface effect = "hms_generation_image_bg" alwaysTransparent = yes }
 				
 				
 				effectButtonType = { name = "hms_generation_clusters" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_clusters" effect = "hms_generation_clusters" }
-				effectButtonType = { name = "hms_generation_clusters_image" spriteType = "GFX_hms_clusters_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_clusters_image" }
+				effectButtonType = { name = "hms_generation_clusters_image" spriteType = "GFX_hms_clusters_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_clusters_image" alwaysTransparent = yes }
 				
 				effectButtonType = { name = "hms_generation_pie_slices" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_pie_slices" effect = "hms_generation_pie_slices" }
-				effectButtonType = { name = "hms_generation_pie_slices_image" spriteType = "GFX_hms_pie_slices_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_pie_slices_image" }
+				effectButtonType = { name = "hms_generation_pie_slices_image" spriteType = "GFX_hms_pie_slices_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_pie_slices_image" alwaysTransparent = yes }
 				
 				effectButtonType = { name = "hms_generation_corridor" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_corridor" effect = "hms_generation_corridor" }
-				effectButtonType = { name = "hms_generation_corridor_image" spriteType = "GFX_hms_nice_loop_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_corridor_image" }
+				effectButtonType = { name = "hms_generation_corridor_image" spriteType = "GFX_hms_nice_loop_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_corridor_image" alwaysTransparent = yes }
 				
 				effectButtonType = { name = "hms_generation_cursed_corridor" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_cursed_corridor" effect = "hms_generation_cursed_corridor" }
-				effectButtonType = { name = "hms_generation_cursed_corridor_image" spriteType = "GFX_hms_ugly_loop_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_cursed_corridor_image" }
+				effectButtonType = { name = "hms_generation_cursed_corridor_image" spriteType = "GFX_hms_ugly_loop_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_cursed_corridor_image" alwaysTransparent = yes }
 				
 				effectButtonType = { name = "hms_generation_center" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_center" effect = "hms_generation_center" }
-				effectButtonType = { name = "hms_generation_center_image" spriteType = "GFX_hms_hub_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_center_image" }
+				effectButtonType = { name = "hms_generation_center_image" spriteType = "GFX_hms_hub_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_center_image" alwaysTransparent = yes }
 				
 				effectButtonType = { name = "hms_generation_circles" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_circles" effect = "hms_generation_circles" }
-				effectButtonType = { name = "hms_generation_circles_image" spriteType = "GFX_hms_circles_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_circles_image" }
+				effectButtonType = { name = "hms_generation_circles_image" spriteType = "GFX_hms_circles_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_circles_image" alwaysTransparent = yes }
 				
 				effectButtonType = { name = "hms_generation_all" spriteType = "GFX_thicc_menu_button_bg" position = { x = -9 y = 0 } clicksound = interface font = "large_title_font_28" text = "hms_generation_all" effect = "hms_generation_all" }
-				effectButtonType = { name = "hms_generation_all_image" spriteType = "GFX_hms_cursed_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_all_image" }
+				effectButtonType = { name = "hms_generation_all_image" spriteType = "GFX_hms_cursed_gentype" position = { x = -121 y = 73 } clicksound = interface effect = "hms_generation_all_image" alwaysTransparent = yes }
 		
 				effectButtonType = { name = "hms_generation_dropdown" spriteType = "GFX_hms_arrow_dropdown" position = { x = 0 y = 13 } clicksound = interface effect = "hms_generation_dropdown" alwaysTransparent = yes }
 				effectButtonType = { name = "hms_generation_dropdown_right" spriteType = "GFX_hms_arrow_dropdown" position = { x = 367 y = 13 } clicksound = interface effect = "hms_generation_dropdown" alwaysTransparent = yes }
@@ -139,7 +141,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "generation_options_contain"
-			position = { x = 295 y = 375 }
+			position = { x = 295 y = 378 }
 			size = { width = 410 height = 102 }
 			orientation = upper_left
 			
@@ -202,7 +204,8 @@ guiTypes = {
 			}
 			
 			effectButtonType = { name = "hms_manipulation_bg" spriteType = "GFX_half_menu_button_bg" position = { x = 0 y = 50 } clicksound = interface effect = "hms_blank_effect" }
-			effectButtonType = { name = "hms_generate_hyperlane_layout" spriteType = "GFX_hms_generate" position = { x = 3 y = 55 } clicksound = interface effect = "hms_generate_hyperlane_layout" }
+			effectButtonType = { name = "hms_generate_hyperlane_layout" spriteType = "GFX_hms_blank" position = { x = 3 y = 55 } clicksound = interface effect = "hms_generate_hyperlane_layout" }
+			effectButtonType = { name = "hms_generate_hyperlane_layout_anim" spriteType = "GFX_hms_generate" position = { x = 3 y = 55 } clicksound = interface effect = "hms_generate_hyperlane_layout" alwaysTransparent = yes }
 			effectButtonType = { name = "hms_delete_hyperlanes" spriteType = "GFX_hms_delete" position = { x = 33 y = 55 } clicksound = interface effect = "hms_delete_hyperlanes" }
 			effectButtonType = { name = "hms_save_hyperlane_layout" spriteType = "GFX_hms_save" position = { x = 63 y = 55 } clicksound = interface effect = "hms_save_hyperlane_layout" }
 			effectButtonType = { name = "hms_load_hyperlane_layout" spriteType = "GFX_hms_load" position = { x = 93 y = 55 } clicksound = interface effect = "hms_load_hyperlane_layout" }
