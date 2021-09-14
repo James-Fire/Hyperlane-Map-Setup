@@ -2,7 +2,7 @@
 hms_set_hub_stars = {
 	every_system = {
 		limit = {
-			has_star_flag = hyperlane_hub
+			has_star_flag = hms_hyperlane_hub
 		}
 		switch = {
 			trigger = has_global_flag
@@ -39,8 +39,8 @@ hms_generator_cluster = {
 				hms_isolated_system = yes
 			}
 		}
-		set_star_flag = hyperlane_hub_primary
-		set_star_flag = hyperlane_hub
+		set_star_flag = hms_hyperlane_hub_primary
+		set_star_flag = hms_hyperlane_hub
 		log = "Primary Hyperlane Hub on \\[This.GetName]"
 		set_variable = {
 			which = hms_hubs
@@ -50,14 +50,14 @@ hms_generator_cluster = {
 			which = cluster_connection_range
 			value = 1
 		}
-		save_global_event_target_as = hyperlane_hub_primary
+		save_global_event_target_as = hms_hyperlane_hub_primary
 	}
 	while = {
 		count = 70
 		random_system = {
 			limit = {
 				NOT = {
-					has_star_flag = hyperlane_hub
+					has_star_flag = hms_hyperlane_hub
 				}
 				NOT = {
 					has_star_flag = sealed_system
@@ -67,7 +67,7 @@ hms_generator_cluster = {
 				}
 				closest_system = {
 					limit = {
-						has_star_flag = hyperlane_hub
+						has_star_flag = hms_hyperlane_hub
 					}
 					min_steps = 1
 					max_steps = 200
@@ -79,9 +79,9 @@ hms_generator_cluster = {
 					}
 				}
 			}
-			set_star_flag = hyperlane_hub
+			set_star_flag = hms_hyperlane_hub
 			log = "Hyperlane Hub on \\[This.GetName]"
-			event_target:hyperlane_hub_primary = {
+			event_target:hms_hyperlane_hub_primary = {
 				change_variable = {
 					which = hms_hubs
 					value = 1
@@ -89,10 +89,10 @@ hms_generator_cluster = {
 			}
 		}
 	}
-	log = "\\[event_target:hyperlane_hub_primary.hms_hubs] Hyperlane Hubs"
+	log = "\\[event_target:hms_hyperlane_hub_primary.hms_hubs] Hyperlane Hubs"
 	log = "Remove all hyperlanes"
 	hms_utilities_clear_hyperlanes = yes
-	event_target:hyperlane_hub_primary = {
+	event_target:hms_hyperlane_hub_primary = {
 		system_event = {
 			id = hms_hubs.2
 		}

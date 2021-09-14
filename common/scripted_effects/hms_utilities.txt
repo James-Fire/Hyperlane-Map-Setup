@@ -1,9 +1,9 @@
 # noscope
 hms_remove_gen_flags = {
 	every_system = {
-		remove_star_flag = hyperlane_hub_primary
-		remove_star_flag = hyperlane_hub
-		remove_star_flag = hyperlane_hub_spread
+		remove_star_flag = hms_hyperlane_hub_primary
+		remove_star_flag = hms_hyperlane_hub
+		remove_star_flag = hms_hyperlane_hub_spread
 	}
 }
 
