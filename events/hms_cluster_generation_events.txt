@@ -67,6 +67,10 @@ system_event = {
 						count = 0
 					}
 				}
+				check_variable = {
+					which = cluster_connection_range
+					value >= 100
+				}
 			}
 			log = "Stage [This.cluster_connection_range] Cluster Connections"
 			change_variable = {

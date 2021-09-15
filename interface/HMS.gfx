@@ -76,13 +76,148 @@ spriteTypes = {
 	
 	spriteType = { name = "GFX_hms_image_bg"						texturefile = "gfx/event_pictures/custom_uis/hms_image_bg.dds" }
 	spriteType = { name = "GFX_hms_gentype_none"					texturefile = "gfx/event_pictures/custom_uis/hms_gentype_none.dds" }
-	spriteType = { name = "GFX_hms_clusters_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" }
-	spriteType = { name = "GFX_hms_nice_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_nice_loop_gentype.dds" }
 	spriteType = { name = "GFX_hms_ugly_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_gentype.dds" }
-	spriteType = { name = "GFX_hms_pie_slices_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_pie_slices_gentype.dds" }
-	spriteType = { name = "GFX_hms_hub_gentype"						texturefile = "gfx/event_pictures/custom_uis/hms_hub_gentype.dds" }
-	spriteType = { name = "GFX_hms_circles_gentype"					texturefile = "gfx/event_pictures/custom_uis/hms_circles_gentype.dds" }
-	spriteType = { name = "GFX_hms_cursed_gentype"					texturefile = "gfx/event_pictures/custom_uis/hms_cursed_gentype.dds" }
+	
+	spriteType = {
+		name = "GFX_hms_clusters_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_cluster_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_cluster_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_pie_slices_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_pie_slices_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_cluster_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_cluster_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_nice_loop_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_nice_loop_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_nice_loop_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_nice_loop_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_ugly_loop_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_ugly_loop_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_hub_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_hub_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_hub_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_hub_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_circles_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_circles_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_circles_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_circles_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_cursed_gentype"
+		texturefile = "gfx/event_pictures/custom_uis/hms_cursed_gentype.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_cursed_stars.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_cursed_stars.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 5.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
 	
 	spriteType = { name = "GFX_side_top"							texturefile = "gfx/interface/menu_ui/side_button_top.dds" }
 	spriteType = { name = "GFX_autofab_side"						texturefile = "gfx/interface/menu_ui/side_button_factory.dds" }
@@ -117,14 +252,14 @@ spriteTypes = {
 	
 	spriteType = { name = "GFX_hms_dong_blank"						texturefile = "gfx/interface/menu_ui/hms_dong_blank.dds" }
 	
-		spriteType = {
+	spriteType = {
 		name = "GFX_hms_disabled"
-		texturefile = "gfx/event_pictures/custom_uis/hms_disabled.dds" #The base image. Defines the size of the sprite.
+		texturefile = "gfx/interface/menu_ui/hms_disabled.dds" #The base image. Defines the size of the sprite.
 		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
 		noOfFrames = 1
 		animation = {
-			animationmaskfile = "gfx/event_pictures/custom_uis/hms_enabled.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
-			animationtexturefile = "gfx/event_pictures/custom_uis/hms_enabled.dds" #The image to animate.
+			animationmaskfile = "gfx/interface/menu_ui/hms_enabled.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/interface/menu_ui/hms_enabled.dds" #The image to animate.
 			animationrotation = 0.0
 			animationlooping = yes
 			animationtime = 5.0

@@ -172,7 +172,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "hyperlane_manipulation_contain"
-			position = { x = 3 y = 120 }
+			position = { x = 10 y = 55 }
 			size = { width = 410 height = 102 }
 			orientation = upper_left
 			
@@ -197,7 +197,7 @@ guiTypes = {
 			effectButtonType = { name = "hms_save_hyperlane_on_gen" spriteType = "GFX_hms_enabled" position = { x = 3 y = 90 } clicksound = interface effect = "hms_save_hyperlane_on_gen" }
 			effectButtonType = { name = "hms_save_hyperlane_on_gen_false" spriteType = "GFX_hms_disabled" position = { x = 3 y = 90 } clicksound = interface effect = "hms_save_hyperlane_on_gen_false" }
 			effectButtonType = { name = "hms_load_hyperlane_on_gen" spriteType = "GFX_hms_enabled" position = { x = 177 y = 90 } clicksound = interface effect = "hms_load_hyperlane_on_gen" }
-			effectButtonType = { name = "hms_load_hyperlane_on_gen_false" spriteType = "GFX_hms_disabled" position = { x = 177 y = 90 } clicksound = interface effect = "hms_load_hyperlane_on_gen_false" }
+			effectButtonType = { name = "hms_load_hyperlane_on_gen_false" spriteType = "GFX_hms_disabled" position = { x = 167 y = 90 } clicksound = interface effect = "hms_load_hyperlane_on_gen_false" }
 		}
 		
 		containerWindowType = {
