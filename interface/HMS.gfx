@@ -283,6 +283,8 @@ spriteTypes = {
 	spriteType = { name = "GFX_hms_left"							texturefile = "gfx/interface/menu_ui/hms_arrow_left.dds" }
 	spriteType = { name = "GFX_hms_right"							texturefile = "gfx/interface/menu_ui/hms_arrow_right.dds" }
 	spriteType = { name = "GFX_hms_arrow_dropdown"					texturefile = "gfx/interface/menu_ui/hms_arrow_dropdown.dds" }
+	spriteType = { name = "GFX_hms_arrow_left_toll"					texturefile = "gfx/interface/menu_ui/hms_arrow_left_toll.dds" }
+	spriteType = { name = "GFX_hms_arrow_right_toll"					texturefile = "gfx/interface/menu_ui/hms_arrow_right_toll.dds" }
 	
 	spriteType = { name = "GFX_hms_dong_blank"						texturefile = "gfx/interface/menu_ui/hms_dong_blank.dds" }
 	

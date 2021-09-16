@@ -38,6 +38,7 @@ country_event = {
 		room = ethic_spaceship_room
 	}
 	immediate = {
+		set_global_flag = hms_page_1
 	}
 	# Confirm
 	option = {

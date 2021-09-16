@@ -13,6 +13,68 @@ hms_blank_effect = {
 	}
 }
 
+hms_next_page = {
+	potential = {
+		hidden_trigger = {
+			ahms_has_gentype_flag = no
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_global_flag = hms_page_1
+				}
+				remove_global_flag = hms_page_1
+				set_global_flag = hms_page_2
+			}
+			else_if = {
+				limit = {
+					has_global_flag = hms_page_2
+				}
+				remove_global_flag = hms_page_2
+				set_global_flag = hms_page_1
+			}
+		}
+	}
+}
+hms_previous_page = {
+	potential = {
+		hidden_trigger = {
+			hms_has_gentype_flag = no
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_global_flag = hms_page_1
+				}
+				remove_global_flag = hms_page_1
+				set_global_flag = hms_page_2
+			}
+			else_if = {
+				limit = {
+					has_global_flag = hms_page_2
+				}
+				remove_global_flag = hms_page_2
+				set_global_flag = hms_page_1
+			}
+		}
+	
+	}
+}
+
 hms_generate_hyperlane_layout = {
 	potential = {
 		hidden_trigger = {
@@ -91,6 +153,7 @@ hms_generation_clusters_tab = {
 	potential = {
 		hidden_trigger = {
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_1
 		}
 	}
 	allow = {
@@ -108,6 +171,7 @@ hms_generation_pie_slices_tab = {
 	potential = {
 		hidden_trigger = {
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_1
 		}
 	}
 	allow = {
@@ -125,6 +189,7 @@ hms_generation_corridor_tab = {
 	potential = {
 		hidden_trigger = {
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_1
 		}
 	}
 	allow = {
@@ -142,6 +207,7 @@ hms_generation_cursed_corridor_tab = {
 	potential = {
 		hidden_trigger = {
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_1
 		}
 	}
 	allow = {
@@ -159,6 +225,7 @@ hms_generation_center_tab = {
 	potential = {
 		hidden_trigger = {
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_1
 		}
 	}
 	allow = {
@@ -176,6 +243,7 @@ hms_generation_circles_tab = {
 	potential = {
 		hidden_trigger = {
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_1
 		}
 	}
 	allow = {
@@ -194,6 +262,7 @@ hms_generation_all_tab = {
 		hidden_trigger = {
 			always = no
 			hms_has_gentype_flag = no
+			has_global_flag = hms_page_2
 		}
 	}
 	allow = {
