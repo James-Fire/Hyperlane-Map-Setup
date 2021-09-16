@@ -9,19 +9,19 @@ hms_set_hub_stars = {
 			hms_hub_black_hole = {
 				set_star_class = sc_black_hole
 				star = {
-					set_planet_class = pc_black_hole
+					change_pc = pc_black_hole
 				}
 			}
 			hms_hub_neutron_star = {
 				set_star_class = sc_neutron_star
 				star = {
-					set_planet_class = pc_neutron_star
+					change_pc = pc_neutron_star
 				}
 			}
 			hms_hub_pulsar = {
 				set_star_class = sc_pulsar
 				star = {
-					set_planet_class = pc_pulsar
+					change_pc = pc_pulsar
 				}
 			}
 		}

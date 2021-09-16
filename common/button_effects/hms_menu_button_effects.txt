@@ -99,6 +99,7 @@ hms_generation_clusters_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_clusters_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_clusters
 	}
@@ -115,6 +116,7 @@ hms_generation_pie_slices_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_pie_slices_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_pie_slices
 	}
@@ -131,6 +133,7 @@ hms_generation_corridor_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_corridor_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_corridor
 	}
@@ -147,6 +150,7 @@ hms_generation_cursed_corridor_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_cursed_corridor_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_cursed_corridor
 	}
@@ -163,6 +167,7 @@ hms_generation_center_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_center_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_center
 	}
@@ -179,6 +184,7 @@ hms_generation_circles_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_circles_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_circles
 	}
@@ -196,6 +202,7 @@ hms_generation_all_tab = {
 		}
 	}
 	effect = {
+		custom_tooltip = "hms_generation_all_tooltip"
 		hms_remove_all_gentype_flags = yes
 		set_global_flag = hms_generation_all
 	}

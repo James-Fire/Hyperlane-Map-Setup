@@ -72,12 +72,9 @@ spriteTypes = {
 	spriteType = { name = "GFX_portrait_bg"							texturefile = "gfx/event_pictures/custom_uis/portrait_bg.dds" }
 	spriteType = { name = "GFX_portrait_flipped_bg"					texturefile = "gfx/event_pictures/custom_uis/portrait_flipped_bg.dds" }
 	
-	spriteType = { name = "GFX_terminal_exploit"					texturefile = "gfx/event_pictures/custom_uis/exploit-Terminal-Image.dds" }
 	
 	spriteType = { name = "GFX_hms_image_bg"						texturefile = "gfx/event_pictures/custom_uis/hms_image_bg.dds" }
-	spriteType = { name = "GFX_hms_gentype_none"					texturefile = "gfx/event_pictures/custom_uis/hms_gentype_none.dds" }
-	spriteType = { name = "GFX_hms_ugly_loop_gentype"				texturefile = "gfx/event_pictures/custom_uis/hms_ugly_loop_gentype.dds" }
-	
+	spriteType = { name = "GFX_hms_gentype_none"	texturefile = "gfx/event_pictures/custom_uis/hms_gentype_none.dds" }
 	spriteType = {
 		name = "GFX_hms_clusters_gentype"
 		texturefile = "gfx/event_pictures/custom_uis/hms_clusters_gentype.dds" #The base image. Defines the size of the sprite.
@@ -219,12 +216,47 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	
-	spriteType = { name = "GFX_side_top"							texturefile = "gfx/interface/menu_ui/side_button_top.dds" }
-	spriteType = { name = "GFX_autofab_side"						texturefile = "gfx/interface/menu_ui/side_button_factory.dds" }
-	spriteType = { name = "GFX_exploit_side"						texturefile = "gfx/interface/menu_ui/side_button_exploit.dds" }
-	spriteType = { name = "GFX_side_bottom"							texturefile = "gfx/interface/menu_ui/side_button_bottom.dds" }
-	spriteType = { name = "GFX_exploit_side_button"					texturefile = "gfx/interface/menu_ui/exploit_side_button.dds" }
-
+	spriteType = {
+		name = "GFX_hms_error_anim"
+		texturefile = "gfx/event_pictures/custom_uis/hms_error_anim_blank.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_error_anim.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_error_anim.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 4.0
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = { #Only buttons can be animated. IconTypes cannot. Buttons that are animated have the animation halted when hovered over.
+		name = "GFX_hms_generate"
+		texturefile = "gfx/interface/menu_ui/hms_blank.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/interface/menu_ui/box_test_mask.dds" #The shape of the animation. Whitespace appears to define where the animation appears.
+			animationtexturefile = "gfx/interface/menu_ui/hms_border_spin_layer.dds" #The image to animate.
+			animationrotation = -90.0
+			animationlooping = yes
+			animationtime = 20
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "rotating"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	
 	spriteType = { name = "GFX_stockpile_menu_top"					texturefile = "gfx/interface/menu_ui/ui_stockpile_top.dds" }
 	spriteType = { name = "GFX_stockpile_menu_bottom"				texturefile = "gfx/interface/menu_ui/ui_stockpile_bot.dds" }
 
@@ -234,10 +266,12 @@ spriteTypes = {
 	spriteType = { name = "GFX_long_menu_button"					texturefile = "gfx/interface/menu_ui/long_button_background.dds" }
 	spriteType = { name = "GFX_long_menu_button_skinny"				texturefile = "gfx/interface/menu_ui/skinny_long_button_background.dds" }
 	spriteType = { name = "GFX_half_menu_button_bg"					texturefile = "gfx/interface/menu_ui/half_button_background.dds" }
-	spriteType = { name = "GFX_blank_menu_button_bg"				texturefile = "gfx/interface/menu_ui/blank_button_background.dds" }
-	spriteType = { name = "GFX_blank_half_menu_button_bg"			texturefile = "gfx/interface/menu_ui/blank_half_button_background.dds" }
 	spriteType = { name = "GFX_menu_button_skinny"					texturefile = "gfx/interface/menu_ui/skinny_button_background.dds" }
 	spriteType = { name = "GFX_half_menu_button_skinny"				texturefile = "gfx/interface/menu_ui/skinny_half_button_background.dds" }
+	spriteType = { name = "GFX_column_menu_button"				texturefile = "gfx/interface/menu_ui/column_button_background.dds" }
+	
+	spriteType = { name = "GFX_blank_menu_button_bg"				texturefile = "gfx/interface/menu_ui/blank_button_background.dds" }
+	spriteType = { name = "GFX_blank_half_menu_button_bg"			texturefile = "gfx/interface/menu_ui/blank_half_button_background.dds" }
 	spriteType = { name = "GFX_blank_menu_button_skinny"			texturefile = "gfx/interface/menu_ui/blank_skinny_button_background.dds" }
 	spriteType = { name = "GFX_blank_half_menu_button_skinny"		texturefile = "gfx/interface/menu_ui/blank_skinny_half_button_background.dds" }
 
@@ -262,7 +296,7 @@ spriteTypes = {
 			animationtexturefile = "gfx/interface/menu_ui/hms_enabled.dds" #The image to animate.
 			animationrotation = 0.0
 			animationlooping = yes
-			animationtime = 5.0
+			animationtime = 6.0
 			animationdelay = 0
 			animationblendmode = "add"
 			animationtype = "pulsing"  #scrolling, rotating, pulsing
@@ -278,14 +312,34 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
 		noOfFrames = 1
 		animation = {
-			animationmaskfile = "gfx/event_pictures/custom_uis/hms_border.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
-			animationtexturefile = "gfx/event_pictures/custom_uis/hms_border.dds" #The image to animate.
+			animationmaskfile = "gfx/event_pictures/custom_uis/hms_border_anim_layer.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_border_anim_layer.dds" #The image to animate.
 			animationrotation = 0.0
 			animationlooping = yes
 			animationtime = 5.0
 			animationdelay = 0
 			animationblendmode = "add"
 			animationtype = "pulsing"  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_hms_border_spin_layer"
+		texturefile = "gfx/event_pictures/custom_uis/hms_border_spin_layer_blank.dds" #The base image. Defines the size of the sprite.
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 1
+		animation = {
+			animationmaskfile = "gfx/interface/menu_ui/box_test_mask.dds" #The shape of the animation. Whitespace appears to define where the animation can appear.
+			animationtexturefile = "gfx/event_pictures/custom_uis/hms_border_spin_layer.dds" #The image to animate.
+			animationrotation = 0.0
+			animationlooping = yes
+			animationtime = 20
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "rotating"  #scrolling, rotating, pulsing
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 			animationframes = { 1 }
@@ -407,100 +461,7 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-	spriteType = {
-		name = "GFX_exploit_menu_1_neg"
-		texturefile = "gfx/interface/menu_ui/exploit_menu_1_neg.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = yes
-			animationtime = 1
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "rotating"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
-
-	spriteType = {
-		name = "GFX_exploit_menu_2_neg"
-		texturefile = "gfx/interface/menu_ui/exploit_menu_2_neg.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = yes
-			animationtime = 1
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "rotating"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
-
-	spriteType = {
-		name = "GFX_exploit_menu_3_neg"
-		texturefile = "gfx/interface/menu_ui/exploit_menu_3_neg.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = yes
-			animationtime = 1
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "rotating"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
-
-	spriteType = {
-		name = "GFX_exploit_menu_4_neg"
-		texturefile = "gfx/interface/menu_ui/exploit_menu_4_neg.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = yes
-			animationtime = 1
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "rotating"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
-
-	spriteType = {
-		name = "GFX_exploit_menu_5_neg"
-		texturefile = "gfx/interface/menu_ui/exploit_menu_5_neg.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
-			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = yes
-			animationtime = 1
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "rotating"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
+	
 	spriteType = {
 		name = "GFX_giga_menu_1"
 		texturefile = "gfx/interface/menu_ui/giga_menu_1.dds"

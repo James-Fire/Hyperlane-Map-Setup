@@ -60,7 +60,8 @@
      hms_central_hub_xenophile_fe: "Xenophile FE"
      hms_central_hub_xenophile_fe_tooltip: "This setting has the hub set to the Xenophile FE capital system, if it exists. If it does not, it defaults to Random. WARNING: FEs sometimes send out fleets to adjacent systems for fun. They may clear the galaxy of its natural Fauna, as all systems are adjacent to them."
      
-     save_load_hyperlanes: "Save/Load on Gen"
+     save_hyperlanes: "Save on Gen"
+     load_hyperlanes: "Load on Gen"
      hms_save_hyperlane_on_gen_tooltip: "The current hyperlane galaxy layout will be saved on generating a new one."
      hms_save_hyperlane_on_gen_false_tooltip: "The current hyperlane galaxy layout will not be saved on generating a new one."
      hms_load_hyperlane_on_gen_tooltip: "The current hyperlane galaxy layout will be loaded and superimposed after generating a new one."
