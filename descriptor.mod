@@ -4,4 +4,5 @@ tags={
 	"Utilities"
 }
 name="Hyperlane Map Setup"
-supported_version="3.0.*"
+picture="thumbnail.png"
+supported_version="3.1.*"
