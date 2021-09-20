@@ -1,34 +1,4 @@
 # noscope
-hms_set_hub_stars = {
-	every_system = {
-		limit = {
-			has_star_flag = hms_hyperlane_hub
-		}
-		switch = {
-			trigger = has_global_flag
-			hms_hub_black_hole = {
-				set_star_class = sc_black_hole
-				star = {
-					change_pc = pc_black_hole
-				}
-			}
-			hms_hub_neutron_star = {
-				set_star_class = sc_neutron_star
-				star = {
-					change_pc = pc_neutron_star
-				}
-			}
-			hms_hub_pulsar = {
-				set_star_class = sc_pulsar
-				star = {
-					change_pc = pc_pulsar
-				}
-			}
-		}
-	}
-}
-
-# noscope
 hms_generator_cluster = {
 	random_system = {
 		limit = {
@@ -309,6 +279,7 @@ hms_generator_ugly_loop = {
 # noscope
 hms_generator_pie = {
 	set_spawn_system_batch = begin
+	hms_utilities_remove_gen_flags = yes
 	hms_utilities_clear_hyperlanes = yes
 	# select the slices centers
 	set_global_flag = hms_continue
@@ -323,11 +294,11 @@ hms_generator_pie = {
 				distance_to_core_percent > 0.4
 				distance_to_core_percent < 0.6
 				NOT = {
-					has_star_flag = hms_slices_center
+					has_star_flag = hms_hyperlane_hub
 				}
 				NOT = {
 					any_system = {
-						has_star_flag = hms_slices_center
+						has_star_flag = hms_hyperlane_hub
 						distance = {
 							source = prev
 							type = euclidean
@@ -337,7 +308,7 @@ hms_generator_pie = {
 					}
 				}
 			}
-			set_star_flag = hms_slices_center
+			set_star_flag = hms_hyperlane_hub
 			set_global_flag = hms_continue
 		}
 	}
@@ -345,14 +316,14 @@ hms_generator_pie = {
 	every_system = {
 		limit = {
 			NOT = {
-				has_star_flag = hms_slices_center
+				has_star_flag = hms_hyperlane_hub
 			}
 		}
 		# we connect to the closest slice center systems
 		# to do that, we connect to every slice center, then closest_system on them work
 		every_system = {
 			limit = {
-				has_star_flag = hms_slices_center
+				has_star_flag = hms_hyperlane_hub
 			}
 			add_hyperlane = {
 				from = this
@@ -361,16 +332,16 @@ hms_generator_pie = {
 		}
 		closest_system = {
 			limit = {
-				has_star_flag = hms_slices_center
+				has_star_flag = hms_hyperlane_hub
 			}
-			save_event_target_as = hms_chosen_center
+			save_event_target_as = hms_chosen_hub
 		}
 		# remove hyperlanes from the far away slice centers
 		every_system = {
 			limit = {
-				has_star_flag = hms_slices_center
+				has_star_flag = hms_hyperlane_hub
 				NOT = {
-					is_same_value = event_target:hms_chosen_center
+					is_same_value = event_target:hms_chosen_hub
 				}
 			}
 			remove_hyperlane = {
@@ -379,47 +350,10 @@ hms_generator_pie = {
 			}
 		}
 	}
-	# # now we just have to connect the slices center in a loop fashion
-	# # for every slice center
-	# every_system = {
-	# 	limit = {
-	# 		has_star_flag = hms_slices_center
-	# 	}
-	# 	while = {
-	# 		count = 2
-	# 		# we connect to the systems
-	# 		random_system = {
-	# 			limit = {
-	# 				NOR = {
-	# 					# that aren't prev
-	# 					is_same_value = prev
-	# 					# that are the closest
-	# 					any_system = {
-	# 						has_star_flag = hms_slices_center
-	# 						NOT = {
-	# 							has_hyperlane_to = prevprev
-	# 						}
-	# 						prevprev = {
-	# 							# the slice center we are treating
-	# 							compare_distance = {
-	# 								closer_object = prev									# the other center we are considering
-	# 								further_object = prevprev									# the center we want to connect to
-	# 							}
-	# 						}
-	# 					}
-	# 				}
-	# 			}
-	# 			add_hyperlane = {
-	# 				from = this
-	# 				to = prev
-	# 			}
-	# 		}
-	# 	}
-	# }
+	hms_utilities_set_hub_stars = yes
+	hms_utilities_connect_hubs = yes
 	# cleanup
-	every_system = {
-		remove_star_flag = hms_slices_center
-	}
+	hms_utilities_remove_gen_flags = yes
 	set_spawn_system_batch = end
 }
 

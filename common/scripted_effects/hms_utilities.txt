@@ -1,5 +1,35 @@
 # noscope
-hms_remove_gen_flags = {
+hms_utilities_set_hub_stars = {
+	every_system = {
+		limit = {
+			has_star_flag = hms_hyperlane_hub
+		}
+		switch = {
+			trigger = has_global_flag
+			hms_hub_black_hole = {
+				set_star_class = sc_black_hole
+				star = {
+					change_pc = pc_black_hole
+				}
+			}
+			hms_hub_neutron_star = {
+				set_star_class = sc_neutron_star
+				star = {
+					change_pc = pc_neutron_star
+				}
+			}
+			hms_hub_pulsar = {
+				set_star_class = sc_pulsar
+				star = {
+					change_pc = pc_pulsar
+				}
+			}
+		}
+	}
+}
+
+# noscope
+hms_utilities_remove_gen_flags = {
 	every_system = {
 		remove_star_flag = hms_hyperlane_hub_primary
 		remove_star_flag = hms_hyperlane_hub
@@ -210,6 +240,164 @@ hms_utilities_tag_partitions = {
 			else = {
 				log = "var not set"
 			}
+		}
+	}
+}
+
+# noscope
+# star flags hms_hyperlane_hub must be set
+# MAX_DISTANCE : the max euclidean distance between 2 hubs
+hms_utilities_connect_hubs = {
+	# first, connect every hub to allow distance to work properly
+	every_system = {
+		limit = {
+			has_star_flag = hms_hyperlane_hub
+		}
+		every_system = {
+			limit = {
+				has_star_flag = hms_hyperlane_hub
+				NOR = {
+					is_same_value = prev
+					has_hyperlane_to = prev
+				}
+			}
+			add_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+	}
+	# then we want to connect them in a loop fashion
+	random_system = {
+		limit = {
+			has_star_flag = hms_hyperlane_hub
+		}
+		save_event_target_as = hms_current_system
+		save_event_target_as = hms_start_system
+		set_star_flag = hms_loop_added
+	}
+	set_global_flag = hms_continue
+	while = {
+		count = 10000
+		limit = {
+			has_global_flag = hms_continue
+		}
+		remove_global_flag = hms_continue
+		event_target:hms_current_system = {
+			closest_system = {
+				limit = {
+					has_star_flag = hms_hyperlane_hub
+					NOT = {
+						has_star_flag = hms_loop_added
+					}
+				}
+				set_star_flag = hms_loop_added
+				set_star_flag = hms_linked_to_@prev
+				save_event_target_as = hms_current_system
+				set_global_flag = hms_continue
+			}
+		}
+	}
+	event_target:hms_current_system = {
+		event_target:hms_start_system = {
+			set_star_flag = hms_linked_to_@prev
+		}
+	}
+	every_system = {
+		limit = {
+			has_star_flag = hms_loop_added
+		}
+		remove_star_flag = hms_loop_added
+	}
+	# then switch on the hub connection setting
+	switch = {
+		trigger = has_global_flag
+		hms_hub_hyperlanes = {
+			every_system = {
+				limit = {
+					has_star_flag = hms_hyperlane_hub
+				}
+				every_system = {
+					limit = {
+						has_star_flag = hms_hyperlane_hub
+						has_star_flag = hms_linked_to_@prev
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+		}
+		hms_hub_wormholes = {
+			every_system = {
+				limit = {
+					has_star_flag = hms_hyperlane_hub
+				}
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					orbit_distance = 100
+					random_pos = yes
+				}
+			}
+			every_system = {
+				limit = {
+					has_star_flag = hms_hyperlane_hub
+				}
+				every_system = {
+					limit = {
+						has_star_flag = hms_hyperlane_hub
+						has_star_flag = hms_linked_to_@prev
+					}
+					link_wormholes = prev
+				}
+			}
+		}
+		hms_hub_gateways = {
+			every_system = {
+				limit = {
+					has_star_flag = hms_hyperlane_hub
+				}
+				spawn_megastructure = {
+					type = "gateway_final"
+					orbit_distance = 100
+					random_pos = yes
+					orbit_angle = 360					# range of the randomization
+				}
+			}
+		}
+	}
+	# cleanup : remove hyperlanes and then flags
+	every_system = {
+		limit = {
+			has_star_flag = hms_hyperlane_hub
+		}
+		every_neighbor_system = {
+			limit = {
+				has_star_flag = hms_hyperlane_hub
+				NOR = {
+					has_star_flag = hms_linked_to_@prev
+					prev = {
+						has_star_flag = hms_linked_to_@prev
+					}
+				}
+			}
+			remove_hyperlane = {
+				from = this
+				to = prev
+			}
+		}
+	}
+	every_system = {
+		limit = {
+			has_star_flag = hms_hyperlane_hub
+		}
+		every_system = {
+			limit = {
+				has_star_flag = hms_hyperlane_hub
+				has_star_flag = hms_linked_to_@prev
+			}
+			remove_star_flag = hms_linked_to_@prev
 		}
 	}
 }
