@@ -17,7 +17,7 @@ hms_next_page = {
 	potential = {
 		hidden_trigger = {
 			always = no
-			ahms_has_gentype_flag = no
+			hms_has_gentype_flag = no
 		}
 	}
 	allow = {

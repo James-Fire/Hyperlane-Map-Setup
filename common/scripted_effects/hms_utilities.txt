@@ -184,11 +184,7 @@ hms_utilities_tag_partitions = {
 			}
 			set_variable = {
 				which = hms_partition
-				value = {
-					# TODO 3.1
-					scope = event_target:global_event_country
-					variable = hms_partition_count
-				}
+				value = event_target:global_event_country.hms_partition_count
 			}
 			every_system = {
 				limit = {
@@ -201,11 +197,7 @@ hms_utilities_tag_partitions = {
 				}
 				set_variable = {
 					which = hms_partition
-					value = {
-						# TODO 3.1
-						scope = event_target:global_event_country
-						variable = hms_partition_count
-					}
+					value = event_target:global_event_country.hms_partition_count
 				}
 			}
 			# TODO remove
