@@ -13,6 +13,6 @@ hms_has_gentype_flag = {
 hms_has_cluster_flag = {
 	OR = {
 		has_global_flag = hms_generation_clusters
-		has_global_flag = hms_generation_pie_slices	
+		#has_global_flag = hms_generation_pie_slices	
 	}
 }
