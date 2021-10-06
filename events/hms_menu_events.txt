@@ -51,3 +51,74 @@ country_event = {
 		#fire_on_action = { on_action = exploit_apply_queue }
 	}
 }
+
+country_event = {
+	### Generate hyperlane layout
+	id = hms_menu.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			#If perma save is enabled, or if load after gen is enabled, save the current network.
+			# TODO perma save ???
+			limit = {
+				has_global_flag = hms_save_hyperlane_on_gen
+			}
+			hms_utilities_save_setup = {
+				INDEX = temp
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = hms_generation_clusters
+			}
+			hms_generator_cluster = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_generation_pie_slices
+			}
+			hms_generator_pie = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_generation_corridor
+			}
+			hms_generator_closest_loop = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_generation_cursed_corridor
+			}
+			hms_generator_ugly_loop = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_generation_center
+			}
+			hms_generator_star = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_generation_circles
+			}
+			hms_generator_concentric_circles = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = hms_generation_all
+			}
+			hms_generator_full = yes
+		}
+		if = {
+			#If perma save is disabled, clear the save slot.
+			# If load after gen is enabled, load the current network.
+			limit = {
+				has_global_flag = hms_save_hyperlane_on_gen
+			}
+			hms_utilities_load_setup = {
+				INDEX = temp
+			}
+		}
+	}
+}

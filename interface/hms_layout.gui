@@ -207,10 +207,11 @@ guiTypes = {
 			effectButtonType = { name = "save_hyperlanes" spriteType = "GFX_column_menu_button" position = { x = 0 y = 86 } clicksound = interface font = "cg_16b" text = "save_hyperlanes" effect = "hms_blank_effect" }
 			effectButtonType = { name = "hms_save_hyperlane_on_gen" spriteType = "GFX_hms_enabled" position = { x = 3 y = 91 } clicksound = interface effect = "hms_save_hyperlane_on_gen" }
 			effectButtonType = { name = "hms_save_hyperlane_on_gen_false" spriteType = "GFX_hms_disabled" position = { x = 3 y = 91 } clicksound = interface effect = "hms_save_hyperlane_on_gen_false" }
-			
-			effectButtonType = { name = "load_hyperlanes" spriteType = "GFX_column_menu_button" position = { x = 0 y = 122 } clicksound = interface font = "cg_16b" text = "load_hyperlanes" effect = "hms_blank_effect" }
-			effectButtonType = { name = "hms_load_hyperlane_on_gen" spriteType = "GFX_hms_enabled" position = { x = 3 y = 127 } clicksound = interface effect = "hms_load_hyperlane_on_gen" }
-			effectButtonType = { name = "hms_load_hyperlane_on_gen_false" spriteType = "GFX_hms_disabled" position = { x = 3 y = 127 } clicksound = interface effect = "hms_load_hyperlane_on_gen_false" }
+            
+            # We save/load from temp before/after generation based on the button above
+			# effectButtonType = { name = "load_hyperlanes" spriteType = "GFX_column_menu_button" position = { x = 0 y = 122 } clicksound = interface font = "cg_16b" text = "load_hyperlanes" effect = "hms_blank_effect" }
+			# effectButtonType = { name = "hms_load_hyperlane_on_gen" spriteType = "GFX_hms_enabled" position = { x = 3 y = 127 } clicksound = interface effect = "hms_load_hyperlane_on_gen" }
+			# effectButtonType = { name = "hms_load_hyperlane_on_gen_false" spriteType = "GFX_hms_disabled" position = { x = 3 y = 127 } clicksound = interface effect = "hms_load_hyperlane_on_gen_false" }
 		}
 		
 		containerWindowType = {

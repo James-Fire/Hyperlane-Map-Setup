@@ -44,6 +44,7 @@ hms_next_page = {
 		}
 	}
 }
+
 hms_previous_page = {
 	potential = {
 		hidden_trigger = {
@@ -73,7 +74,6 @@ hms_previous_page = {
 				set_global_flag = hms_page_1
 			}
 		}
-	
 	}
 }
 
@@ -92,59 +92,8 @@ hms_generate_hyperlane_layout = {
 		#Use the Current hyperlane options to generate the map
 		custom_tooltip = "hms_generate_hyperlane_layout_tooltip"
 		hidden_effect = {
-			if = { #If perma save is enabled, or if load after gen is enabled, save the current network.
-				limit = {
-					
-				}
-				
-			}
-			if = {
-				limit = {
-					has_global_flag = hms_generation_clusters
-				}
-				hms_generator_cluster = yes
-			}
-			else_if = {
-				limit = {
-					has_global_flag = hms_generation_pie_slices
-				}
-				hms_generator_pie = yes
-			}
-			else_if = {
-				limit = {
-					has_global_flag = hms_generation_corridor
-				}
-				hms_generator_closest_loop = yes
-			}
-			else_if = {
-				limit = {
-					has_global_flag = hms_generation_cursed_corridor
-				}
-				hms_generator_ugly_loop = yes
-			}
-			else_if = {
-				limit = {
-					has_global_flag = hms_generation_center
-				}
-				hms_generator_star = yes
-			}
-			else_if = {
-				limit = {
-					has_global_flag = hms_generation_circles
-				}
-				hms_generator_concentric_circles = yes
-			}
-			else_if = {
-				limit = {
-					has_global_flag = hms_generation_all
-				}
-				hms_generator_full = yes
-			}
-			if = { #If perma save is disabled, clear the save slot.
-				limit = {
-				
-				}
-				
+			country_event = {
+				id = hms_menu.10
 			}
 		}
 	}
@@ -169,6 +118,7 @@ hms_generation_clusters_tab = {
 		set_global_flag = hms_generation_clusters
 	}
 }
+
 hms_generation_pie_slices_tab = {
 	potential = {
 		hidden_trigger = {
@@ -187,6 +137,7 @@ hms_generation_pie_slices_tab = {
 		set_global_flag = hms_generation_pie_slices
 	}
 }
+
 hms_generation_corridor_tab = {
 	potential = {
 		hidden_trigger = {
@@ -205,6 +156,7 @@ hms_generation_corridor_tab = {
 		set_global_flag = hms_generation_corridor
 	}
 }
+
 hms_generation_cursed_corridor_tab = {
 	potential = {
 		hidden_trigger = {
@@ -223,6 +175,7 @@ hms_generation_cursed_corridor_tab = {
 		set_global_flag = hms_generation_cursed_corridor
 	}
 }
+
 hms_generation_center_tab = {
 	potential = {
 		hidden_trigger = {
@@ -241,6 +194,7 @@ hms_generation_center_tab = {
 		set_global_flag = hms_generation_center
 	}
 }
+
 hms_generation_circles_tab = {
 	potential = {
 		hidden_trigger = {
@@ -259,6 +213,7 @@ hms_generation_circles_tab = {
 		set_global_flag = hms_generation_circles
 	}
 }
+
 hms_generation_all_tab = {
 	potential = {
 		hidden_trigger = {
@@ -294,6 +249,7 @@ hms_generation_dropdown = {
 	effect = {
 	}
 }
+
 hms_generation_none = {
 	potential = {
 		hidden_trigger = {
@@ -308,6 +264,7 @@ hms_generation_none = {
 	effect = {
 	}
 }
+
 hms_generation_image_bg = {
 	potential = {
 		hidden_trigger = {
@@ -322,6 +279,7 @@ hms_generation_image_bg = {
 	effect = {
 	}
 }
+
 hms_generation_clusters_image = {
 	potential = {
 		hidden_trigger = {
@@ -336,6 +294,7 @@ hms_generation_clusters_image = {
 	effect = {
 	}
 }
+
 hms_generation_pie_slices_image = {
 	potential = {
 		hidden_trigger = {
@@ -350,6 +309,7 @@ hms_generation_pie_slices_image = {
 	effect = {
 	}
 }
+
 hms_generation_corridor_image = {
 	potential = {
 		hidden_trigger = {
@@ -364,6 +324,7 @@ hms_generation_corridor_image = {
 	effect = {
 	}
 }
+
 hms_generation_cursed_corridor_image = {
 	potential = {
 		hidden_trigger = {
@@ -378,6 +339,7 @@ hms_generation_cursed_corridor_image = {
 	effect = {
 	}
 }
+
 hms_generation_center_image = {
 	potential = {
 		hidden_trigger = {
@@ -392,6 +354,7 @@ hms_generation_center_image = {
 	effect = {
 	}
 }
+
 hms_generation_circles_image = {
 	potential = {
 		hidden_trigger = {
@@ -406,6 +369,7 @@ hms_generation_circles_image = {
 	effect = {
 	}
 }
+
 hms_generation_all_image = {
 	potential = {
 		hidden_trigger = {
@@ -702,15 +666,17 @@ hms_cluster_connection_type_reverse = {
 			remove_global_flag = hms_hub_gateways
 			set_global_flag = hms_hub_wormholes
 		}
-		else_if = { #Skip over this thing for now, it's hard.
+		else_if = {
+			#Skip over this thing for now, it's hard.
 			limit = {
-				has_global_flag = hms_standard_hyperlanes 
+				has_global_flag = hms_standard_hyperlanes
 			}
 			remove_global_flag = hms_standard_hyperlanes
 			set_global_flag = hms_hub_hyperlanes
 		}
 	}
 }
+
 hms_cluster_connection_type = {
 	potential = {
 		hidden_trigger = {
@@ -745,9 +711,10 @@ hms_cluster_connection_type = {
 			remove_global_flag = hms_hub_gateways
 			set_global_flag = hms_hub_hyperlanes
 		}
-		else_if = { #Skip over this thing for now, it's hard.
+		else_if = {
+			#Skip over this thing for now, it's hard.
 			limit = {
-				has_global_flag = hms_standard_hyperlanes 
+				has_global_flag = hms_standard_hyperlanes
 			}
 			remove_global_flag = hms_standard_hyperlanes
 			set_global_flag = hms_hub_hyperlanes
@@ -866,6 +833,7 @@ hms_cluster_hub_star_reverse = {
 		}
 	}
 }
+
 hms_cluster_hub_star = {
 	potential = {
 		hidden_trigger = {
@@ -930,6 +898,7 @@ hms_cluster_hyperlanes_neighbour = {
 		custom_tooltip = "hms_cluster_hyperlanes_neighbour_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+
 hms_cluster_hyperlanes_distance = {
 	potential = {
 		hidden_trigger = {
@@ -950,6 +919,7 @@ hms_cluster_hyperlanes_distance = {
 		custom_tooltip = "hms_cluster_hyperlanes_distance_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+
 hms_cluster_hyperlanes_hub = {
 	potential = {
 		hidden_trigger = {
@@ -970,6 +940,7 @@ hms_cluster_hyperlanes_hub = {
 		custom_tooltip = "hms_cluster_hyperlanes_hub_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+
 hms_cluster_hyperlanes_swap_reverse = {
 	potential = {
 		hidden_trigger = {
@@ -994,7 +965,8 @@ hms_cluster_hyperlanes_swap_reverse = {
 			remove_global_flag = hms_cluster_hyperlanes_neighbour
 			set_global_flag = hms_cluster_hyperlanes_hub
 		}
-		else_if = { #Skip over this option for now, we need 1.1 and button loc commands
+		else_if = {
+			#Skip over this option for now, we need 1.1 and button loc commands
 			limit = {
 				has_global_flag = hms_cluster_hyperlanes_distance
 			}
@@ -1010,6 +982,7 @@ hms_cluster_hyperlanes_swap_reverse = {
 		}
 	}
 }
+
 hms_cluster_hyperlanes_swap = {
 	potential = {
 		hidden_trigger = {
@@ -1034,7 +1007,8 @@ hms_cluster_hyperlanes_swap = {
 			remove_global_flag = hms_cluster_hyperlanes_neighbour
 			set_global_flag = hms_cluster_hyperlanes_hub
 		}
-		else_if = { #Skip over this option for now, we need 1.1 and button loc commands
+		else_if = {
+			#Skip over this option for now, we need 1.1 and button loc commands
 			limit = {
 				has_global_flag = hms_cluster_hyperlanes_distance
 			}
@@ -1068,6 +1042,7 @@ hms_central_hub_random = {
 		custom_tooltip = "hms_central_hub_random_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+
 hms_central_hub_lgate = {
 	potential = {
 		hidden_trigger = {
@@ -1084,6 +1059,7 @@ hms_central_hub_lgate = {
 		custom_tooltip = "hms_central_hub_lgate_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+
 hms_central_hub_xenophile_fe = {
 	potential = {
 		hidden_trigger = {
@@ -1100,6 +1076,7 @@ hms_central_hub_xenophile_fe = {
 		custom_tooltip = "hms_central_hub_xenophile_fe_tooltip"		#The button should do nothing when clicked, but we can give a tooltip when hovered over.
 	}
 }
+
 hms_central_hub_swap_reverse = {
 	potential = {
 		hidden_trigger = {
@@ -1136,6 +1113,7 @@ hms_central_hub_swap_reverse = {
 		}
 	}
 }
+
 hms_central_hub_swap = {
 	potential = {
 		hidden_trigger = {
@@ -1172,7 +1150,6 @@ hms_central_hub_swap = {
 		}
 	}
 }
-
 
 #Hyperlane Manipulation Buttons
 hms_delete_hyperlanes = {
@@ -1290,7 +1267,9 @@ hms_save_hyperlane_layout = {
 	effect = {
 		#Save the Current hyperlane map
 		hidden_effect = {
-			hms_utilities_save_setup = yes
+			hms_utilities_save_setup = {
+				INDEX = 1
+			}
 		}
 	}
 }
@@ -1309,7 +1288,9 @@ hms_load_hyperlane_layout = {
 	effect = {
 		#Load the saved hyperlane map
 		hidden_effect = {
-			hms_utilities_load_setup = yes
+			hms_utilities_load_setup = {
+				INDEX = 1
+			}
 		}
 	}
 }

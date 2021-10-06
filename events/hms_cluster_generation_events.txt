@@ -286,7 +286,7 @@ system_event = {
 					}
 					every_neighbor_system_euclidean = {
 						limit = {
-							NOT = {
+							NOR = {
 								has_hyperlane_to = prev
 								distance = {
 									source = prev
