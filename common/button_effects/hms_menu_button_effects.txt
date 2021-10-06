@@ -122,6 +122,7 @@ hms_generation_clusters_tab = {
 hms_generation_pie_slices_tab = {
 	potential = {
 		hidden_trigger = {
+			always = no
 			hms_has_gentype_flag = no
 			has_global_flag = hms_page_1
 		}
