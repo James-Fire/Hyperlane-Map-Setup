@@ -883,6 +883,10 @@ hms_cluster_hyperlanes_neighbour = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_neighbour
+			# TODO write code for this
+			NOT = {
+				has_global_flag = hms_generation_pie_slices
+			}
 			NOR = {
 				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
@@ -904,6 +908,10 @@ hms_cluster_hyperlanes_distance = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_distance
+			# TODO write code for this
+			NOT = {
+				has_global_flag = hms_generation_pie_slices
+			}
 			NOR = {
 				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
@@ -925,6 +933,10 @@ hms_cluster_hyperlanes_hub = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_cluster_hyperlanes_hub
+			# TODO write code for this
+			NOT = {
+				has_global_flag = hms_generation_pie_slices
+			}
 			NOR = {
 				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
@@ -945,6 +957,10 @@ hms_cluster_hyperlanes_swap_reverse = {
 	potential = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
+			# TODO write code for this
+			NOT = {
+				has_global_flag = hms_generation_pie_slices
+			}
 			NOR = {
 				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
@@ -987,6 +1003,10 @@ hms_cluster_hyperlanes_swap = {
 	potential = {
 		hidden_trigger = {
 			hms_has_cluster_flag = yes
+			# TODO write code for this
+			NOT = {
+				has_global_flag = hms_generation_pie_slices
+			}
 			NOR = {
 				#has_global_flag = hms_hub_gateways
 				has_global_flag = hms_standard_hyperlanes
