@@ -3,6 +3,8 @@
     HMS_HUB_WETWORK: "REPLACE_ME"
     HMS_HUB_WETWORK_DESC: "REPLACE_ME"
     hms_menu.1.refresh: "REPLACE_ME"
+    edict_hms_menu: "§HHMS§! §YMod Menu§!"
+    edict_hms_menu_desc: "Open the HMS Mod Menu."
     #UI
     hms_generation_formula_title: "Generation Type"
     generation_options_title: "Generation Options"

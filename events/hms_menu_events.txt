@@ -2,26 +2,25 @@ namespace = hms_menu
 event = {
 	id = hms_menu.1
 	hide_window = yes
-	is_triggered_only = yes
+    is_triggered_only = yes
+    trigger = {
+        NOT = {
+            has_global_flag = hms_menu_start
+        }
+    }
 	immediate = {
-		set_global_flag = hms_generation_clusters		#Default Generation type, probably going to be the most used.
-		set_global_flag = hms_hub_hyperlanes
-		set_global_flag = hms_hub_no_change
-		set_global_flag = hms_cluster_hyperlanes_neighbour
-		set_global_flag = hms_central_hub_random
-		every_country = {
-			limit = {
-				NOT = {
-					has_global_flag = hms_menu_start
-				}
-			}
-			set_global_flag = hms_menu_start
-			country_event = {
-				id = hms_menu.2
-			}
-		}
-	}
-	after = {
+        hms_initialize = yes # will set the global flags
+        every_country = {
+            limit = {
+                NOT = {
+                    has_global_flag = hms_menu_start
+                }
+            }
+            set_global_flag = hms_menu_start
+            country_event = {
+                id = hms_menu.2
+            }
+        }
 	}
 }
 

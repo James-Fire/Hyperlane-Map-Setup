@@ -1,0 +1,33 @@
+hms_menu = {
+	icon = "GFX_research_icon"
+	length = 0
+	potential = {
+		is_ai = no
+		NOT = {
+			has_global_flag = dmm_installed
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+	resources = {
+		category = edicts
+		cost = {
+		}
+	}
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = hms_menu_start
+					}
+				}
+				hms_initialize = yes
+			}
+			country_event = {
+				id = hms_menu.2
+			}
+		}
+	}
+}

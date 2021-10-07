@@ -1,0 +1,35 @@
+[url=https://discord.gg/fdqys7WcuS][img]https://i.imgur.com/daBft2H.png[/img][/url]
+
+Tired of the bland "Hyperlane Density" setting that is all vanilla provides? Perhaps you want to connect everyone to one system just for the lols? Or maybe you just want actual clusters?
+
+[b]Hyperlane Map Setup[/b] got you covered! Here you can set up hyperlane networks to an endless variety of options without having to know anything about modding!
+
+[h3]Sounds amazing, but how does it work?[/h3]
+It's really easy! You can use our awesome UI to apply one of the generators and enjoy the new hyperlane map! With 6 general types of generation, plus options for them, there's plenty of ways you can screw up your hyperlane network!
+
+[h3]What do I have to do to use this wonderful feature?[/h3]
+Open the mod menu (either from the edicts list or via the marvelous [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2458024521]Dynamic Mod Menu[/url]). You can click on "Clusters" at the top to select another type of generator. Depending on the selected generator, you might have options on the bottom. On the left you can see the little cog. Pressing it will run the selected generator.
+
+[h3]Wow, it's easier than I thought! But what about the current map? Is there a way to save it?[/h3]
+Of course! You can find on the left a file icon with a green arrow. Pressing it will save the current setup. Pressing the file icon with a red arrow will load the saved setup [b]on top[/b] of your current one. This allows you to combine several generator (and/or the vanilla map) for even more fun!
+Should you want to delete every existing hyperlane, there is also the file icon button with a red cross on the left. Just be aware that it won't refresh the display of the galactic map (vanilla issue), so don't worry if you still see them. You can make sure they are gone by going into a system and checking that there is no hyperlane arrows.
+
+[h3]That's a really cool mod! Anything else I need to know?[/h3]
+Some generators might take a bit, especially the bigger your map is. If the game freezes, just wait patiently.
+
+You might also need to wait one or two days in game to refresh the galactic display after running a generator.
+
+[h3]Is it compatible with X? Is it achievement compatible? Does it work in MP[/h3]
+This mod should be compatible with everything! And sadly, it is not achievement compatible.
+It should work in MP (only the host will get the initial menu at startup, but the other player can access it via edict). We haven't tested it in MP though, and 3.1 may have desyncs with custom UI mods, so you might experience them.
+
+[h3]You have convinced me, I will totally try this mod![/h3]
+Have fun!
+
+[url=https://discord.gg/UFyMvwZ][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+
+Support James
+
+[url=https://www.patreon.com/user?u=6831316][img]https://i.imgur.com/H7KEFJ7.png[/img][/url]
+
+[url=https://ko-fi.com/jamesfire][img]https://i.imgur.com/j5EnFli.png[/img][/url]
