@@ -57,6 +57,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		hms_utilities_remove_gen_flags = yes
 		if = {
 			#If perma save is enabled, or if load after gen is enabled, save the current network.
 			# TODO perma save ???

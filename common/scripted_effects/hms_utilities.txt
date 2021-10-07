@@ -34,6 +34,9 @@ hms_utilities_remove_gen_flags = {
 		remove_star_flag = hms_hyperlane_hub_primary
 		remove_star_flag = hms_hyperlane_hub
 		remove_star_flag = hms_hyperlane_hub_spread
+		remove_star_flag = hms_loop_added
+		remove_star_flag = hms_added
+		remove_star_flag = hms_continue
 	}
 }
 
