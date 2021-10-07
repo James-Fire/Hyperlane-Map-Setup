@@ -1,7 +1,15 @@
 # Triggers when the game starts
 on_game_start = {
 	events = {
-		hms_utility.10
+        hms_utility.10
+        hms_menu.1
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+        hms_utility.10
+        hms_menu.1
 	}
 }
 

@@ -7,3 +7,11 @@ hms_remove_all_gentype_flags = {
 	remove_global_flag = hms_generation_circles
 	remove_global_flag = hms_generation_all
 }
+
+hms_initialize = {
+    set_global_flag = hms_generation_clusters		#Default Generation type, probably going to be the most used.
+    set_global_flag = hms_hub_hyperlanes
+    set_global_flag = hms_hub_no_change
+    set_global_flag = hms_cluster_hyperlanes_neighbour
+    set_global_flag = hms_central_hub_random
+}
