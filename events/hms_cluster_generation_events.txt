@@ -247,7 +247,7 @@ system_event = {
 					}
 					spawn_megastructure = {
 						type = "hms_gateway"
-						orbit_distance = 100
+						orbit_distance = 20
 						random_pos = yes
 						orbit_angle = 360						# range of the randomization
 					}

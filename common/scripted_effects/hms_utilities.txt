@@ -1,3 +1,26 @@
+hms_utilities_save_gateways = {
+	every_system = {
+		limit = {
+			has_megastructure = hms_gateway
+		}
+		set_star_flag = hms_cluster_gateway
+	}
+}
+
+hms_utilities_load_gateways = {
+	every_system = {
+		limit = {
+			has_star_flag = hms_cluster_gateway
+		}
+		spawn_megastructure = {
+			type = "hms_gateway"
+			orbit_distance = 20
+			random_pos = yes
+			orbit_angle = 360	# range of the randomization
+		}
+	}
+}
+
 # noscope
 hms_utilities_generate_hub_wormholes = { #There can only be 1 wormhole per system, so they have to be spread throughout the cluster.
 	while = {
@@ -209,6 +232,7 @@ hms_utilities_remove_gen_flags = {
 		remove_star_flag = hms_loop_added
 		remove_star_flag = hms_added
 		remove_star_flag = hms_continue
+		remove_star_flag = hms_cluster_gateway
 	}
 }
 

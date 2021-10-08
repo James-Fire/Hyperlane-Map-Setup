@@ -67,7 +67,9 @@ country_event = {
 			hms_utilities_save_setup = {
 				INDEX = temp
 			}
+			hms_utilities_save_gateways = yes
 		}
+		every_megastructure = { limit = { is_megastructure_type = hms_gateway } delete_megastructure = this }
 		if = {
 			limit = {
 				has_global_flag = hms_generation_clusters
@@ -119,6 +121,7 @@ country_event = {
 			hms_utilities_load_setup = {
 				INDEX = temp
 			}
+			hms_utilities_load_gateways = yes
 		}
 	}
 }
