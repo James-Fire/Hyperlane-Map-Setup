@@ -2,4 +2,4 @@ Fixed the gateway option.
 
 Fixed gateways getting in the way of generating a new layout.
 
-Fixed wormhole option.*
+Disabled wormhole option, pending fix.

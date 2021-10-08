@@ -584,6 +584,7 @@ hms_hub_hyperlanes = {
 hms_hub_wormholes = {
 	potential = {
 		hidden_trigger = {
+			always = no
 			hms_has_cluster_flag = yes
 			has_global_flag = hms_hub_wormholes
 		}
@@ -664,7 +665,7 @@ hms_cluster_connection_type_reverse = {
 				has_global_flag = hms_hub_gateways
 			}
 			remove_global_flag = hms_hub_gateways
-			set_global_flag = hms_hub_wormholes
+			set_global_flag = hms_hub_hyperlanes
 		}
 		else_if = {
 			#Skip over this thing for now, it's hard.
@@ -695,7 +696,7 @@ hms_cluster_connection_type = {
 				has_global_flag = hms_hub_hyperlanes
 			}
 			remove_global_flag = hms_hub_hyperlanes
-			set_global_flag = hms_hub_wormholes
+			set_global_flag = hms_hub_gateways
 		}
 		else_if = {
 			limit = {
