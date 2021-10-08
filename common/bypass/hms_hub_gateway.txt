@@ -1,5 +1,5 @@
 hms_hub_network = {
-	name = HMS_HUB_WETWORK
+	name = HMS_HUB_NETWORK
 	is_pathfind = yes
 	uses_action = no
 	always_active = yes
@@ -8,8 +8,8 @@ hms_hub_network = {
 	ftl_multiplier = 0			# 0 means instant
 	icon_frame = 30
 	remember_instances = no 	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
-	galactic_map_tooltip_header = HMS_HUB_WETWORK
-	galactic_map_tooltip_desc = HMS_HUB_WETWORK_DESC
+	galactic_map_tooltip_header = HMS_HUB_NETWORK
+	galactic_map_tooltip_desc = HMS_HUB_NETWORK_DESC
 	connection_type = any_other
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"

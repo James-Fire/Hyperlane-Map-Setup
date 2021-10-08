@@ -238,33 +238,7 @@ system_event = {
 				}
 			}
 			hms_hub_wormholes = {
-				every_system = {
-					limit = {
-						has_star_flag = hms_hyperlane_hub
-					}
-					spawn_natural_wormhole = {
-						bypass_type = wormhole
-						orbit_distance = 100
-						random_pos = yes
-					}
-					every_system = {
-						limit = {
-							has_star_flag = hms_hyperlane_hub
-							distance = {
-								source = prev
-								min_distance >= 1
-								max_distance <= 170
-								type = euclidean
-							}
-						}
-						spawn_natural_wormhole = {
-							bypass_type = wormhole
-							orbit_distance = 100
-							random_pos = yes
-						}
-						link_wormholes = prev
-					}
-				}
+				hms_utilities_generate_hub_wormholes = yes
 			}
 			hms_hub_gateways = {
 				every_system = {
@@ -272,7 +246,7 @@ system_event = {
 						has_star_flag = hms_hyperlane_hub
 					}
 					spawn_megastructure = {
-						type = "gateway_final"
+						type = "hms_gateway"
 						orbit_distance = 100
 						random_pos = yes
 						orbit_angle = 360						# range of the randomization

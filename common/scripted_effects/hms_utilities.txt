@@ -1,4 +1,176 @@
 # noscope
+hms_utilities_generate_hub_wormholes = { #There can only be 1 wormhole per system, so they have to be spread throughout the cluster.
+	while = {
+		limit = {
+			any_system = {
+				has_star_flag = hms_hyperlane_hub
+				OR = {
+					has_natural_wormhole = no
+					count_neighbor_system = {
+						count = 5
+						limit = { has_natural_wormhole = no }
+					}
+				}
+				any_system = {
+					NOT = { is_same_value = PREV }
+					has_star_flag = hms_hyperlane_hub
+					OR = {
+						has_natural_wormhole = no
+						any_neighbor_system = {
+							has_natural_wormhole = no
+						}
+					}
+					distance = {
+						source = prev
+						min_distance >= 1
+						max_distance <= 170
+						type = euclidean
+					}
+					NOT = {
+						distance = {
+							source = prev
+							min_jumps = 1
+							max_jumps = 3
+							type = hyperlane
+						}
+					}
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = hms_hyperlane_hub
+			}
+			if = {
+				limit = {
+					has_natural_wormhole = no
+				}
+				random_system = {
+					limit = {
+						has_star_flag = hms_hyperlane_hub
+						distance = {
+							source = prev
+							min_distance >= 1
+							max_distance <= 100
+							type = euclidean
+						}
+					}
+					if = {
+						limit = {
+							has_natural_wormhole = no
+						}
+						PREV = {
+							spawn_natural_wormhole = {
+								bypass_type = wormhole
+								orbit_distance = 100
+								random_pos = yes
+							}
+						}
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							orbit_distance = 100
+							random_pos = yes
+						}
+						link_wormholes = prev
+					}
+					else_if = {
+						limit = {
+							any_neighbor_system = {
+								has_natural_wormhole = no
+							}
+						}
+						random_neighbor_system = {
+							limit = {
+								has_natural_wormhole = no
+							}
+							PREVPREV = {
+								spawn_natural_wormhole = {
+									bypass_type = wormhole
+									orbit_distance = 100
+									random_pos = yes
+								}
+							}
+							spawn_natural_wormhole = {
+								bypass_type = wormhole
+								orbit_distance = 100
+								random_pos = yes
+							}
+							link_wormholes = prevprev
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_neighbor_system = {
+						has_natural_wormhole = no
+					}
+				}
+				random_neighbor_system = {
+					limit = {
+						has_natural_wormhole = no
+					}
+					random_system = {
+						limit = {
+							has_star_flag = hms_hyperlane_hub
+							distance = {
+								source = prevprev
+								min_distance >= 1
+								max_distance <= 100
+								type = euclidean
+							}
+						}
+						if = {
+							limit = {
+								has_natural_wormhole = no
+							}
+							PREVPREV = {
+								spawn_natural_wormhole = {
+									bypass_type = wormhole
+									orbit_distance = 100
+									random_pos = yes
+								}
+							}
+							spawn_natural_wormhole = {
+								bypass_type = wormhole
+								orbit_distance = 100
+								random_pos = yes
+							}
+							link_wormholes = prevprev
+						}
+						else_if = {
+							limit = {
+								any_neighbor_system = {
+									has_natural_wormhole = no
+								}
+							}
+							random_neighbor_system = {
+								limit = {
+									has_natural_wormhole = no
+								}
+								PREVPREVPREV = {
+									spawn_natural_wormhole = {
+										bypass_type = wormhole
+										orbit_distance = 100
+										random_pos = yes
+									}
+								}
+								spawn_natural_wormhole = {
+									bypass_type = wormhole
+									orbit_distance = 100
+									random_pos = yes
+								}
+								link_wormholes = prevprevprev
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# noscope
 hms_utilities_set_hub_stars = {
 	every_system = {
 		limit = {

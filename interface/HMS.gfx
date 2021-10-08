@@ -389,11 +389,11 @@ spriteTypes = {
 	}
 	spriteType = { #Only buttons can be animated. IconTypes cannot. Buttons that are animated have the animation halted when hovered over.
 		name = "GFX_hms_generate"
-		texturefile = "gfx/interface/menu_ui/hms_blank.dds" #The base image. Defines the size of the sprite.
+		texturefile = "gfx/interface/menu_ui/hms_blank.dds" #The base image. Defines the size of the sprite. This can be an empty image.
 		effectFile = "gfx/FX/buttonstate.lua"
 		noOfFrames = 1
 		animation = {
-			animationmaskfile = "gfx/interface/menu_ui/box_test_mask.dds" #The shape of the animation. Whitespace appears to define where the animation appears.
+			animationmaskfile = "gfx/interface/menu_ui/box_test_mask.dds" #The shape of the animation. Whitespace defines where the animation is allowed to appear. For full coverage, a white box is fine.
 			animationtexturefile = "gfx/interface/menu_ui/hms_generate.dds" #The image to animate.
 			animationrotation = -90.0
 			animationlooping = yes

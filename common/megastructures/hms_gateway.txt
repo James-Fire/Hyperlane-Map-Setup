@@ -1,0 +1,28 @@
+hms_gateway = {
+	entity = "gateway_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	# build_outside_gravity_well = yes						# indicates this will use "free" placement between the system's inner and outer ring
+															# if this option is active, the placement_rules will be completely ignored
+	show_galactic_map_icon = no
+	potential = {
+		always = no
+	}
+	possible = {
+	}
+	
+	build_time = 1
+	resources = {
+		category = megastructures
+		cost = {
+		}
+	}
+
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	bypass_type = hms_hub_network
+	on_build_complete = {
+	}
+}
