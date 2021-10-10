@@ -29,3 +29,28 @@ country_event = {
 		}
 	}
 }
+
+# Encountered Abandoned Gateway
+ship_event = {
+	id = hms.20
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = encountered_first_gateway }
+		}
+		FROM = {
+			any_system_megastructure = { is_megastructure_type = hms_gateway }
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = gateway_system }
+		owner = {
+			set_country_flag = encountered_first_gateway
+			add_seen_bypass_type = gateway
+		}
+	}
+}
