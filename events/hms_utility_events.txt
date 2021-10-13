@@ -33,7 +33,24 @@ country_event = {
 # Encountered Abandoned Gateway
 ship_event = {
 	id = hms.20
-	hide_window = yes
+	title = "apoc.1.name"
+	desc = {
+		text = apoc.1.desc
+		trigger = {
+			NOT = {
+				owner = { has_country_flag = encountered_first_lgate }
+			}
+		}
+	}
+	desc = {
+		text = apoc.1.b.desc
+		trigger = {
+			owner = { has_country_flag = encountered_first_lgate }
+		}
+	}
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_radio_chatter
+	location = FROM
 
 	is_triggered_only = yes
 

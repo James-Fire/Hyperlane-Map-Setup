@@ -1,5 +1,3 @@
-Fixed the gateway option.
+Fixed the Gateway Event not popping up.
 
-Fixed gateways getting in the way of generating a new layout.
-
-Disabled wormhole option, pending fix.
+Fixed the HMS gateways not having a model.
