@@ -85,6 +85,12 @@ hms_generator_full = {
 					is_same_value = prev
 					has_hyperlane_to = prev
 				}
+				distance = {
+					source = prev
+					min_distance >= 1
+					max_distance <= 1  #prevprev.hms_all_gen_distance
+					type = euclidean
+				}
 			}
 			add_hyperlane = {
 				from = this

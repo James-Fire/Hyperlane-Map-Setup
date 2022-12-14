@@ -19,9 +19,6 @@ hms_gateway = {
 		}
 	}
 
-	construction_blocks_others = no
-	construction_blocked_by_others = no
-
 	bypass_type = hms_hub_network
 	on_build_complete = {
 	}

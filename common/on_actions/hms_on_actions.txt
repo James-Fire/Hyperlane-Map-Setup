@@ -25,6 +25,6 @@ dmm_mod_selected = {
 # FromFrom = Country
 on_entering_system_first_time = {
 	events = {
-		hms.20
+		hms_utility.20
 	}
 }

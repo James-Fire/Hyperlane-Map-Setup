@@ -14,4 +14,7 @@ hms_initialize = {
     set_global_flag = hms_hub_no_change
     set_global_flag = hms_cluster_hyperlanes_neighbour
     set_global_flag = hms_central_hub_random
+	
+	#set_variable = { which = hms_all_gen_distance value = 100 } #Default Gentype All distance to connect.
+	#set_variable = { which = hms_isolated_clusters value = 0 } #Default number of clusters that are separated from the typical connections.
 }

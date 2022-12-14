@@ -10,7 +10,8 @@
     #UI
     hms_generation_formula_title: "Generation Type"
     generation_options_title: "Generation Options"
-    hyperlane_manipulation_title: "Manipulation Options"
+    hyperlane_manipulation_title: "Manipulation"
+    hyperlane_manipulation_title_2: "Options"
     hyperlane_saving_title: "Save States"
 
     hms_menu.2.name: "Hyperlane Map Setup"

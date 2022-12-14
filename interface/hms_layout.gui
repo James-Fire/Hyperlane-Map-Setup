@@ -88,15 +88,15 @@ guiTypes = {
 			size = { width = 410 height = 102 }
 			orientation = upper_left
 			
-				effectButtonType = { name = "hms_generation_page_left" spriteType = "GFX_hms_arrow_left_toll" position = { x = -111 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_clusters" effect = "hms_previous_page" }
+				effectButtonType = { name = "hms_generation_page_left" spriteType = "GFX_hms_arrow_left_toll" position = { x = -111 y = 0 } clicksound = interface effect = "hms_previous_page" }
 				effectButtonType = { name = "hms_generation_clusters_tab" spriteType = "GFX_column_menu_button" position = { x = -98 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_clusters" effect = "hms_generation_clusters_tab" }
 				effectButtonType = { name = "hms_generation_pie_slices_tab" spriteType = "GFX_column_menu_button" position = { x = -98 y = 37 } clicksound = interface font = "cg_16b" text = "hms_generation_pie_slices" effect = "hms_generation_pie_slices_tab" }
 				effectButtonType = { name = "hms_generation_corridor_tab" spriteType = "GFX_column_menu_button" position = { x = 100 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_corridor" effect = "hms_generation_corridor_tab" }
 				effectButtonType = { name = "hms_generation_cursed_corridor_tab" spriteType = "GFX_column_menu_button" position = { x = 100 y = 37 } clicksound = interface font = "cg_16b" text = "hms_generation_cursed_corridor" effect = "hms_generation_cursed_corridor_tab" }
 				effectButtonType = { name = "hms_generation_center_tab" spriteType = "GFX_column_menu_button" position = { x = 298 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_center" effect = "hms_generation_center_tab" }
 				effectButtonType = { name = "hms_generation_circles_tab" spriteType = "GFX_column_menu_button" position = { x = 298 y = 37 } clicksound = interface font = "cg_16b" text = "hms_generation_circles" effect = "hms_generation_circles_tab" }
-				effectButtonType = { name = "hms_generation_all_tab" spriteType = "GFX_column_menu_button" position = { x = -115 y = 80 } clicksound = interface font = "cg_16b" text = "hms_generation_all" effect = "hms_generation_all_tab" }
-				effectButtonType = { name = "hms_generation_page_right" spriteType = "GFX_hms_arrow_right_toll" position = { x = 496 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_clusters" effect = "hms_next_page" }
+				effectButtonType = { name = "hms_generation_all_tab" spriteType = "GFX_column_menu_button" position = { x = -100 y = 0 } clicksound = interface font = "cg_16b" text = "hms_generation_all" effect = "hms_generation_all_tab" }
+				effectButtonType = { name = "hms_generation_page_right" spriteType = "GFX_hms_arrow_right_toll" position = { x = 496 y = 0 } clicksound = interface effect = "hms_next_page" }
 				
 				
 				effectButtonType = { name = "hms_generation_image_bg" spriteType = "GFX_hms_image_bg" position = { x = -114 y = 77 } clicksound = interface effect = "hms_generation_image_bg" alwaysTransparent = yes }
@@ -141,10 +141,10 @@ guiTypes = {
 			
 			effectButtonType = {
 				name = "generation_options_title"
-				position = { x = 115 y = 0 }
+				position = { x = 95 y = -25 }
+				size = { width = 270 height = 102 }
 				no_clicksound = yes
 				alwaysTransparent = yes
-				size = { width = 250 height = 50 }
 				font = "large_title_font_28"
 				text = "generation_options_title"
 				effect = "hms_blank_effect"
@@ -189,11 +189,22 @@ guiTypes = {
 			
 			effectButtonType = {
 				name = "hyperlane_manipulation_title"
-				position = { x = 0 y = -80 }
+				position = { x = 10 y = -45 }
+				size = { width = 170 height = 102 }
 				no_clicksound = yes
-				alwaysTransparent = yes
+				#alwaysTransparent = yes
 				font = "large_title_font_28"
 				text = "hyperlane_manipulation_title"
+				effect = "hms_blank_effect"
+			}
+			effectButtonType = {
+				name = "hyperlane_manipulation_title_2"
+				position = { x = 10 y = -20 }
+				size = { width = 170 height = 102 }
+				no_clicksound = yes
+				#alwaysTransparent = yes
+				font = "large_title_font_28"
+				text = "hyperlane_manipulation_title_2"
 				effect = "hms_blank_effect"
 			}
 			
@@ -252,6 +263,15 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "alien_message"
+			font = "cg_16b"
+			position = { x = 230 y = 37000 } #Yeet
+			maxWidth = 475
+			maxHeight = 290
+			format = left
+			scrollbartype = "standardtext_slider"
+		}	
+		instantTextBoxType = {
+			name = "heading"
 			font = "cg_16b"
 			position = { x = 230 y = 37000 } #Yeet
 			maxWidth = 475
