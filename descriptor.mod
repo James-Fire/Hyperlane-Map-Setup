@@ -6,5 +6,5 @@ tags={
 }
 name="Hyperlane Map Setup"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.7.*"
 remote_file_id="2622181308"
