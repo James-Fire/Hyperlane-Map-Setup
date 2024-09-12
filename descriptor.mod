@@ -6,6 +6,6 @@ tags={
 }
 name="Hyperlane Map Setup"
 picture="thumbnail.png"
-supported_version="3.10.*"
+supported_version="v3.13.*"
 path="C:/Users/godis/Documents/Paradox Interactive/Stellaris/mod/Hyperlane Map Setup"
 remote_file_id="2622181308"

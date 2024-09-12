@@ -1,5 +1,5 @@
 namespace = hms_utility
-#
+
 event = {
 	id = hms_utility.10
 	hide_window = yes
@@ -32,7 +32,8 @@ country_event = {
 
 # Encountered Abandoned Gateway
 ship_event = {
-	id = hms.20
+	id = hms_utility.20
+	#hide_window = yes
 	title = "apoc.1.name"
 	desc = {
 		text = apoc.1.desc
@@ -51,7 +52,6 @@ ship_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_radio_chatter
 	location = FROM
-
 	is_triggered_only = yes
 
 	trigger = {
@@ -64,7 +64,6 @@ ship_event = {
 	}
 
 	immediate = {
-		FROM = { save_event_target_as = gateway_system }
 		owner = {
 			set_country_flag = encountered_first_gateway
 			add_seen_bypass_type = gateway
